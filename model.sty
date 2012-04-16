@@ -1,0 +1,186 @@
+% Modelverslag.sty Template for CMI Rotterdam University
+% Version 1.5, april 2011 - P.J. den Brok
+% Editted April 11th 2012 - W. de Kraker (added bibtex reference, draftmode and changes in layout and general readablity improvements)
+
+\ProvidesPackage{model}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=black,citecolor=black,filecolor=black, urlcolor=black}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{calc}
+\usepackage{rotating}
+\usepackage{latexsym}
+\usepackage{amsfonts}
+\usepackage{pslatex}
+\usepackage{eurosym}
+\newcommand{\eurom}{\mbox{\euro}}
+\newcommand{\INS}{CMI}
+\iflanguage{dutch}{\def\HR{Hogeschool Rotterdam}}{\def\HR{Rotterdam University}}
+\iflanguage{dutch}{\def\TI{Technische Informatica}}{\def\TI{Technical Informatics}}
+\iflanguage{dutch}{\def\BI{Bedrijfskundige Informatica}}{\def\BI{Business Informatics}}
+\iflanguage{dutch}{\def\INF{Informatica}}{\def\INF{Informatics}}
+\iflanguage{dutch}{\def\van{van}}{\def\van{by}}
+\iflanguage{dutch}{\def\opl{Opleiding}}{\def\opl{Program}}
+\iflanguage{dutch}{\def\doca{Eerste docent}}{\def\doca{First supervisor}}
+\iflanguage{dutch}{\def\docb{Tweede docent}}{\def\docb{Second supervisor}}
+
+%Speciale macro voor afbeeldingen: *.png *.gif *.jpg *.pdf. Voorbeeld:
+%\figuur{scale=0.5, angle=270}{plaatjes/plot}{label}{Een eenvoudige plotter.}
+\newcommand{\figuur}[4]{\begin{figure}[htpb!]\includegraphics[#1]{#2}
+ \centering\caption{#4}\label{fig:#3}\vspace{2mm}\end{figure}}
+ 
+%Speciale macro voor brede afbeeldingen: *.png *.gif *.jpg *.pdf. Voorbeeld:
+%\figuur{width=\PROCENT{99}}{plaatjes/plot}{label}{Een eenvoudige
+%plotter.}. In twocolumn-mode werkt alleen [tp!] plaatsing.
+\newcommand{\Figuur}[4]{\begin{figure*}[htpb!]\includegraphics[#1]{#2}
+ \centering\caption{#4}\label{fig:#3}\vspace{2mm}\end{figure*}}
+ 
+% voor de redactie
+\newcommand{\redactie}[1]{{\bf{} (Opm: #1) }}
+
+% de tabelomgeving
+\newcommand{\mycap}{}% noodzakelijk voor de tabelomgeving
+\newcommand{\mylab}{}% noodzakelijk voor de tabelomgeving
+\newcommand{\myafm}{}% noodzakelijk voor de TwoColSize omgeving
+
+% alle formatters van de 'tabularomgeving' zijn toegestaan plus:
+% Tabelomgevingen en extra formatters (zie voorbeeld hoofdverslag)
+% \R p{lengte} meer regels rechts  per cel met gegeven lengte (raggedleft)
+% \C p{lengte} meer regels centrum per cel met gegeven lengte (centering)
+% \L p{lengte} meer regels links   per cel met gegeven lengte (raggedright)
+
+\newcommand{\BST}[1]{\let\temp=\\#1\let\\=\temp} %bescherm backslash in temp
+\def\R{\BST\raggedleft\hspace{0pt}} % interne tabelformatter rechts
+\def\C{\BST\centering\hspace{0pt}}  % interne tabelformatter centrum
+\def\L{\BST\raggedright\hspace{0pt}}% interne tabelformatter links
+\newcommand{\Knak}{\penalty0} % Regelknak tussen woorden
+
+% Relatieve afmetingen met \Procent{0 ... 99} van de kolombreedte
+\newcommand{\Procent}[1]{\columnwidth*\real{.#1}}
+
+% Relatieve afmetingen met \PROCENT{0 ... 99} van de tekstbreedte
+\newcommand{\PROCENT}[1]{\textwidth*\real{.#1}}
+
+% De speciale environment 'tabel' (tabular) voor een horizontale tabel
+% met een verplichte label en een verplicht onderschrift.
+\newenvironment{tabel}[4][\normalsize]{\renewcommand{\mycap}{#4}
+  \renewcommand{\mylab}{#3}\begin{table}[htbp!]#1\begin{tabular}{#2}}
+ {\end{tabular}\vspace{2mm}\centering\caption{\mycap}
+  \label{tab:\mylab}\end{table}}
+  
+% De speciale environment 'Tabel' (tabular) voor een brede horizontale
+% tabel (ook in twocolumn-mode) met een verplichte label en een
+% verplicht onderschrift. In twocolumn-mode werkt alleen [tp!] plaatsing.
+\newenvironment{Tabel}[4][\normalsize]{\renewcommand{\mycap}{#4}
+  \renewcommand{\mylab}{#3}\begin{table*}[htpb!]#1\begin{tabular}{#2}}
+ {\end{tabular}\vspace{2mm}\centering\caption{\mycap}
+  \label{tab:\mylab}\end{table*}}
+  
+% De speciale environment 'TABEL' macro om een grote verticale tabel
+% met label en onderschrift te plaatsen op een aparte pagina
+% (ongeschikt in publicatiemode)
+\newenvironment{TABEL}[4][\normalsize]{\renewcommand{\mycap}{#4}
+  \renewcommand{\mylab}{#3}\begin{table}[htbp!]#1\begin{sidewaystable}{#2}}
+ {\end{sidewaystable}\vspace{2mm}\centering\caption{\mycap}
+  \label{tab:\mylab}\end{table}}
+  
+% Een relatieve verkleining van lange regels in de two-columnmode:
+\newenvironment{Aanpassen}[1][\relax]{\relax}{\relax}
+
+% Bladspiegel afmetingen:
+\textwidth      = 15cm
+\textheight     = 23cm
+\headheight     = 0cm
+\headsep        = 0cm
+\topmargin      = 0.5cm
+\oddsidemargin  = 1cm
+\evensidemargin = 0cm
+\floatsep       = 0.75cm
+\textfloatsep   = \floatsep
+\intextsep      = \floatsep
+\setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
+\sloppy%twocolummode met \verb!!'s moet sloppy, andere moden zijn ongevoeliger
+\newlength{\maxwidth}
+
+
+\ifpublic %publishable version
+  \setlength{\parindent}{0pt}% Eur. alinea past bij listings en verbatims   
+  \iftwocol\renewenvironment{Aanpassen}[1][\scriptsize]{#1}{\relax}\fi
+  \newcommand{\hoofdstuk}{\subsection*}%I.v.m. pagina-overgang
+  \newcommand{\paragraaf}{\subsubsection*}% I.v.m. pagina-overgang
+  \newcommand{\samenvatting}[1]
+       {\begin{center}\large{\textbf{\abstractname}}\end{center}}
+  \newcommand{\titelblad}[6]
+      {\include{pagnum}% optionele start paginanummering
+       \hypersetup{pdftitle={#1},
+            pdfsubject={verslag},
+            pdfauthor={#2},
+            pdfkeywords={verslag #3},
+        }
+       \begin{center}\textbf{#1}\end{center}
+       \begin{center}\footnotesize{\em{#2}}\end{center}
+       \begin{center}\footnotesize{#4}\end{center}
+       \begin{center}\footnotesize{\opl{} `\em{#3}'}\end{center}}
+  \renewenvironment{thebibliography}[1]
+     {{\normalsize{\textbf{ \\\centering\bibname \\}}}
+      \@mkboth{\MakeUppercase\bibname}{\MakeUppercase\bibname}
+      \list{\@biblabel{\@arabic\c@enumiv}}
+           {\settowidth\labelwidth{\@biblabel{#1}}
+            \leftmargin\labelwidth
+            \advance\leftmargin\labelsep
+            \@openbib@code
+            \usecounter{enumiv}
+            \let\p@enumiv\@empty
+            \renewcommand\theenumiv{\@arabic\c@enumiv}}
+      \sloppy
+      \clubpenalty4000
+      \@clubpenalty \clubpenalty
+      \widowpenalty4000
+      \sfcode`\.\@m}
+     {\def\@noitemerr
+       {\@latex@warning{Empty `thebibliography' environment}}
+\endlist}
+
+
+\else     %normal version
+  \newcommand{\hoofdstuk}[1]{\chapter*{#1}\addcontentsline{toc}{chapter}{#1}}
+  \newcommand{\paragraaf}[1]{\section*{#1}\addcontentsline{toc}{section}{#1}}
+  \newcommand{\subparagraaf}[1]{\subsection*{#1}\addcontentsline{toc}{subsection}{#1}}
+  \newcommand{\samenvatting}[1]{\hoofdstuk{\abstractname}}
+  \newcommand{\bijlage}[1]{\chapter{#1}}
+  \newcommand{\titelblad}[6]{
+   \hypersetup{pdftitle={#1},
+            pdfsubject={verslag},
+            pdfauthor={#2},
+            pdfkeywords={verslag #3},
+           }
+   \thispagestyle{empty}
+   \begin{center}
+   ~\\~\\~\\~\\~\\~\\% truuk
+   \vspace{1.0cm}
+   \includegraphics[width=5.1cm]{images/research-logo.png} \\
+    \vspace{2.0cm}
+   \begin{center}
+   \line(1,0){350}
+   \end{center}
+   \textbf{\Large #1\\}
+   \vspace{0.5cm}
+   \van{} \\
+   \emph{#2} \\
+  \begin{center}
+  \line(1,0){350}
+  \end{center}
+   {\small \INS{}-\opl{} \emph{#3} -- \HR} \\
+   \vspace{0.3cm}
+   #4 \\
+   \vspace{\fill}
+   \end{center}
+   {\footnotesize%
+   \begin{tabular}[2]{ll}
+    \doca    & \emph{#5} \\
+    \docb    & \emph{#6} \\
+   \end{tabular}
+   }
+   \vspace{1.0cm}
+  }
+\fi

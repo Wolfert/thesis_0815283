@@ -1,0 +1,68 @@
+\documentclass[11pt,a4paper,twoside,dutch]{report}
+\usepackage[english]{babel}
+\selectlanguage{english}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newif\ifpublic \newif\iftwocol	% publication mode %
+\newif\ifdraftmode \newif\ifdraftmode	% drafts mode %
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% publishable version (no titlepage, credits, evaluation or attachments)%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\publictrue	% 1-kolom publicatiemode (zonder %) of verslagmode (met %)
+%\twocoltrue	% 2-kolommen publication mode
+%\draftmodetrue	% 3-draft mode
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% template packages en macro's %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\ifpublic\iftwocol\twocolumn\fi\fi	% flag 1 or 2 columns %
+\usepackage[utf8]{inputenc}
+\usepackage{model}		% template %
+\renewcommand{\redactie}[1]{\relax}	% nodig voor redactionele opmerkingen %
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% packages %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{algorithmic}
+\usepackage{listings}
+\usepackage[scaled]{helvet} %% Helvetica replica
+\renewcommand*\familydefault{\sfdefault} %% Only if the base font of the document is to be sans serif
+\usepackage[T1]{fontenc}
+
+
+\begin{document}
+\titelblad
+	{Native Cross-platform Mobile Application Development}
+	{W. de Kraker (0815283)} 
+	{\INF}                     
+	{\today}                  
+	{Dhr. Y. S. Tjang}
+	{Dhr. A. Chamani}
+
+\ifpublic
+	{\footnotesize{\input{samenvatting}}}
+\else
+	\pagenumbering{roman}
+	\input{abstract}
+	\include{credits} 
+	\tableofcontents
+	%\include{definitions}
+	\pagenumbering{arabic}
+\fi
+	\input{introduction}
+	\input{content}
+	\input{conclusion} 
+\ifpublic
+% todo.
+%	\iflanguage{dutch}{\def\bibname{\normalsize{Bronnen}}}
+%		{\def\bibname{\normalsize{References}}}
+%	{\footnotesize{\input{bronnen}}} 
+\else
+	\bibliographystyle{plain}
+	\bibliography{bibliography}
+	\input{evaluating}
+	\appendix
+	%\include{attachment} 
+\fi
+\end{document} 

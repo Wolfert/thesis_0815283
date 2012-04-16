@@ -1,0 +1,12 @@
+.DS_Store
+*.blg
+*.bbl
+*.toc
+*.synctex.gz
+*.out
+*.tuo
+*.mp
+*.tmp
+*.tui
+*.aux
+*.log
