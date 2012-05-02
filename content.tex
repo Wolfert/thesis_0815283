@@ -10,9 +10,7 @@ The university is divided into eleven schools, offering more than 80 graduate an
 In 2011, live music venue WORM - Instituut voor Avantgardistische Recreatie hired Lunatech to build Stager, a modern web-based resource planning and ticketing application to help manage live music events. Lunatech took the opportunity to use the relatively new Play framework to build a web application with an HTML5 and Java architecture. Stager has broad requirements ranging from high performance and security for the public ticket sales component, high usability for the internal resource planning component that will be used for hours a day by employees and being open to enhancements in the future for new customers.
 
 \subparagraaf{WORM}
-WORM is een instituut voor avantgardistische recreatie te Rotterdam, bestaande uit een kunstenaarscollectief, een podium met winkel en een Parallelle Universiteit (DIY-werkplaatsen 
-voor film, muziek en media). Geboren onder de sterren van punk, dada, fluxus, situationisme en futurisme is WORM uitgegroeid tot een eigengereide organisatie die de ‘Do-It-Yourself’ mentaliteit van hun voorouders combineert met ultra-pragmatisme, liefde voor techniek(en) en goede boekhouding. De output van WORM is film, radio, concerten, cursussen, party's, publicaties, performances, web-projecten, installaties, workshops en een op­eenhoping van tactiele media en internet. WORM focust zich (blijmoedig en toch serieus) op avantgarde, middelenschaarste en opensource.
-
+WORM is een instituut voor avantgardistische recreatie te Rotterdam, bestaande uit een kunstenaarscollectief, een podium met winkel en een Parallelle Universiteit (DIY-werkplaatsen voor film, muziek en media). Geboren onder de sterren van punk, dada, fluxus, situationisme en futurisme is WORM uitgegroeid tot een eigengereide organisatie die de ‘Do-It-Yourself’ mentaliteit van hun voorouders combineert met ultra-pragmatisme, liefde voor techniek(en) en goede boekhouding. De output van WORM is film, radio, concerten, cursussen, partys, publicaties, performances, web-projecten, installaties, workshops en een opeenhoping van tactiele media en internet.WORM focust zich (blijmoedig en toch serieus) op avantgarde, middelenschaarste en opensource.
 
 \hoofdstuk{Mobile platforms}
 
@@ -39,7 +37,6 @@ Windows Phone 7 is a mobile operating system, developed Microsoft as a succesor 
 \subparagraaf{Symbian}
 
 \paragraaf{Marketshare and trend}
-
 
 \begin{centering}
 \includegraphics[scale=0.5]{images/marketsharetrendsApril10Tomay12.png}\\{World wide mobile OS Marketshare trends, April 2010 up to may 2012}\\
@@ -107,30 +104,64 @@ A Mixed based hybrid app is a webviewbased app build upon a framework which prov
 PhoneGap is an example of a framework which can be used to develop mixed hybrid applications.
 
 \paragraaf{Comparison}
-Web apps - Quick and cheap to develop. Written entirely in HTML5, CSS and JavaScript. Executed by the mobile
+Web apps are quick and cheap to develop. Written entirely in HTML5, CSS and JavaScript. Executed by the mobile
 browser and therefore cross - platform by default, but less powerful than native apps.
  
-Hybrid Apps (Web) - The app's source code consists of web code executed within a native wrapper that is provided by a framework.
+Hybrid Apps (Web), the app's source code consists of web code executed within a native wrapper that is provided by a framework.
  
-Hybrid Apps (Mix) - The developer augments the web code with native language to create unique features and
-access native APIs that are not yet available via JavaScript, such as AR, NFC and others.
+Hybrid Apps (Mix), the developer augments the web code with a Javascript API to create unique features and
+access native APIs that are not yet available via the browser, such as AR, NFC and others.
  
-Native Apps - Platform-specific. Requires unique expertise and knowledge. Pricey and time consuming to develop but
+Native App are platform-specific. Requires unique expertise and knowledge. Pricey and time consuming to develop but
  delivers the highest user experience of all approaches.
 
 \begin{centering}
-\includegraphics[scale=0.5]{images/apptypesdefined.png}\\{label x}\\
+\includegraphics[scale=0.5]{images/apptypesdefined.png}\\{Different types of mobile applications\cite{IBM-Worklight2012}}\\
 \end{centering}
 
 \hoofdstuk{Exsisting solutions to Cross-platform Mobile Application Development}
 \paragraaf{Introduction}
-\paragraaf{PhoneGap}
+In todays industry exist several cross-platform mobile application development frameworks which offer a solution to cross-platform problem. All of these frameworks provide a custom solution of crossing the bride between platforms. In order determine which one should be adopted by Lunatech for mobile development the following criteria have been set up for comparisson:
+
+\begin{itemize}
+\item \emph{Platform support}\\
+Which platforms and their versions are supported by the framework.
+\item \emph{Native UI support}\\
+Whether or not native userinterface elements are supported as per supported platform.
+\item \emph{Programming language}\\
+Which programming language is used to develop using the framework.
+\item \emph{IDE}\\
+Which IDE is used to develop using the framework.
+\item \emph{Lisence type}\\
+Which lisence type is available.
+\item \emph{Application type}\\
+Which type of mobile application is produced using this framework.
+\end{itemize}
+
+The cross-platform criterium is based on Lunatechs requirement to build mobile applications for the operating systems have have at least a 10 percent marketshare in the earopean continent. Second after that comes the support for native userinterface elements. Togother these criteria form the essense of the main research question: "\emph{How to develop a cross-platform mobile application while retaining the native look-and-feel?}"
+The remaining criteria are of secondary importance, they will provide more detail means to provide frameworks which offer native UI support.
+
+The following solutions have been choosen for review: \emph{Titanium, Rhodes, Worklight and MoSync}. These are derived from the list "Existing solutions" %todo.
+
+
 \paragraaf{Appcelerator Titanium}
+Appceleator Titanium is an commericially supported opensource platform for developing cross-platform mobile applications. It was introduced by Appcelerator Inc. in December 2008. Build upon the EclipseIDE Titanium offers a Javascript API to native mapper classes which allow the developer to generate truely native cross-platform mobile applications.
+
 \paragraaf{Rhodes}
+Rhodes is an open source Ruby-based framework to build native apps for all major smartphone operating systems (iPhone, Android, RIM, Windows Mobile and Windows Phone 7). These are true native device applications (not mobile web apps) which work with synchronized local data and take advantage of device capabilities such as GPS, PIM contacts and calendar, camera, native mapping, push, barcode, signature capture, Bluetooth and Near Field Communications (NFC)
+
 \paragraaf{Worklight}
+Worklight Studio is an eclipse based IDE for the cross-platform development of mobile apps. Worklight Studio was introduced in 200x by Worklight Inc. In early 2012 Worklight Inc. became an IBM company. Worklight Studio offers mobile development trough the use of webtechnologies such as HTML5, and Javascript.
+
 \paragraaf{MoSync}
+The MoSync mobile SDK offers cross-platform development trough the use of webtechnologie or C/C++.
+
+
+
+\paragraaf{PhoneGap}
 \paragraaf{Sencha Touch}
 \paragraaf{jQTouch}
+
 \paragraaf{Comparison}
 
 \hoofdstuk{Developing cross-platform native applications with Titanium}
