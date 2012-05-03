@@ -1,22 +1,26 @@
 \hoofdstuk{Background}
 \paragraaf{Lunatech Research B.V}
-Lunatech provides application development services, completely based on open-source web and Java technologies and open standards. They are early adopters of new technology, and use cutting-edge frameworks and tools to give themselves the advantage in software development. To stay up-to-date, their developers have the opportunity to research, try new technologies and contribute to open-source projects. The company is dominated by software developers. Everyone (except the director) writes code, on top of which some staff have a secondary management role, and the staff who will deliver a project interact with the customer directly.
+Lunatech provides application development services, completely based on open-source web and Java technologies and open standards. They are early adopters of new technology, and use cutting-edge frameworks and tools. To stay up-to-date, their developers have the opportunity to research, try new technologies and contribute to open-source projects. The company is dominated by software developers. Everyone (except the director) writes code, on top of which some staff have a secondary management role, and the staff who will deliver a project interact with the customer directly.
 
 \paragraaf{Rotterdam University of Applied Sciences (Hogeschool Rotterdam)}
-Rotterdam University is one of the major Universities of Applicationlied Sciences in the Netherlands. Currently almost 30,000 students are working on their professional future at our university.
-The university is divided into eleven schools, offering more than 80 graduate and undergrad- uate programmes in seven fields: art, technology, media and information technology, health, behaviour and society, engineering, education, and of course, business.\cite{HogeschoolRotterdam2012}
+Rotterdam University is one of the major Universities of Applied Sciences in the Netherlands. Currently almost 30,000 students are working on their professional future at the university.
+The university is divided into eleven schools, offering more than 80 graduate and undergraduate programmes in seven fields: art, technology, media and information technology, health, behaviour and society, engineering, education, and of course, business.\cite{HogeschoolRotterdam2012}
 
 \paragraaf{Stager}
-In 2011, live music venue WORM - Instituut voor Avantgardistische Recreatie hired Lunatech to build Stager, a modern web-based resource planning and ticketing application to help manage live music events. Lunatech took the opportunity to use the relatively new Play framework to build a web application with an HTML5 and Java architecture. Stager has broad requirements ranging from high performance and security for the public ticket sales component, high usability for the internal resource planning component that will be used for hours a day by employees and being open to enhancements in the future for new customers.
+In 2011, live music venue WORM - Instituut voor Avantgardistische Recreatie hired Lunatech to build \emph{Stager}, a modern web-based resource planning and ticketing application to help manage live music events. Lunatech took the opportunity to use the relatively new Play framework to build a web application with an HTML5 and Java architecture. Stager has broad requirements ranging from high performance and security for the public ticket sales component to high usability for the internal resource planning component that will be used for hours a day by employees and being open to enhancements in the future for new customers. \cite{Lunatech2011} %todo: bron toevoegen
 
 \subparagraaf{WORM}
-WORM is een instituut voor avantgardistische recreatie te Rotterdam, bestaande uit een kunstenaarscollectief, een podium met winkel en een Parallelle Universiteit (DIY-werkplaatsen voor film, muziek en media). Geboren onder de sterren van punk, dada, fluxus, situationisme en futurisme is WORM uitgegroeid tot een eigengereide organisatie die de ‘Do-It-Yourself’ mentaliteit van hun voorouders combineert met ultra-pragmatisme, liefde voor techniek(en) en goede boekhouding. De output van WORM is film, radio, concerten, cursussen, partys, publicaties, performances, web-projecten, installaties, workshops en een opeenhoping van tactiele media en internet.WORM focust zich (blijmoedig en toch serieus) op avantgarde, middelenschaarste en opensource.\#todo: translate
+WORM is een instituut voor avantgardistische recreatie te Rotterdam, bestaande uit een kunstenaarscollectief, een podium met winkel en een Parallelle Universiteit (DIY-werkplaatsen voor film, muziek en media). Geboren onder de sterren van punk, dada, fluxus, situationisme en futurisme is WORM uitgegroeid tot een eigengereide organisatie die de ‘Do-It-Yourself’ mentaliteit van hun voorouders combineert met ultra-pragmatisme, liefde voor techniek(en) en goede boekhouding. De output van WORM is film, radio, concerten, cursussen, partys, publicaties, performances, web-projecten, installaties, workshops en een opeenhoping van tactiele media en internet.WORM focust zich (blijmoedig en toch serieus) op avantgarde, middelenschaarste en opensource.\#todo: translate \cite{WORM2012} %TODO bron toevoegen
 
 \hoofdstuk{Mobile platforms}
 
 \paragraaf{Introduction}
 % per platform: van wie is het, wat is de geschiedenis, waar wordt het gebruikt, welke achterliggende techniek drijft het?
+% plaatjes homescreens of devices toevoegen, visueel maken.
+
 The following chapter presents a concise overview of current mobile operating systems for mobile platforms, specifically smartphones and tablets.
+
+% todo: define platform.
 
 A smartphone can be defined as a smart phone is a next-generation, multifunctional cell phone that provides voice communication and text-messaging capabilities and facilitates data processing as well as enhanced wireless connectivity.\cite{Ni2006}
 
@@ -30,18 +34,18 @@ Android is a opensource mobile operating system, developed by the Open Handset A
 BlackBerry OS is a proprietary mobile operating system, developed by RIM\emph{(Research In Motion)} for its line of BlackBerry mobile devices.
 
 \subparagraaf{Windows Phone 7}
-Windows Phone 7 is a mobile operating system, developed Microsoft as a succesor to its Windows Mobile platform.
+Windows Phone 7 is a mobile operating system, developed by Microsoft as a succesor to its Windows Mobile platform.
 
+\subparagraaf{Other platforms}
+% Onder other valt Symbian. Symbian is een app platforms dus we nemen het mee:)
 \subparagraaf{Java ME}
-
 \subparagraaf{Symbian}
 
 \paragraaf{Marketshare and trend}
-
+% TODO: waar de stats vandaan komen,  wat ze betekenen, waarom ik ze heb gekozen, wat de alternatieven zijn((gartner 2011)
 \begin{centering}
 \includegraphics[scale=0.5]{images/marketsharetrendsApril10Tomay12.png}\\{World wide mobile OS Marketshare trends, April 2010 up to may 2012}\\
 \end{centering}
-
 
 \begin{centering}
 \includegraphics[scale=0.5]{images/netmarketshare_march2012.png}\\
@@ -70,35 +74,37 @@ Palm & 0.00\\
 
 
 \hoofdstuk{Defining native}
-\paragraaf{Intoduction}
-The following chapter will define the \emph{native look-and-feel}.
+\paragraaf{Introduction}
+This chapter will define the paradigm of \emph{native look-and-feel}.
 
 \paragraaf{Native mobile applications}
-A native application is by definition an application inherent to the platform it was build for using techniques proprietary to the platform. For example, an iOS application is native when written in Objective-C and an Android application is written in Java.  Native applications are typically fast can can acces the devices n
+A native application is an application inherent to the platform for which it was built using techniques proprietary to the platform. For example, an iOS application is native when written in Objective-C and an Android application is written in Java.  Native applications are typically fast and can access the device's native API's.
 
 \subparagraaf{The native look-and-feel}
-When written in the native framework for a platform an mobile application receives acces to the available public libraries of the platform. These libraries include the UIKit\emph{(on iOS)} which provides the developer with a pre fabricated set of user interface components. These can be seen as the buildingblocks for the graphical userinterface on that platform. When used, the general style of the mobile application gains homogeneity to the overal user interface design of the platforms operating system. This gives an application its native look, which in turn participates to the native feel.
+When written in the native framework for a platform a mobile application receives acces to the available public libraries of the platform. These libraries include the UIKit\emph{(on iOS)} which provides the developer with a pre-fabricated set of user interface components. These can be seen as the building blocks for the graphical user interface on that platform. When used, the general style of the mobile application gains consitency to the overal user interface design of the platforms operating system. This gives an application its native look, which in turn participates to the \emph{native feel}.
 
 %with a feeling of recognition when using the application, userinterface elements work as they expected based upon experience with using the operating system.
+% add some notes about the Human Interface Guidelines.
 
-The native feel of a mobile application can be defined as the in the speed which the userinterface elements, the responsiveness of userinterface elements to touch events, and finally smoothness of the animation in which the userinterface elements are moved.
-A native mobile application has the advantage to hardware acceleration. This means its code has been precompiled and directly executed by the device CPU. As a result of this the userinterface feels smooth.
+The \emph{native feel} of a mobile application can be defined as the speed in which the userinterface elements, the responsiveness of user interface elements to touch events, and smoothness of the animation in which the user interface elements are moved.
+A native mobile application has the advantage to hardware acceleration. This means its code has been precompiled and directly executed by the device CPU, rather than having to be interpreted by the device's browser. As a result of this the user interface elements are rendered faster and it \emph{feels} smooth.
  	
 
 \paragraaf{Alternative mobile application types}
 \subparagraaf{Web applications}
-A mobile web application is an application developed with web technologies as Javascript and HTML5 with CSS3. It is in fact nothing more than a website designed to fit on mobile devices, often they resemble the style of a native application rather than a traditional website. Often these application are build with a Javascript library to add support for scrolling and handling touch events. These touch events are handled via widgets, userinterface elements which provide the user with components composed similair to the native components. Examples of these libraries include jQtouch, SenchaTouch.
+A mobile web application is an application developed with web technologies as JavaScript and HTML5 with CSS3. It is in fact nothing more than a website designed to fit on mobile devices, often they resemble the style of a native application rather than a traditional website. Often these applications are build with a Javascript library to add support for scrolling and handling touch events. These touch events are handled via widgets, userinterface elements which provide the user with components composed similar to the native components. Examples of these libraries include jQtouch, SenchaTouch.
 
+% todo: screenshots/links neerzetten.
 
 \subparagraaf{Hybrid applications}
-A hybrid application in mobile development refers to an application which use a native \emph{shell} to wrap a web app. There are generally two forms of native shells,  the first is  webview and second a native framework which exposes a javascript API to provide the web application access to otherwise native API's.
+A hybrid application in mobile development refers to an application which use a native \emph{shell} to wrapped around web app. There are generally two forms of native shells,  the first is  webview and second a native framework which exposes a javascript API to provide the web application access to otherwise native API's.
 
-\subparagraaf{Webviewbased hybrid applications}
-A webviewbased hybrid application is nothing more as a webbased mobile application wrapped in a webview. A webview is a view or element which is acts like a browser would, e.g. it is able to render HTML and run javascript.  It is readily available in the native libraries. The advantage of a webviewbased hybrid application over an normal web application is that it can be published via the devices native application publishing platforms. e.g. a webviewbased hybrid application targetted for the iPhone can be placed in the Applicationle appstore. 
+\subparagraaf{Webview-based hybrid applications}
+A webview-based hybrid application is nothing more as a webbased mobile application wrapped in a webview. A webview is a view or element which is acts like a browser would, e.g. it is able to render HTML and run javascript.  It is readily available in the native libraries. The advantage of a webview-based hybrid application over an normal web application is that it can be published via the devices native application publishing platforms. e.g. a webview-based hybrid application targetted for the iPhone can be placed in the Apple appstore. 
 
 Worklight is an example of a framework which can be used to develop webviewbased hybrid applications.
 
-\subparagraaf{Mixed hybrid applications}
+\subparagraaf{Framework hybrid applications}
 A Mixed based hybrid application is a webviewbased application build upon a framework which provides a Javascript API to allow the application access to otherwise native API's. The framework is written in the platforms native programming language, this provides the possibility to access the native API, such as reading contact list, composing of SMSes, full access to the location API, etc.
 
 PhoneGap is an example of a framework which can be used to develop mixed hybrid applications.
