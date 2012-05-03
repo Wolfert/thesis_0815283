@@ -83,7 +83,10 @@
   \renewcommand{\mylab}{#3}\begin{table}[htbp!]#1\begin{sidewaystable}{#2}}
  {\end{sidewaystable}\vspace{2mm}\centering\caption{\mycap}
   \label{tab:\mylab}\end{table}}
-  
+ 
+% Table of contents een index minder diep.
+\setcounter{tocdepth}{1}
+
 % Een relatieve verkleining van lange regels in de two-columnmode:
 \newenvironment{Aanpassen}[1][\relax]{\relax}{\relax}
 
