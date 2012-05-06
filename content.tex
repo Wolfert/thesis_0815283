@@ -84,28 +84,27 @@ A native application is an application inherent to the platform for which it was
 When written in the native framework for a platform a mobile application receives acces to the available public libraries of the platform. These libraries include the UIKit\emph{(on iOS)} which provides the developer with a pre-fabricated set of user interface components. These can be seen as the building blocks for the graphical user interface on that platform. When used, the general style of the mobile application gains consitency to the overal user interface design of the platforms operating system. This gives an application its native look, which in turn participates to the \emph{native feel}.
 
 %with a feeling of recognition when using the application, userinterface elements work as they expected based upon experience with using the operating system.
-% add some notes about the Human Interface Guidelines.
+%todo: add some notes about the Human Interface Guidelines.
 
-The \emph{native feel} of a mobile application can be defined as the speed in which the userinterface elements, the responsiveness of user interface elements to touch events, and smoothness of the animation in which the user interface elements are moved.
-A native mobile application has the advantage to hardware acceleration. This means its code has been precompiled and directly executed by the device CPU, rather than having to be interpreted by the device's browser. As a result of this the user interface elements are rendered faster and it \emph{feels} smooth.
+The \emph{native feel} of a mobile application can be defined as the speed in which the userinterface elements, the responsiveness of user interface elements to touch events, and smoothness of the animation in which the user interface elements are moved. A native mobile application has the advantage to hardware acceleration. This means its code has been precompiled and directly executed by the device CPU, rather than having to be interpreted by the device's browser. As a result of this the user interface elements are rendered faster and it \emph{feels} smooth.
  	
 
 \paragraaf{Alternative mobile application types}
 \subparagraaf{Web applications}
-A mobile web application is an application developed with web technologies as JavaScript and HTML5 with CSS3. It is in fact nothing more than a website designed to fit on mobile devices, often they resemble the style of a native application rather than a traditional website. Often these applications are build with a Javascript library to add support for scrolling and handling touch events. These touch events are handled via widgets, userinterface elements which provide the user with components composed similar to the native components. Examples of these libraries include jQtouch, SenchaTouch.
+A mobile web application is an application developed with web technologies as JavaScript and HTML5 with CSS3. It is in fact nothing more than a website designed to fit on mobile devices, often they resemble the style of a native application rather than a traditional website. These applications are build with a JavaScript library to add support for scrolling and handling touch events. Touch events are handled via user interface elements provided by the library. Examples of these libraries include jQtouch, SenchaTouch.
 
 % todo: screenshots/links neerzetten.
 
 \subparagraaf{Hybrid applications}
-A hybrid application in mobile development refers to an application which use a native \emph{shell} to wrapped around web app. There are generally two forms of native shells,  the first is  webview and second a native framework which exposes a javascript API to provide the web application access to otherwise native API's.
+A hybrid application in mobile development refers to an application which use a native shell to wrapped around web app. There are generally two forms of native shells, the first is a \emph{webview} and the second a native framework which exposes a javascript API to provide the web application access to otherwise native API's.
 
 \subparagraaf{Webview-based hybrid applications}
-A webview-based hybrid application is nothing more as a webbased mobile application wrapped in a webview. A webview is a view or element which is acts like a browser would, e.g. it is able to render HTML and run javascript.  It is readily available in the native libraries. The advantage of a webview-based hybrid application over an normal web application is that it can be published via the devices native application publishing platforms. e.g. a webview-based hybrid application targetted for the iPhone can be placed in the Apple appstore. 
+A webview-based hybrid application is a webbased mobile application wrapped in a webview. A webview is a view or element which acts like a browser would, e.g. it is able to render HTML and run javascript.  It is readily available in the native libraries. The advantage of a webview-based hybrid application over an normal web application is that it can be published via the devices native application publishing platforms. e.g. a webview-based hybrid application targetted for the iPhone can be placed in the Apple appstore. 
 
 Worklight is an example of a framework which can be used to develop webviewbased hybrid applications.
 
 \subparagraaf{Framework hybrid applications}
-A Mixed based hybrid application is a webviewbased application build upon a framework which provides a Javascript API to allow the application access to otherwise native API's. The framework is written in the platforms native programming language, this provides the possibility to access the native API, such as reading contact list, composing of SMSes, full access to the location API, etc.
+A Framework based hybrid application is a webviewbased application build upon a framework which provides a Javascript API to allow the application access to otherwise native API's. The framework is written in the platforms native programming language making it possible to access the native API, such as reading contact list, composing of SMSes, full access to the location API, etc.
 
 PhoneGap is an example of a framework which can be used to develop mixed hybrid applications.
 
@@ -127,44 +126,45 @@ Native Application are platform-specific. Requires unique expertise and knowledg
 
 \hoofdstuk{Exsisting solutions to Cross-platform Mobile Application Development}
 \paragraaf{Introduction}
-In todays industry exist several cross-platform mobile application development frameworks which offer a solution to cross-platform problem. All of these frameworks provide a custom solution of crossing the bride between platforms. In order determine which one should be adopted by Lunatech for mobile development the following criteria have been set up for comparisson:
+In todays industry there exist several cross-platform mobile application development framework which offer a solution to cross-platform problem. All of these framework provide a custom solution for crossing the bridge between platforms. In order determine which one should be adopted by Lunatech for mobile development the following criteria have been determined for comparisson:
 
-\begin{itemize}
+\begin{enumerate}
 \item \emph{Platform support}\\
 Which platforms and their versions are supported by the framework.
 \item \emph{Native UI support}\\
-Whether or not native userinterface elements are supported as per supported platform.
+Whether or not native user interface elements are supported for each supported platform.
 \item \emph{Programming language}\\
 Which programming language is used to develop using the framework.
-\item \emph{IDE}\\
-Which IDE is used to develop using the framework.
-\item \emph{Lisence type}\\
-Which lisence type is available.
+\item \emph{IDE} (Intergrated Development Environment)\\
+Which IDE can be used to develop using with the framework.
+\item \emph{License type}\\
+Which license types are available.
 \item \emph{Application type}\\
 Which type of mobile application is produced using this framework.
-\end{itemize}
+\end{enumerate}
 
-The cross-platform criterium is based on Lunatechs requirement to build mobile applications for the operating systems have have at least a 10 percent marketshare in the earopean continent. Second after that comes the support for native userinterface elements. Togother these criteria form the essense of the main research question: "\emph{How to develop a cross-platform mobile application while retaining the native look-and-feel?}"
-The remaining criteria are of secondary importance, they will provide more detail means to provide frameworks which offer native UI support.
+The cross-platform criterium is based on Lunatechs requirement to build mobile applications for the operating systems have at least a 10 percent marketshare in the European continent. Second  comes the support for native user interface elements. Together these criteria form the essence of the main research question: "\emph{How to develop a cross-platform mobile application while retaining the native look-and-feel?}"
+The remaining criteria are of secondary importance, they will provide more detailed means to compare the frameworks which offer native user interface support.
 
-The following solutions have been choosen for review: \emph{Titanium, Rhodes, Worklight and MoSync}. These are derived from the list Existing solutions\footnote{see attachment: \emph{Excisting solutions}} %todo!
+The following solutions have been choosen for review: \emph{Titanium, Rhodes, Worklight and MoSync}. These are derived from the list Existing solutions\footnote{see attachment: \emph{Existing solutions}} %todo!
 
 
-\paragraaf{Applicationcelerator Titanium}
-Applicationceleator Titanium is an commericially supported opensource platform for developing cross-platform mobile applications. It was introduced by Applicationcelerator Inc. in December 2008. Build upon the EclipseIDE Titanium offers a Javascript API to native mapper classes which allow the developer to generate truely native cross-platform mobile applications.
+\paragraaf{Appcelerator Titanium}
+Applicationceleator Titanium is an commericially supported opensource platform for developing cross-platform mobile applications. It was introduced by Appcelerator Inc in December 2008. Built upon the Eclipse IDE Titanium offers a Javascript API to native mapper classes which allow the developer to generate truely native cross-platform mobile applications.
+%todo uitleggen mapperclasses.
 
 \subparagraaf{Platform support and native capability}
-As of may 2012 Titanium has native support for iOS and Android. Next to building a native application for these platforms Titanium offers the option to generate a web application. 
-Research in Motion (BlackBerry) is in active (however closed closed from public) development. At the first of May Applicationcelerator announced that it is extending its core value of cross-platform native application development beyond iOS and Android, on to RIM's BlackBerry devices.\cite{Asher2012}
+As of may 2012 Titanium supports iOS and Android. Next to building a native application for these platforms Titanium offers the option to generate a web application. 
+Support for Research in Motion (BlackBerry) is in active (however closed from public) development. May first 2012 Appcelerator announced that it is extending its core value of cross-platform native application development beyond iOS and Android, on to RIM's BlackBerry devices.\cite{Asher2012}
 
 \subparagraaf{Techniques and tools}
-TitaniumStudio is an eclipse based IDE with integration the propriatory mobile SDKs and simulators. Titanium native applications are written using Javascript.
+TitaniumStudio is an Eclipse based IDE with integration the propriatory mobile SDKs and simulators. Native applications built with Titanium are written using JavaScript.
 
 \subparagraaf{Application type}
-Applications produced by 
+Applications produced by %todo
 
 \paragraaf{Rhodes}
-Rhodes is an open source Ruby-based framework to build native applications for all major smartphone operating systems (iPhone, Android, RIM, Windows Mobile and Windows Phone 7). These are true native device applications (not mobile web applications) which work with synchronized local data and take advantage of device capabilities such as GPS, PIM contacts and calendar, camera, native mapping, push, barcode, signature capture, Bluetooth and Near Field Communications (NFC)
+Rhodes is an open source Ruby-based framework to build native applications for all major smartphone operating systems (iPhone, Android, RIM, Windows Mobile and Windows Phone 7). These are true native device applications (not mobile web applications) which work with synchronized local data and take advantage of device capabilities such as GPS, PIM contacts and calendar and the camera. %todo: herfomuleren
 
 \subparagraaf{Platform support and native capability}
 iOS, Android, BlackBerry, Symbian, Windows Mobile
