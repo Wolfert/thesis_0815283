@@ -41,6 +41,9 @@ Windows Phone 7 is a mobile operating system, developed by Microsoft as a succes
 \subparagraaf{Java ME}
 \subparagraaf{Symbian}
 
+\paragraaf{Distribution of applications}
+%todo
+
 \paragraaf{Marketshare and trend}
 % TODO: waar de stats vandaan komen,  wat ze betekenen, waarom ik ze heb gekozen, wat de alternatieven zijn((gartner 2011)
 \begin{centering}
@@ -150,18 +153,32 @@ The following solutions have been choosen for review: \emph{Titanium, Rhodes, Wo
 
 
 \paragraaf{Appcelerator Titanium}
-Applicationceleator Titanium is an commericially supported opensource platform for developing cross-platform mobile applications. It was introduced by Appcelerator Inc in December 2008. Built upon the Eclipse IDE Titanium offers a Javascript API to native mapper classes which allow the developer to generate truely native cross-platform mobile applications.
-%todo uitleggen mapperclasses.
+Appceleator Titanium is an commericially supported opensource platform for developing cross-platform mobile applications. It was introduced by Appcelerator Inc in December 2008. Built upon the Eclipse IDE Titanium offers a Javascript API to native proxy classes which allow the developer to generate truely native cross-platform mobile applications. 
+%todo uitleggen proxy classes.
 
 \subparagraaf{Platform support and native capability}
 As of may 2012 Titanium supports iOS and Android. Next to building a native application for these platforms Titanium offers the option to generate a web application. 
 Support for Research in Motion (BlackBerry) is in active (however closed from public) development. May first 2012 Appcelerator announced that it is extending its core value of cross-platform native application development beyond iOS and Android, on to RIM's BlackBerry devices.\cite{Asher2012}
 
 \subparagraaf{Techniques and tools}
-TitaniumStudio is an Eclipse based IDE with integration the propriatory mobile SDKs and simulators. Native applications built with Titanium are written using JavaScript.
+TitaniumStudio is an Eclipse based IDE with integration the propriatory mobile SDKs and simulators. For iOS this means Titanium requires Xcode with the iOS SDK to be installed, for Android the Android SDK and the Android AVD\footnote{AVD: Android Virtual Device (device simulator)} are required.
+
+Titanium application are primarily written in JavaScript but be augmented with HTML \& CSS. 
+
+Prior to compiling an application Titanium loads the JavaScript files into a single JavaScript Evaluator. 
 
 \subparagraaf{Application type}
-Applications produced by %todo
+Applications built with Titanium can be devided into two types.
+
+\begin{itemize}
+	\item
+	Framework hybrid applications
+	\item
+	Native applications
+\end{itemize}
+
+\subparagraaf{Philosophy}
+The goal of Titanium is to provide a high level, cross-platform JavaScript runtime and API for mobile development.\cite{Whinnery2012}
 
 \paragraaf{Rhodes}
 Rhodes is an open source Ruby-based framework to build native applications for all major smartphone operating systems (iPhone, Android, RIM, Windows Mobile and Windows Phone 7). These are true native device applications (not mobile web applications) which work with synchronized local data and take advantage of device capabilities such as GPS, PIM contacts and calendar and the camera. %todo: herfomuleren
@@ -199,6 +216,9 @@ The MoSync mobile SDK offers cross-platform development trough the use of webtec
 
 \hoofdstuk{Developing cross-platform native applications with Titanium}
 \paragraaf{Inner workings}
+basically, at runtime, your application consists of three major components – your JavaScript source code (inlined into a Java or Objective-C file and compiled as an encoded string), the platform-specific implementation of the Titanium API in the native programming language, and a JavaScript interpreter that will be used to evaluate your code at runtime (V8 (default) or Rhino for Android, or JavaScriptCore for iOS). Except in the browser, of course, where the built-in JavaScript engine will be used.When your application is launched, a JavaScript execution environment is created in native code, and your application source code is evaluated. Injected into the JavaScript runtime environment of your application is what we call “proxy” objects – basically, a JavaScript object which has a paired object in native code. Colloquially we will often refer to “JavaScript land” and “native land” in a Titanium application, as they are kind of parallel universes to one another. The proxy object exists both in JavaScript land and native land, and serves as the “bridge” between the two.
+In your JavaScript code, when you call a function on the global Titanium or Ti object, such as var b = Ti.UI.createButton({title:'Poke Me'});, that will invoke a native method that will create a native UI object, and create a “proxy” object (b) which exposes properties and methods on the underlying native UI object to JavaScript.
+UI components (view proxies) can be arranged hierarchically to create complex user interfaces. Proxy objects which represent an interface to non-visual APIs (like filesystem I/O or database access) execute in native code, and synchronously (or asynchronously for APIs like network access) return a result to JavaScript. \cite{Whinnery2012}
 
 \hoofdstuk{Case study}
 \paragraaf{Stager app}
@@ -206,10 +226,11 @@ The MoSync mobile SDK offers cross-platform development trough the use of webtec
 \subparagraaf{Events}
 \subparagraaf{Notifications}
 \subparagraaf{Tickets}
+\subparagraaf{i18n}
 \subparagraaf{Mobile payment}
-\paragraaf{Used techniqutes and methodologies}
+\paragraaf{Used techniques and methodologies}
 \subparagraaf{Javascript}
-\subparagraaf{RequireJS}
+\subparagraaf{CommonJS}
 \subparagraaf{JSON}
 \subparagraaf{Playframework}
 \subparagraaf{Java}
