@@ -1,8 +1,101 @@
 \hoofdstuk{Developing cross-platform native applications with Titanium}
 \paragraaf{Inner workings}
-basically, at runtime, your application consists of three major components – your JavaScript source code (inlined into a Java or Objective-C file and compiled as an encoded string), the platform-specific implementation of the Titanium API in the native programming language, and a JavaScript interpreter that will be used to evaluate your code at runtime (V8 (default) or Rhino for Android, or JavaScriptCore for iOS). Except in the browser, of course, where the built-in JavaScript engine will be used.When your application is launched, a JavaScript execution environment is created in native code, and your application source code is evaluated. Injected into the JavaScript runtime environment of your application is what we call “proxy” objects – basically, a JavaScript object which has a paired object in native code. Colloquially we will often refer to “JavaScript land” and “native land” in a Titanium application, as they are kind of parallel universes to one another. The proxy object exists both in JavaScript land and native land, and serves as the “bridge” between the two.
+
+At runtime a mobile application developed with Titanium consists of three major components:
+\begin{itemize}
+	\item
+	JavaScript sourcecode
+	\item
+	Implementation of the Titanium API
+	\item
+	JavaScript interpreter
+\end{itemize}
+
+During runtime the JavaScript sourcecode will be incorporated in a native class where it is compiled as encoded as a string. The implementation of the Titanium API done in a platform specific native programming language, Java for Android and Objective-C for iOS. The JavaScript interpreter evaluates the JavaScript code at runtime. Each platform has its own specific JavaScript Interpreter.
+
+V8 is the default for Android but Rhino is also supported. V8 is has a better performance dealing as Rhino because it is directly intergrated to the NDK\footnote{Native Development Kit}. This means it does the code does not have to run trough the JVM\footnote{Java Virtual Machine}. Performance gain can exceed over 200\% processing time when parsing a JSON object.\cite{Lukasavage2011}
+
+For iOS JavaScriptCode is the choosen interpreter.
+
+
+ that will be used to evaluate your code at runtime (V8 (default) or Rhino for Android, or JavaScriptCore for iOS). Except in the browser, of course, where the built-in JavaScript engine will be used.
+
+After the launch:
+
+When your application is launched, a JavaScript execution environment is created in native code, and your application source code is evaluated. Injected into the JavaScript runtime environment of your application is what we call “proxy” objects
+
+\cite{Whinnery2012}
+
+\paragraaf{Proxy objects}
+To bridge the gap between JavaScript and native Titanium makes use of proxy objects. A proxy object is an JavaScript object with a paired object in native code. 
+\cite{Whinnery2012} This means the object exists in both JavaScript and native code. A global namespace in JavaScript exposes access to the proxy objects.
+
 In your JavaScript code, when you call a function on the global Titanium or Ti object, such as var b = Ti.UI.createButton({title:'Poke Me'});, that will invoke a native method that will create a native UI object, and create a “proxy” object (b) which exposes properties and methods on the underlying native UI object to JavaScript.
-UI components (view proxies) can be arranged hierarchically to create complex user interfaces. Proxy objects which represent an interface to non-visual APIs (like filesystem I/O or database access) execute in native code, and synchronously (or asynchronously for APIs like network access) return a result to JavaScript. \cite{Whinnery2012}
+UI components (view proxies) can be arranged hierarchically to create complex user interfaces. Proxy objects which represent an interface to non-visual APIs (like filesystem I/O or database access) execute in native code, and synchronously (or asynchronously for APIs like network access) return a result to JavaScript. 
+
+In the following example we'll make a simple button in JavaScript which results in a native UIButton instance on iOS:
+
+\begin{minted}[mathescape,
+               linenos,
+               numbersep=5pt,
+               gobble=0,
+               frame=lines,
+               framesep=2mm]{js}
+
+var button = Titanium.UI.createButton({
+   title: "Title",
+   top: 10,
+   width: 100,
+   height: 50
+});
+\end{minted}
+
+In iOS the proxy button object:
+\begin{minted}[linenos,
+				samepage,
+				tabsize=2,
+				xleftmargin=0cm,
+               numbersep=5pt,
+               frame=lines,
+               framesep=2mm]{objc}
+-(UIButton*)button
+{
+	if (button==nil)
+	{
+		id backgroundImage = [self.proxy valueForKey:@"backgroundImage"];
+		id backgroundImageS = [self.proxy valueForKey:@"backgroundSelectedImage"];
+
+		hasBackgroundForStateNormal = backgroundImage  != nil ? YES :NO;
+		hasBackgroundForStateSelected = backgroundImageS != nil ? YES :NO;
+
+		BOOL hasImage = hasBackgroundForStateDisabled||hasBackgroundForStateNormal;
+
+		UIButtonType defaultType = (hasImage==YES) ? UIButtonTypeCustom : UIButtonTypeRoundedRect;
+		style = [TiUtils intValue:[self.proxy valueForKey:@"style"]
+							  def:defaultType];
+		UIView *btn = [TiButtonUtil buttonWithType:style];
+		button = (UIButton*)[btn retain];
+		[self addSubview:button];
+
+		[TiUtils setView:button positionRect:self.bounds];
+		[button addTarget:[self action:@selector(controlAction:forEvent:) 
+					  forControlEvents:UIControlEventAllTouchEvents];
+
+		button.exclusiveTouch = YES;
+	}
+	return button;
+}
+\end{minted}
+
+\paragraaf{JavaScript}
+\paragraaf{CommonJS}
+\paragraaf{Modules}
+
+\paragraaf{Eclipse}
+\paragraaf{Buildsystem}
+\paragraaf{XCode CLI and the iOS SDK}
+\paragraaf{Android SDK}
+
 
 \paragraaf{Performance versus flexibility}
 tableview.

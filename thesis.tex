@@ -29,9 +29,16 @@
 \usepackage[scaled]{helvet} %% Helvetica replica
 \renewcommand*\familydefault{\sfdefault} %% Only if the base font of the document is to be sans serif
 \usepackage[T1]{fontenc}
+\usepackage{minted}
+
+\hyphenation{auto-maton}
 
 
 \begin{document}
+\renewcommand{\theFancyVerbLine}{
+  \sffamily\textcolor[rgb]{0.5,0.5,0.5}{\scriptsize\arabic{FancyVerbLine}}}
+\hyphenation{auto-maton}
+
 \titelblad
 	{Native Cross-platform Mobile Application Development}
 	{W. de Kraker (0815283)} 
