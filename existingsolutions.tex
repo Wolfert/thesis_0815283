@@ -1,0 +1,84 @@
+\hoofdstuk{Exsisting solutions to Cross-platform Mobile Application Development}
+\paragraaf{Introduction}
+In todays industry there exist several cross-platform mobile application development framework which offer a solution to cross-platform problem. All of these framework provide a custom solution for crossing the bridge between platforms. In order determine which one should be adopted by Lunatech for mobile development the following criteria have been determined for comparisson:
+
+\begin{enumerate}
+\item \emph{Platform support}\\
+Which platforms and their versions are supported by the framework.
+\item \emph{Native UI support}\\
+Whether or not native user interface elements are supported for each supported platform.
+\item \emph{Programming language}\\
+Which programming language is used to develop using the framework.
+\item \emph{IDE} (Intergrated Development Environment)\\
+Which IDE can be used to develop using with the framework.
+\item \emph{License type}\\
+Which license types are available.
+\item \emph{Application type}\\
+Which type of mobile application is produced using this framework.
+\end{enumerate}
+
+The cross-platform criterium is based on Lunatechs requirement to build mobile applications for the operating systems have at least a 10 percent marketshare in the European continent. Second  comes the support for native user interface elements. Together these criteria form the essence of the main research question: "\emph{How to develop a cross-platform mobile application while retaining the native look-and-feel?}"
+The remaining criteria are of secondary importance, they will provide more detailed means to compare the frameworks which offer native user interface support.
+
+The following solutions have been choosen for review: \emph{Titanium, Rhodes, Worklight and MoSync}. These are derived from the list Existing solutions\footnote{see attachment: \emph{Existing solutions}} %todo!
+
+
+\paragraaf{Appcelerator Titanium}
+Appceleator Titanium is an commericially supported opensource platform for developing cross-platform mobile applications. It was introduced by Appcelerator Inc in December 2008. Built upon the Eclipse IDE Titanium offers a Javascript API to native proxy classes which allow the developer to generate truely native cross-platform mobile applications. 
+%todo uitleggen proxy classes.
+
+\subparagraaf{Platform support and native capability}
+As of may 2012 Titanium supports iOS and Android. Next to building a native application for these platforms Titanium offers the option to generate a web application. 
+Support for Research in Motion (BlackBerry) is in active (however closed from public) development. May first 2012 Appcelerator announced that it is extending its core value of cross-platform native application development beyond iOS and Android, on to RIM's BlackBerry devices.\cite{Asher2012}
+
+\subparagraaf{Techniques and tools}
+TitaniumStudio is an Eclipse based IDE with integration the propriatory mobile SDKs and simulators. For iOS this means Titanium requires Xcode with the iOS SDK to be installed, for Android the Android SDK and the Android AVD\footnote{AVD: Android Virtual Device (device simulator)} are required.
+
+Titanium application are primarily written in JavaScript but be augmented with HTML \& CSS. 
+
+Prior to compiling an application Titanium loads the JavaScript files into a single JavaScript Evaluator. 
+
+\subparagraaf{Application type}
+Applications built with Titanium can be devided into two types.
+
+\begin{itemize}
+	\item
+	Framework hybrid applications
+	\item
+	Native applications
+\end{itemize}
+
+\subparagraaf{Philosophy}
+The goal of Titanium is to provide a high level, cross-platform JavaScript runtime and API for mobile development.\cite{Whinnery2012}
+
+\paragraaf{Rhodes}
+Rhodes is an open source Ruby-based framework to build native applications for all major smartphone operating systems (iPhone, Android, RIM, Windows Mobile and Windows Phone 7). These are true native device applications (not mobile web applications) which work with synchronized local data and take advantage of device capabilities such as GPS, PIM contacts and calendar and the camera. %todo: herfomuleren
+
+\subparagraaf{Platform support and native capability}
+iOS, Android, BlackBerry, Symbian, Windows Mobile
+\subparagraaf{Techniques and tools}
+Eclipse based studio, Ruby \& HTML
+\subparagraaf{Application type}
+
+
+\paragraaf{Worklight}
+Worklight Studio is an eclipse based IDE for the cross-platform development of mobile applications. Worklight Studio was introduced in 200x by Worklight Inc. In early 2012 Worklight Inc. became an IBM company. Worklight Studio offers mobile development trough the use of webtechnologies such as HTML5, and Javascript.
+
+\subparagraaf{Platform support and native capability}
+iOS, Android, BlackBerry, Windows Mobile	
+\subparagraaf{Techniques and tools}
+Eclipse plugin, HTML5, CSS, Javascript
+\subparagraaf{Application type}
+Hybrid web
+
+\paragraaf{MoSync}
+The MoSync mobile SDK offers cross-platform development trough the use of webtechnologie or C/C++.
+\subparagraaf{Platform support and native capability}
+\subparagraaf{Techniques and tools}
+\subparagraaf{Application type}
+
+\paragraaf{PhoneGap}
+\paragraaf{Sencha Touch}
+\paragraaf{jQTouch}
+
+\paragraaf{Comparisson}
