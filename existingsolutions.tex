@@ -42,7 +42,7 @@ Titanium applications are written in JavaScript but can be augmented with HTML \
 
 
 \begin{centering}
-\includegraphics[scale=0.25]{images/titanium_architecture.png}\\{Titaniums bridge architecture\cite{Inc2012a}}\\
+	\includegraphics[scale=0.25]{images/titanium_architecture.png}\\{Titaniums bridge architecture\cite{Inc2012a}}\\
 \end{centering}
 
 \subparagraaf{Application type}
@@ -70,6 +70,10 @@ iOS, Android, BlackBerry, Symbian, Windows Mobile
 Eclipse based studio, Ruby \& HTML
 
 \subparagraaf{Application type}
+Even though Rhodes advertises producing fully native apps\cite{RhoMobile}, they do not. In fact all they do is provide the user with a framework, access to some navigational user interface controls, but the rest is a webview.
+\begin{centering}
+	\includegraphics[scale=0.3]{images/rhodes_notsonative.png}\\{Rhodes sample iOS application: not fully native}\\
+\end{centering}
 
 \subparagraaf{Philosophy}
 
@@ -80,20 +84,18 @@ Eclipse based studio, Ruby \& HTML
 Worklight Studio is an eclipse based IDE for the cross-platform development of mobile applications. Worklight Studio was introduced in 200x by Worklight Inc. In early 2012 Worklight Inc. became an IBM company. Worklight Studio offers mobile development trough the use of webtechnologies such as HTML5, and Javascript.
 
 \subparagraaf{Platform support and native capability}
-iOS, Android, BlackBerry, Windows Mobile	
+Worklight supports the following platforms: iOS, Android, BlackBerry and Windows Mobile 7.
 
 \subparagraaf{Techniques and tools}
-	
-Eclipse plugin, HTML5, CSS, Javascript
-
+As mentioned above, Worklight Studio is an eclipse based IDE.
+Allows the developer access to device APIs using native code or standard HTML5, CSS3 and JavaScript over a uniform PhoneGap bridge.
 
 
 \subparagraaf{Application type}
 Applications developed with Worklight can be classied as \emph{framework built hybrid applications}. As defined in the previous chapter this means the applications are based fitted inside webview and build on a framework which provides an API to allow the application access to otherwise native API's. The latter is achieved trough Worklights SDK while the former is made possible by an implementation of PhoneGap. \cite{Inc2012}
 
-
 \begin{centering}
-\includegraphics[scale=0.5]{images/Worklight_architecture.png}\\{Worklights bridge architecture\cite{Inc2012a}}\\
+	\includegraphics[scale=0.5]{images/Worklight_architecture.png}\\{Worklights bridge architecture\cite{Inc2012a}}\\
 \end{centering}
 
 \subparagraaf{Philosophy}
