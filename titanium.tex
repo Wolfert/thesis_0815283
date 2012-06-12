@@ -4,86 +4,71 @@
 At runtime a mobile application developed with Titanium consists of three major components:
 \begin{itemize}
 	\item
-	JavaScript sourcecode
+	The JavaScript sourcecode
 	\item
-	Implementation of the Titanium API
+	A platform-specific implementation of the Titanium API
 	\item
-	JavaScript interpreter
+	A JavaScript interpreter
 \end{itemize}
 
 During runtime the JavaScript sourcecode will be incorporated in a native class where it is compiled as encoded as a string. The implementation of the Titanium API done in a platform specific native programming language, Java for Android and Objective-C for iOS. The JavaScript interpreter evaluates the JavaScript code at runtime. Each platform has its own specific JavaScript Interpreter.
 
 V8 is the default for Android but Rhino is also supported. V8 is has a better performance dealing as Rhino because it is directly intergrated to the NDK\footnote{Native Development Kit}. This means it does the code does not have to run trough the JVM\footnote{Java Virtual Machine}. Performance gain can exceed over 200\% processing time when parsing a JSON object.\cite{Lukasavage2011}
 
-For iOS JavaScriptCode is the choosen interpreter.
+For iOS JavaScriptCore is the choosen interpreter.
 
+\subparagraaf{Runtime}
+At runtime a JavaScript execution environment set up in the native evironment this is where the application sourcecode is evaluated. Injected into JavaScript execution environment are so called \emph{proxy} objects.
 
- that will be used to evaluate your code at runtime (V8 (default) or Rhino for Android, or JavaScriptCore for iOS). Except in the browser, of course, where the built-in JavaScript engine will be used.
+\subparagraaf{Proxy objects}
+A proxy object is an JavaScript object with a paired object in native code.\cite{Whinnery2012} This means the object exists in both JavaScript and native code. Proxy objects gap the bridge between the native and the JavaScript environment. A global Titanium object in JavaScript exposes access to the proxy objects. 
 
-After the launch:
+So, for example var label = Titanium.UI.createTabel({ text: "label" }); will invoke a native method which creates a native UILabel object. 
 
-When your application is launched, a JavaScript execution environment is created in native code, and your application source code is evaluated. Injected into the JavaScript runtime environment of your application is what we call “proxy” objects
-
-\cite{Whinnery2012}
-
-\paragraaf{Proxy objects}
-To bridge the gap between JavaScript and native Titanium makes use of proxy objects. A proxy object is an JavaScript object with a paired object in native code. 
-\cite{Whinnery2012} This means the object exists in both JavaScript and native code. A global namespace in JavaScript exposes access to the proxy objects.
-
-In your JavaScript code, when you call a function on the global Titanium or Ti object, such as var b = Ti.UI.createButton({title:'Poke Me'});, that will invoke a native method that will create a native UI object, and create a “proxy” object (b) which exposes properties and methods on the underlying native UI object to JavaScript.
+var b = Ti.UI.createButton({title:'Title'});, that will invoke a native method that will create a native UI object, and create a “proxy” object (b) which exposes properties and methods on the underlying native UI object to JavaScript.
 UI components (view proxies) can be arranged hierarchically to create complex user interfaces. Proxy objects which represent an interface to non-visual APIs (like filesystem I/O or database access) execute in native code, and synchronously (or asynchronously for APIs like network access) return a result to JavaScript. 
 
-In the following example we'll make a simple button in JavaScript which results in a native UIButton instance on iOS:
+
+Par example: In the JavaScript code, when a function is called on the global Titanium object to create a native UILabel a proxy object is created.
 
 \begin{minted}[mathescape,
+			   label="JavaScript-object",
                linenos,
                numbersep=5pt,
                gobble=0,
                frame=lines,
                framesep=2mm]{js}
 
-var button = Titanium.UI.createButton({
-   title: "Title",
+var label = Titanium.UI.createTabel({
+   text: "Lorem impsum",
    top: 10,
+   left: 10,
    width: 100,
-   height: 50
+   height: 20
 });
 \end{minted}
 
+
 In iOS the proxy button object:
+
 \begin{minted}[linenos,
+				label="Native-object",
 				samepage,
 				tabsize=2,
 				xleftmargin=0cm,
                numbersep=5pt,
                frame=lines,
                framesep=2mm]{objc}
--(UIButton*)button
+-(UILabel*)label
 {
-	if (button==nil)
-	{
-		id backgroundImage = [self.proxy valueForKey:@"backgroundImage"];
-		id backgroundImageS = [self.proxy valueForKey:@"backgroundSelectedImage"];
-
-		hasBackgroundForStateNormal = backgroundImage  != nil ? YES :NO;
-		hasBackgroundForStateSelected = backgroundImageS != nil ? YES :NO;
-
-		BOOL hasImage = hasBackgroundForStateDisabled||hasBackgroundForStateNormal;
-
-		UIButtonType defaultType = (hasImage==YES) ? UIButtonTypeCustom : UIButtonTypeRoundedRect;
-		style = [TiUtils intValue:[self.proxy valueForKey:@"style"]
-							  def:defaultType];
-		UIView *btn = [TiButtonUtil buttonWithType:style];
-		button = (UIButton*)[btn retain];
-		[self addSubview:button];
-
-		[TiUtils setView:button positionRect:self.bounds];
-		[button addTarget:[self action:@selector(controlAction:forEvent:) 
-					  forControlEvents:UIControlEventAllTouchEvents];
-
-		button.exclusiveTouch = YES;
-	}
-	return button;
+    if (label==nil)
+    {
+        label = [[UILabel alloc] initWithFrame:CGRectZero];
+        label.backgroundColor = [UIColor clearColor];
+        label.numberOfLines = 0;
+        [self addSubview:label];
+    }
+    return label;
 }
 \end{minted}
 
