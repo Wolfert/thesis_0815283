@@ -31,13 +31,13 @@
 \usepackage[T1]{fontenc}
 \usepackage{minted}
 
-\hyphenation{auto-maton}
-
+% linenumbers next to code formatted text.
+\renewcommand{\theFancyVerbLine}{
+  \sffamily\textcolor[rgb]{0.098,0.6,0.81}{\scriptsize\arabic{FancyVerbLine}}} %old grey: 0.5, 0.5, 0.5
 
 \begin{document}
-\renewcommand{\theFancyVerbLine}{
-  \sffamily\textcolor[rgb]{0.5,0.5,0.5}{\scriptsize\arabic{FancyVerbLine}}}
-\hyphenation{auto-maton}
+
+
 
 \titelblad
 	{Native Cross-platform Mobile Application Development}
