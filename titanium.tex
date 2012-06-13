@@ -1,4 +1,8 @@
 \hoofdstuk{Developing cross-platform native applications with Titanium}
+
+\paragraaf{Introduction}
+%korte herhaling van wat titanium is, referentie naar existing solutions.
+
 \paragraaf{Inner workings}
 
 At runtime a mobile application developed with Titanium consists of three major components:
@@ -11,7 +15,7 @@ At runtime a mobile application developed with Titanium consists of three major 
 	A JavaScript interpreter
 \end{itemize}
 
-During runtime the JavaScript sourcecode will be incorporated in a native class where it is compiled as encoded as a string. The implementation of the Titanium API done in a platform specific native programming language, Java for Android and Objective-C for iOS. The JavaScript interpreter evaluates the JavaScript code at runtime. Each platform has its own specific JavaScript Interpreter.
+During runtime the JavaScript sourcecode will be intergrated in a native class where it is encoded as a string and compiled. The implementation of the Titanium API done in a platform specific native programming language, Java for Android and Objective-C for iOS. The JavaScript interpreter evaluates the JavaScript code at runtime. Each platform has its own specific JavaScript Interpreter.
 
 V8 is the default for Android but Rhino is also supported. V8 is has a better performance dealing as Rhino because it is directly intergrated to the NDK\footnote{Native Development Kit}. This means it does the code does not have to run trough the JVM\footnote{Java Virtual Machine}. Performance gain can exceed over 200\% processing time when parsing a JSON object.\cite{Lukasavage2011}
 
@@ -84,3 +88,6 @@ In iOS the proxy button object:
 
 \paragraaf{Performance versus flexibility}
 tableview.
+
+\paragraaf{Conclusion}
+% werking, architectuur, kort samenvatten
