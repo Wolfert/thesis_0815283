@@ -1,8 +1,18 @@
 \hoofdstuk{Case study}
+
+\paragraaf{Introduction}
 Mobile application has been developed with Titanium to study its flexibility and features.
+
+
+\paragraaf{Stager}
+In 2011, live music venue WORM hired Lunatech to build \emph{Stager}, a modern web-based resource planning and ticketing application to help manage live music events. Lunatech took the opportunity to use the relatively new Play framework to build a web application with an HTML5 and Java architecture. Stager has broad requirements ranging from high performance and security for the public ticket sales component to high usability for the internal resource planning component that will be used for hours a day by employees and being open to enhancements in the future for new customers. \cite{Lunatech2011}
+
+\subparagraaf{WORM}
+WORM is an institute for avantgardistic recreation Rotterdam, consisting of an artistscollective, a podium with a bar and Parallel University (DIY workshops for film, music and media). Born under the stars of punk, Dada, Fluxus, Situationism and futurism WORM is grown into a headstrong organization that the 'Do-It-Yourself' mentality of their ancestors, combined with ultra-pragmatism, love of technique (s) and proper accounting. Worm outputs film, radio, concerts, courses, partys, publications, performances, web projects, installations, workshops and an accumulation of tactile media and internet.WORM focuses (cheerful yet serious) in avantgarde, resource scarcity and opensource. \cite{WORM2012}
 
 \paragraaf{Stager app}
 As described in the chapter \emph{Background} Stager is an planning and ticketing application to help manage live music events. In addition to planning and ticketing Stager features an \emph{atomfeed} to publish events. A Stager app would make use of this atomfeed to list any published events on a mobile device.
+
 
 \paragraaf{Stager application requirements}
 
@@ -13,8 +23,50 @@ events are linked to their corresponding event detailview
 events in the list are sorted by date (asc)
 events in the list contain labels with event title, subtitle, date
 
+Detailview of an event
+Shows detailed event information of an selected event:
+event title, 
+subtitle, 
+date, 
+times (doors open, start, end), 
+location details (venue name, street, number, city), 
+event content (html rendered text)
+
+Add event to agenda
+Prompts the user: "Add event 'x' on date 'y' in agenda?"
+Adds a selected event to the mobile devices agenda.
+Prompts the user of succes of add action.
+
+Start gps-based navigation towards physical location of event
+Prompts the user "Navigate to y?"
+Opens map application with address as argument.
+
+View media attached to an event
+Media defined as: URL's to event images, videos, websites.
+
+Display in a grid or list, categorize media types.
+Each displayed media item is resembled by a tumbnail or icon.
+When selected a media item opens to its content in:
+images an included webview,
+websites the device browser,
+for videos the youtube app or the browser( depending on video type \& location).
+
+Share event details to social media
+An event detail view will contain a 'share/deel' button.
+Prompts the user for platform to share. (twitter/facebook/email)
+Default value (editable): "I am attending event x on date y in location x !"
+
+	
+(Un)Register device to receive push notifications on new events of interest
+Register the device to receive pushed notifications about upcoming events which might be of interest to the user.
+Based on Relation.interest model in Stager.
+
+
 
 \subparagraaf{Events}
+
+
+
 \subparagraaf{Notifications}
 \subparagraaf{Tickets}
 \subparagraaf{i18n}
@@ -26,8 +78,8 @@ For Titanium Javascript is the only option. Everything that can be written in Ja
 \subparagraaf{Playframework}
 \subparagraaf{Java}
 \subparagraaf{JSON}
-
-
-
 %\paragraaf{Titanium modules}
 %\paragraaf{Stager service modules}
+
+
+\paragraaf{Conclusion}
