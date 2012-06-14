@@ -20,18 +20,55 @@ Which type of mobile application is produced using this framework.
 The cross-platform criterium is based on Lunatechs requirement to build mobile applications for the operating systems have at least a 10 percent marketshare in the European continent. Second comes the support for native user interface elements. Together these criteria form the essence of the main research question: \emph{"How to develop a cross-platform mobile application while retaining the native look-and-feel?"}
 The remaining criteria are of secondary importance, they will provide more detailed means to compare the frameworks which offer native user interface support.
 
-The following solutions have been choosen for review: \emph{Titanium, Rhodes, Worklight and MoSync}. These are derived from the list Existing solutions\footnote{see attachment: \emph{Existing solutions}} this have been done based on by Lunatech provided requirements. %todo!
+\paragraaf{Framework requirements} %TODO
 
-\paragraaf{Requirements}
-%todo. - uitleggen waarom deze frameworks zijn geselecteerd.
+<draft>
+A cross-platform mobile application development framework
+\begin{itemize}
+\item Support cross-platform mobile application development. This means that it has to be able to build an application which runs on multiple platforms, originating only from a single codebase.
+\item Be able to offer the native look-and-feel as defined in Chapter  2. \emph{Defining native}
+\end{itemize}
+</draft>
 
+\paragraaf{Approach}
+%listing van bestaande frameworks.
+%toepassen criterea.
+%testwijze (benchmak app)
+%beste kiezen om mee verder te gaan
+<draft>
+To determine which frameworks should be included in the comparison a list of cross-platform mobile application development framework has been prepared.\footnote{see attachment: \emph{Existing solutions}} This intial list contains only frameworks which adhere to the requirement of supporting cross-platform mobile application development.
+
+After we've gathered a list of potentioal candidates we'll take a closer look at each and filter out our those who don't adhere to criteria of supporting native user elements.This should leave us with less than x frameworks to compare. which is the goal because the timeframe of the internship doesn't allow for more. 
+
+Estimated is that it takes 4 days to do experiments with a framework, this is based on N+1 in which N is the number of days it took to develop the benchmark app + 1 to familiarize with the framework. If in those 4 days I'm unable to complete the benchmark app, it is still a result. The experiment consumes a timespan of 32 hours per framework and consist of the following activities:
+
+\begin{itemize}
+\item Install framework
+\item Familiarize with how it works
+\item Rewrite the benchmark app in it
+\item Noting down results and documenting the experience
+\end{itemize}
+
+Ensuing the experiments is a comparison in which the frameworks battle for victory.
+The remaining framework will be analysed on the points:
+\begin{itemize}
+\item Available documentation	
+\item Licensing
+\item Community
+\item Customizeablity (being able to add your own features.etc)
+\end{itemize}
+
+This will be done by creating a full version of the benchmark app.
+\#TODO: draft uitwerken.
+
+</draft>
 
 
 
 \paragraaf{Appcelerator Titanium}
 Appceleator Titanium is an commericially supported opensource platform for developing cross-platform mobile applications. It was introduced by Appcelerator Inc in December 2008. Built upon the Eclipse IDE Titanium offers a Javascript API to native proxy classes which allow the developer to generate truely native cross-platform mobile applications. 
 
-\subparagraaf{Platform support and native capability}
+\subparagraaf{Platform support}
 As of may 2012 Titanium supports iOS and Android. Next to building a native application for these platforms Titanium offers the option to generate a web application. 
 Support for Research in Motion (BlackBerry) is in active (however closed from public) development. May first 2012 Appcelerator announced that it is extending its core value of cross-platform native application development beyond iOS and Android, on to RIM's BlackBerry devices.\cite{Asher2012}
 
@@ -57,13 +94,14 @@ As mentioned above, Titanium applications are written in JavaScript but can be a
 \subparagraaf{Philosophy}
 The goal of Titanium is to provide a high level, cross-platform JavaScript runtime and API for mobile development.\cite{Whinnery2012} Titanium aims to help developers levarage their JavaScript knowledge to build native mobile apps that run across multiple platforms.
 
+\subparagraaf{Results}
 
 
 
 \paragraaf{Rhodes}
 Rhodes is an open source Ruby-based framework to build native applications for all major smartphone operating systems (iPhone, Android, RIM, Windows Mobile and Windows Phone 7). These are true native device applications (not mobile web applications) which work with synchronized local data and take advantage of device capabilities such as GPS, PIM contacts and calendar and the camera. %todo: herfomuleren
 
-\subparagraaf{Platform support and native capability}
+\subparagraaf{Platform support}
 iOS, Android, BlackBerry, Symbian, Windows Mobile
 
 \subparagraaf{Techniques and tools}
@@ -76,6 +114,7 @@ Even though Rhodes advertises producing fully native apps\cite{RhoMobile}, they 
 \end{centering}
 
 \subparagraaf{Philosophy}
+\subparagraaf{Results}
 
 
 
@@ -83,7 +122,10 @@ Even though Rhodes advertises producing fully native apps\cite{RhoMobile}, they 
 \paragraaf{Worklight}
 Worklight Studio is an eclipse based IDE for the cross-platform development of mobile applications. Worklight Studio was introduced in 200x by Worklight Inc. In early 2012 Worklight Inc. became an IBM company. Worklight Studio offers mobile development trough the use of webtechnologies such as HTML5, and Javascript.
 
-\subparagraaf{Platform support and native capability}
+Worklight advertises the capability for developers to develop crossplatform HTML5, hybrid and native mobile applications.
+
+
+\subparagraaf{Platform support}
 Worklight supports the following platforms: iOS, Android, BlackBerry and Windows Mobile 7.
 
 \subparagraaf{Techniques and tools}
@@ -105,18 +147,22 @@ Worklight aims to grant developers access trough HTML5 to the capabilities that 
 % Modern mobile users want on-the-go access to personalized data and context-driven services delivered at the right time and through the right channel. Augmented reality, Near Field Communication (NFC), push, geo-location, integration with cloud services, and mobile wallets are but a few of the current technologies that enable organizations to streamline operations, reduce costs and increase revenues.
 
 % Worklight was designed from the ground up to address these exact needs. Built around HTML5, Worklight’s open approach does not employ proprietary translators, auto-compilers or esoteric coding languages. Our solution supports multiple development methodologies such as hybrid, web and native, which allow developers to access all of the unique capabilities that modern devices provide.
+\subparagraaf{Results}
 
 
 \paragraaf{MoSync}
 The MoSync mobile SDK offers cross-platform development trough the use of webtechnologie or C/C++.
 
-\subparagraaf{Platform support and native capability}
+\subparagraaf{Platform support}
 
 \subparagraaf{Techniques and tools}
 
 \subparagraaf{Application type}
 
 \subparagraaf{Philosophy}
+
+\subparagraaf{Results}
+
 
 
 \paragraaf{Comparisson} %todo..
