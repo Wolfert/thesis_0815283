@@ -1,0 +1,108 @@
+\hoofdstuk{appendix I - Preliminary research}
+
+% Benchmark app. requirements etc.
+
+\paragraaf{Appcelerator Titanium}
+Appceleator Titanium is an commericially supported opensource platform for developing cross-platform mobile applications. It was introduced by Appcelerator Inc in December 2008. Built upon the Eclipse IDE Titanium offers a Javascript API to native proxy classes which allow the developer to generate truely native cross-platform mobile applications. 
+
+\subparagraaf{Platform support}
+As of may 2012 Titanium supports iOS and Android. Next to building a native application for these platforms Titanium offers the option to generate a web application. 
+Support for Research in Motion (BlackBerry) is in active (however closed from public) development. May first 2012 Appcelerator announced that it is extending its core value of cross-platform native application development beyond iOS and Android, on to RIM's BlackBerry devices.\cite{Asher2012}
+
+\subparagraaf{Techniques and tools}
+TitaniumStudio is an Eclipse based IDE with integration the propriatory mobile SDKs and simulators. For iOS this means Titanium requires Xcode with the iOS SDK to be installed, for Android the Android SDK and the Android AVD\footnote{AVD: Android Virtual Device (device simulator)} are required.
+
+Titanium applications are written in JavaScript but can be augmented with HTML \& CSS. During runtime the JavaScript is evaluated and executed via so-called \emph{proxy objects}.Proxy Objects are objects which are paired to a native object and can resemble native user interface elements.\footnote{Proxy objects are discussed in more detail in chapter x:Proxy objects \#TODO}.
+
+
+\begin{centering}
+	\includegraphics[scale=0.25]{images/titanium_architecture.png}\\{Titaniums bridge architecture\cite{Inc2012a}}\\
+\end{centering}
+
+\subparagraaf{Application type}
+As mentioned above, Titanium applications are written in JavaScript but can be augmented with HTML \& CSS. The latter is in case a web application is required rather than a native application. This devices applications built with Titanium in two types:
+\begin{itemize}
+	\item
+	Webapplications
+	\item
+	Native applications
+\end{itemize}
+
+\subparagraaf{Philosophy}
+The goal of Titanium is to provide a high level, cross-platform JavaScript runtime and API for mobile development.\cite{Whinnery2012} Titanium aims to help developers levarage their JavaScript knowledge to build native mobile apps that run across multiple platforms.
+
+\subparagraaf{Results}
+
+
+
+\paragraaf{Rhodes}
+Rhodes is an open source Ruby-based framework to build native applications for all major smartphone operating systems (iPhone, Android, RIM, Windows Mobile and Windows Phone 7). These are true native device applications (not mobile web applications) which work with synchronized local data and take advantage of device capabilities such as GPS, PIM contacts and calendar and the camera. %todo: herfomuleren
+
+\subparagraaf{Platform support}
+iOS, Android, BlackBerry, Symbian, Windows Mobile
+
+\subparagraaf{Techniques and tools}
+Eclipse based studio, Ruby \& HTML
+
+\subparagraaf{Application type}
+Even though Rhodes advertises producing fully native apps\cite{RhoMobile}, they do not. In fact all they do is provide the user with a framework, access to some navigational user interface controls, but the rest is a webview.
+\begin{centering}
+	\includegraphics[scale=0.3]{images/rhodes_notsonative.png}\\{Rhodes sample iOS application: not fully native}\\
+\end{centering}
+
+\subparagraaf{Philosophy}
+\subparagraaf{Results}
+
+
+
+
+\paragraaf{Worklight}
+Worklight Studio is an eclipse based IDE for the cross-platform development of mobile applications. Worklight Studio was introduced in 200x by Worklight Inc. In early 2012 Worklight Inc. became an IBM company. Worklight Studio offers mobile development trough the use of webtechnologies such as HTML5, and Javascript.
+
+Worklight advertises the capability for developers to develop crossplatform HTML5, hybrid and native mobile applications.
+
+
+\subparagraaf{Platform support}
+Worklight supports the following platforms: iOS, Android, BlackBerry and Windows Mobile 7.
+
+\subparagraaf{Techniques and tools}
+As mentioned above, Worklight Studio is an eclipse based IDE.
+Allows the developer access to device APIs using native code or standard HTML5, CSS3 and JavaScript over a uniform PhoneGap bridge.
+
+
+\subparagraaf{Application type}
+Applications developed with Worklight can be classied as \emph{framework built hybrid applications}. As defined in the previous chapter this means the applications are based fitted inside webview and build on a framework which provides an API to allow the application access to otherwise native API's. The latter is achieved trough Worklights SDK while the former is made possible by an implementation of PhoneGap. \cite{Inc2012}
+
+\begin{centering}
+	\includegraphics[scale=0.5]{images/Worklight_architecture.png}\\{Worklights bridge architecture\cite{Inc2012a}}\\
+\end{centering}
+
+\subparagraaf{Philosophy}
+Worklight aims to grant developers access trough HTML5 to the capabilities that mobile devices provide. 
+
+
+% Modern mobile users want on-the-go access to personalized data and context-driven services delivered at the right time and through the right channel. Augmented reality, Near Field Communication (NFC), push, geo-location, integration with cloud services, and mobile wallets are but a few of the current technologies that enable organizations to streamline operations, reduce costs and increase revenues.
+
+% Worklight was designed from the ground up to address these exact needs. Built around HTML5, Worklight’s open approach does not employ proprietary translators, auto-compilers or esoteric coding languages. Our solution supports multiple development methodologies such as hybrid, web and native, which allow developers to access all of the unique capabilities that modern devices provide.
+\subparagraaf{Results}
+
+
+\paragraaf{MoSync}
+The MoSync mobile SDK offers cross-platform development trough the use of webtechnologie or C/C++.
+
+\subparagraaf{Platform support}
+
+\subparagraaf{Techniques and tools}
+
+\subparagraaf{Application type}
+
+\subparagraaf{Philosophy}
+
+\subparagraaf{Results}
+
+
+
+\paragraaf{Comparisson} %todo..
+
+\paragraaf{Conclusion}
+%samenvatting geven - misschien hier de overige 3 frameworks al uitsluiten?
