@@ -1,4 +1,4 @@
-\documentclass[11pt,a4paper,twoside,dutch]{report}
+\documentclass[11pt,a4paper,dutch]{report} %twoside weggehaald.
 \usepackage[english]{babel}
 \selectlanguage{english}
 
@@ -52,15 +52,15 @@
 \else
 	\pagenumbering{roman}
 	\input{abstract}
-	\include{credits} 
+	% \include{credits} 
 	\tableofcontents
 	\pagenumbering{arabic}
 \fi
 	\input{background}
 	\input{introduction}
-	% \input{definitions}
-	\input{definingnative}
-	\input{mobileplatforms}
+	\input{definitions}
+	% \input{definingnative}
+	% \input{mobileplatforms}
 	%\input{existingsolutions}
 	\input{preliminary}
 	\input{titanium}
