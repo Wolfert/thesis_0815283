@@ -1,11 +1,36 @@
 \hoofdstuk{Definitions}
 
+The goal of this chapter is to define the context of the main research question.
+
+\indent \emph{"How to develop a cross-platform mobile application while retaining the native look-and-feel?"}
+
+\noindent Accordingly this chapter will define:
+\begin{itemize}
+\item the scope of \emph{cross-platform}
+\item the concept of the \emph{native look-and-feel}
+\end{itemize}
 
 
-\paragraaf{Mobile platforms}
-In this thesis \emph{mobile platforms} encapsulate only smartphones as it has not been a requirement to support tablets and other mobile devices.
+\paragraaf{Cross-platform}
 
-A smartphone can be defined as a smart phone is a next-generation, multifunctional cell phone that provides voice communication and text-messaging capabilities and facilitates data processing as well as enhanced wireless connectivity.\cite{Ni2006}
+This paragraph will define the scope of \emph{cross-platform}.
+
+
+\subparagraaf{Platforms}
+In todays market there exists a wide variaty of mobile platforms. In order to determine which platforms should be supported for mobile development the following criteria have been provided by Lunatech:
+
+\begin{enumerate}
+\item \emph{Platform type}\\
+Only smartphones will be targetted for development
+\item \emph{Platform marketshare}\\
+The platform should have at least a 10\% marketshare in the european continent
+\item \emph{Platform marketshare trend}\\
+The marketshare trend from the past 6 months should not depict a trend directed below the set threshold of 10\% within the next 6 months
+\end{enumerate}
+
+The platform type criteria is based on Lunatech's requirement to support smartphones. A smartphone can be defined as a smart phone is a next-generation, multifunctional cell phone that provides voice communication and text-messaging capabilities and facilitates data processing as well as enhanced wireless connectivity.\cite{Ni2006}
+
+The smartphone only criteria implies that it is not a requirement to support support tablets and other mobile devices. This has significant influence on the marketshare criteria because it eliminates marketshare statistics based on operatingsystems, instead specific version details to be be included. %For instance this means that statistics which were harvested based on useragent strings have to be specifically scanned for \emph{iPhone} rather than \emph{Safai Mobile}.
 
 \subparagraaf{Apple iOS}
 iOS is a proprietary mobile operating system, developed by Apple Inc. It was originally released in 2007 for the iPhone and iPod Touch. iOS also became the main operating system of the iPad and Apple TV.
@@ -13,7 +38,6 @@ iOS is a proprietary mobile operating system, developed by Apple Inc. It was ori
 \begin{centering}
 \includegraphics[scale=0.5]{images/iphone4.jpg}\\{4th generation Apple iPhone running iOS 4}\\
 \end{centering}
-
 
 \subparagraaf{Google Android}
 Android is a opensource mobile operating system, developed by the Open Handset Alliance, led by Google and other companies.\cite{Inc.2012}
@@ -44,6 +68,9 @@ Windows Phone 7 is a mobile operating system developed by Microsoft as a succeso
 \subparagraaf{Java ME}
 \subparagraaf{Symbian}
 
+\subparagraaf{Conclusion}
+
+
 
 \paragraaf{Native mobile applications}
 This paragraph will define the paradigm of \emph{native look-and-feel}. A native application is an application inherent to the platform for which it was built using techniques proprietary to the platform. For example, an iOS application is native when written in Objective-C and an Android application is written in Java.  Native applications are typically fast and can access the device's native API's.
@@ -55,11 +82,11 @@ When written in the native framework for a platform a mobile application receive
 %todo: add some notes about the Human Interface Guidelines.
 
 The \emph{native feel} of a mobile application can be defined as the speed in which the userinterface elements, the responsiveness of user interface elements to touch events, and smoothness of the animation in which the user interface elements are moved. A native mobile application has the advantage to hardware acceleration. This means its code has been precompiled and directly executed by the device CPU, rather than having to be interpreted by the device's browser. As a result of this the user interface elements are rendered faster and it \emph{feels} smooth.
- 	
+
 
 \paragraaf{Alternative mobile application types}
 \subparagraaf{Web applications}
-A mobile web application is an application developed with web technologies as JavaScript and HTML5 with CSS3. It is in fact nothing more than a website designed to fit on mobile devices, often they resemble the style of a native application rather than a traditional website. These applications are build with a JavaScript library to add support for scrolling and handling touch events. Touch events are handled via user interface elements provided by the library. Examples of these libraries include jQtouch, SenchaTouch.
+A mobile web application is an application developed with web technologies as JavaScript and HTML5 with CSS3. It is in fact nothing more than a website designed to fit on mobile devices, often they resemble the style of a native application rather than a traditional website. These applications are build with a JavaScript library to add support for scrolling and handling touch events. Touch events are handled via user interface elements provided by the library. Examples of these libraries include jQtouch, SenchaTouch
 
 % todo: screenshots/links neerzetten.
 
