@@ -1,5 +1,4 @@
 \hoofdstuk{Definitions}
-
 The goal of this chapter is to define the context of the main research question.
 
 \indent \emph{"How to develop a cross-platform mobile application while retaining the native look-and-feel?"}
@@ -12,7 +11,6 @@ The goal of this chapter is to define the context of the main research question.
 
 
 \paragraaf{Cross-platform}
-
 This paragraph will define the scope of \emph{cross-platform}.
 
 
@@ -31,6 +29,21 @@ The marketshare trend from the past 6 months should not depict a trend directed 
 The platform type criteria is based on Lunatech's requirement to support smartphones. A smartphone can be defined as a smart phone is a next-generation, multifunctional cell phone that provides voice communication and text-messaging capabilities and facilitates data processing as well as enhanced wireless connectivity.\cite{Ni2006}
 
 The smartphone only criteria implies that it is not a requirement to support support tablets and other mobile devices. This has significant influence on the marketshare criteria because it eliminates marketshare statistics based on operatingsystems, instead specific version details to be be included. %For instance this means that statistics which were harvested based on useragent strings have to be specifically scanned for \emph{iPhone} rather than \emph{Safai Mobile}.
+
+\subparagraaf{Platform marketshares \& trend}
+For a platform to be supported in cross-platform it needs to be of significant size, Lunatech has stated that this means a 10\% minium threshold in marketshare.
+
+%TODO
+% which ways to marketshare provide a reliable reflection of the real world
+%net marketshare
+% which alternatives are there, why have i chosen x.
+
+%marketshare data here
+% some notes on platforms
+%marketshare trend here
+%applied thresholds on trend
+%some algoritm
+%conclusion
 
 \subparagraaf{Apple iOS}
 iOS is a proprietary mobile operating system, developed by Apple Inc. It was originally released in 2007 for the iPhone and iPod Touch. iOS also became the main operating system of the iPad and Apple TV.
@@ -69,7 +82,7 @@ Windows Phone 7 is a mobile operating system developed by Microsoft as a succeso
 \subparagraaf{Symbian}
 
 \subparagraaf{Conclusion}
-
+Apple iOS w/iPhone and Android are the way to go.
 
 
 \paragraaf{Native mobile applications}
@@ -102,3 +115,29 @@ Worklight is an example of a framework which can be used to develop webviewbased
 A Framework based hybrid application is a webviewbased application build upon a framework which provides an API to allow the application access to otherwise native API's. The framework is written in the platforms native programming language making it possible to access the native API, such as reading contact list, composing of SMSes, full access to the location API, etc.
 
 PhoneGap is an example of a framework which can be used to develop mixed hybrid applications.
+
+\paragraaf{Comparison}
+Web applications are quick and cheap to develop. Written entirely in HTML5, CSS and JavaScript. Executed by the mobile
+browser and therefore cross - platform by default, but less powerful than native apps.
+ 
+Hybrid Applications (Web), the app's source code consists of web code executed within a native wrapper that is provided by a framework.
+ 
+Hybrid Applications (Mix), the developer augments the web code with a Javascript API to create unique features and
+access native APIs that are not yet available via the browser, such as AR, NFC and others.
+ 
+Native Application are platform-specific. Requires unique expertise and knowledge. Pricey and time consuming to develop but
+ delivers the highest user experience of all approaches.
+
+\begin{centering}
+\includegraphics[scale=0.5]{images/apptypesdefined.png}\\{Different types of mobile applications\cite{IBM-Worklight2012}}\\
+\end{centering}
+
+\paragraaf{Conclusion}
+A nativily written mobile application provides the user with an experience immersed to that of the level of the device's operationg system. This is due to two reasons:
+\begin{itemize}
+\item
+\emph{Performance}\\
+a native application is faster because it has direct access to memory and CPU
+\item \emph{Looks}\\
+a native application looks and feels more coherent to the device's operatingsystem because it is able to make use the of the provided userinterface elements.
+\end{itemize}
