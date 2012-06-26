@@ -9,84 +9,168 @@ The goal of this chapter is to define the context of the main research question.
 \item the concept of the \emph{native look-and-feel}
 \end{itemize}
 
-
 \paragraaf{Cross-platform}
 This paragraph will define the scope of \emph{cross-platform}.
-
 
 \subparagraaf{Platforms}
 In todays market there exists a wide variaty of mobile platforms. In order to determine which platforms should be supported for mobile development the following criteria have been provided by Lunatech:
 
 \begin{enumerate}
 \item \emph{Platform type}\\
-Only smartphones will be targetted for development
+The platform has to be mobile, equipped with a touchscreen and support 3rd party applications. %Only smartphones will be targetted for development.
 \item \emph{Platform marketshare}\\
-The platform should have at least a 10\% marketshare in the european continent
+The platform should have at least a 10\% marketshare in the european continent.
 \item \emph{Platform marketshare trend}\\
-The marketshare trend from the past 6 months should not depict a trend directed below the set threshold of 10\% within the next 6 months
+The marketshare trend from the past 6 months should not depict a trend directed below the set threshold of 10\% within the next 6 months.
 \end{enumerate}
 
-The platform type criteria is based on Lunatech's requirement to support smartphones. A smartphone can be defined as a smart phone is a next-generation, multifunctional cell phone that provides voice communication and text-messaging capabilities and facilitates data processing as well as enhanced wireless connectivity.\cite{Ni2006}
+The platform type criteria is based on Lunatech's requirement to support smartphones and tablet computers. A smartphone can be defined as a smart phone is a next-generation, multifunctional cell phone that provides voice communication and text-messaging capabilities and facilitates data processing as well as enhanced wireless connectivity.\cite{Ni2006} Tablet computers, commonly referred to as tablet PCs, are wireless portable personal computers that utilize a touchscreen to access or process information. \cite{Leigh2011}
 
-The smartphone only criteria implies that it is not a requirement to support support tablets and other mobile devices. This has significant influence on the marketshare criteria because it eliminates marketshare statistics based on operatingsystems, instead specific version details to be be included. %For instance this means that statistics which were harvested based on useragent strings have to be specifically scanned for \emph{iPhone} rather than \emph{Safai Mobile}.
+
+%The smartphone only criteria implies that it is not a requirement to support support tablets and other mobile devices. This has significant influence on the marketshare criteria because it eliminates marketshare statistics based on operatingsystems, instead specific version details to be be included. %For instance this means that statistics which were harvested based on useragent strings have to be specifically scanned for \emph{iPhone} rather than \emph{Safai Mobile}.
 
 \subparagraaf{Platform marketshares \& trend}
-For a platform to be supported in cross-platform it needs to be of significant size, Lunatech has stated that this means a 10\% minium threshold in marketshare.
+Platforms included in the cross-platform scope it need to have a 10\% in share in the european smartphone market. 
 
-%TODO
-% which ways to marketshare provide a reliable reflection of the real world
-%net marketshare
-% which alternatives are there, why have i chosen x.
+There are serveral sources which provide statistical data over mobile platform marketshare. One of these is \emph{Net Market Share}. Net Market Share defines itself as the standard for tracking key internet tochnology usage market share. This means their statistical data usage based, because it is aggregated from tracking users on the internet. Net market share aggregates its data from over 40,000 websites with approximately 160 million visitors per month.\cite{NetApplications2012}
 
-%marketshare data here
-% some notes on platforms
-%marketshare trend here
-%applied thresholds on trend
-%some algoritm
-%conclusion
 
-\subparagraaf{Apple iOS}
-iOS is a proprietary mobile operating system, developed by Apple Inc. It was originally released in 2007 for the iPhone and iPod Touch. iOS also became the main operating system of the iPad and Apple TV.
+An alternate source for marketshare data is \emph{Gartner}. Gartner describes itself as being the world's leading information technology research and advisory company.\cite{Gartner2012} In an anual publication Gartner publishes a smartphone market share report. In contrast to Net Market Share this report has been based on manufator unit sales data. Although very accurate, it does not reflect real usage nor is it an up to date source, i.e. the lastest publication dates from august 2011.\cite{Pettey2011} Therefore Net Market Share is favorable over Gartner.
+
 
 \begin{centering}
-\includegraphics[scale=0.5]{images/iphone4.jpg}\\{4th generation Apple iPhone running iOS 4}\\
+\includegraphics[scale=0.5]{images/netmarketshare_march2012.png}\\
 \end{centering}
 
-\subparagraaf{Google Android}
+% \begin{tabel}{|>\R p{\Procent{25}} | >\R p{\Procent{25}} |}{vbx}{Marketshare in the european continent as of march 2012\cite{Netmarketshare2012}}
+% \hline
+% \bf{Operating System} & \bf{Total \% Market Share}\\
+% \hline \hline
+% iOS & 74.04\\
+% Android & 18.36\\
+% BlackBerry & 3.84\\
+% Symbian & 1.75\\
+% Java ME & 0.83\\
+% Windows Phone & 0.68\\
+% Bada & 0.29\\
+% Windows Mobile & 0.14\\
+% Kindle & 0.05\\
+% Samsung & 0.03\\
+% LG & 0.01\\
+% ZTE & 0.00\\
+% Palm & 0.00\\
+% \hline
+% \end{tabel}
+
+% \begin{centering}
+% \includegraphics[scale=0.6]{images/marketsharetrendsApril10Tomay12.png}\\{World wide mobile OS Marketshare trends, April 2010 up to may 2012}\\
+% \end{centering}
+
+\begin{tabel}{|>\R p{\Procent{25}} | >\R p{\Procent{25}} |>\R p{\Procent{25}} |}{vbx}{Market share in the european continent as of October 2011 and March 2012\cite{Netmarketshare2012}}
+\hline
+\bf{Operating System} & \bf{Market Share in October 2011} & \bf{Market Share in March 2012}\\
+\hline \hline
+iOS & 75.78 & 74.04\\
+Android & 16.14 & 18.36\\
+BlackBerry & 3.56 & 3.84\\
+Symbian & 2.69 & 1.75\\
+Java ME & 0.87 & 0.83\\
+Windows Phone & 0.27 & 0.68\\
+Bada & 0.35 & 0.29\\
+Windows Mobile & 0.27 & 0.14\\
+Kindle & 0.00 & 0.05\\
+Samsung & 0.06 & 0.03\\
+LG & 0.01 & 0.01\\
+\hline
+\end{tabel}
+
+iOS and Android both cover over 10 \% of the market, together they are good for 92.40 \% of the total mobile market as of march 2012 in the european continent.
+
+
+% dit lijkt weg te kunnen:
+% There are serveral sources for statistics relating to mobile platform marketshare. Although each based on their own source for gathering statisical data, there are generally 3 ways to collect such data:
+% \begin{enumerate}
+% \item \emph{Interview based}\\
+% A market survey based on data gathered from (public) interviews.
+% \item \emph{Sales based}\\
+% A market survey based on the calculations from manufactorer sales data.
+% \item \emph{Usage probing}\\
+% A market survey where the device specific properties are measured to collect data.
+% \end{enumerate}
+
+% An interview based method of gathering does relies on the following algorithm provide an realistic image:
+
+% A sales based does not j therefor i. Therefor method based on usage probing is favorable.
+% Netmarketshare is a company which provides statistcs based on the usage probing method. It does this by collecting data from the useragent string. This is a piece of information a browser (and thus the device)\footnote{Although the useragent string is manipulatable we neglect this possibility} identifies itself with.
+
+iOS is a proprietary mobile operating system, developed by Apple Inc. It was originally released in 2007 for the iPhone and iPod Touch. iOS also became the main operating system of the iPad and Apple TV.
+
+\cite{Sylvain2012}
+
+\begin{centering}
+\includegraphics[scale=0.5]{images/iphone4.jpg}\\{4th generation Apple iPhone running iOS 4.3}\\
+\end{centering}
+
 Android is a opensource mobile operating system, developed by the Open Handset Alliance, led by Google and other companies.\cite{Inc.2012}
 
 \begin{centering}
 \includegraphics[scale=0.35]{images/android_sgs2.jpg}\\{Samsung Galaxy S2 running Android 2.3}\\
 \end{centering}
 
+% \subparagraaf{BlackBerry OS}
+% BlackBerry OS is a proprietary mobile operating system, developed by RIM\emph{(Research In Motion)} for its line of BlackBerry mobile devices.
 
-\subparagraaf{BlackBerry OS}
-BlackBerry OS is a proprietary mobile operating system, developed by RIM\emph{(Research In Motion)} for its line of BlackBerry mobile devices.
+% \begin{centering}
+% \includegraphics[scale=0.5]{images/Blackberrybold9900.jpg}\\{BlackBerry Bold 9900 running BlackBerry OS 7.1}\\
+% \end{centering}
 
+
+% \subparagraaf{Windows Phone 7}
+% Windows Phone 7 is a mobile operating system developed by Microsoft as a succesor to its Windows Mobile platform.
+
+% \begin{centering}
+% \includegraphics[scale=0.35]{images/WindowsPhone7.png}\\{Windows Phone 7}\\
+% \end{centering}
+
+
+% \subparagraaf{Other platforms}
+% % Onder other valt Symbian. Symbian is een app platforms dus we nemen het mee:)
+% \subparagraaf{Java ME}
+% \subparagraaf{Symbian}
+
+
+\subparagraaf{Platform versions}
+In order to determine which versions per platform will be supported Lunatech has stated that a version must have at least of 10\% of the users. 
+
+\noindent For Android this means the versions:
+\begin{itemize}
+\item 2.2 - \emph{Froyo} (19.1\%)
+\item 2.3.3 to 2.3.7 - \emph{Gingerbread} (64.6\%)
+\end{itemize}
+This statement is based on data gathered by the number of Android devices that have accessed Google Play within a 14-day period ending on the data collection date noted below.
 \begin{centering}
-\includegraphics[scale=0.5]{images/Blackberrybold9900.jpg}\\{BlackBerry Bold 9900 running BlackBerry OS 7.1}\\
+\includegraphics[scale=0.35]{images/androidversionchart.png}\\{Android platform version distribution, as of June 1st, 2012.\cite{GoogleAndroid2012}}\\
+\end{centering}
+
+\noindent For iOS this includes the versions:
+\begin{itemize}
+\item 4.3 (15.0\%)
+\item 5.1 (84.0\%)
+\end{itemize}
+\begin{centering}
+\includegraphics[scale=0.35]{images/iosversionchart.png}\\{iOS platform version distribution, as of May 26th, 2012.\cite{Sylvain2012}}\\
 \end{centering}
 
 
-\subparagraaf{Windows Phone 7}
-Windows Phone 7 is a mobile operating system developed by Microsoft as a succesor to its Windows Mobile platform.
-
-\begin{centering}
-\includegraphics[scale=0.35]{images/WindowsPhone7.png}\\{Windows Phone 7}\\
-\end{centering}
-
-
-\subparagraaf{Other platforms}
-% Onder other valt Symbian. Symbian is een app platforms dus we nemen het mee:)
-\subparagraaf{Java ME}
-\subparagraaf{Symbian}
 
 \subparagraaf{Conclusion}
-Apple iOS w/iPhone and Android are the way to go.
+Apple iOS and Google Android both adhere to the criteria set by Lunatech and will be included in the scope of cross-platform. In conclusion \emph{cross-platform} support is defined as compitible to run on iOS 4.3 or greater and Android 2.2 or greater.
 
 
 \paragraaf{Native mobile applications}
-This paragraph will define the paradigm of \emph{native look-and-feel}. A native application is an application inherent to the platform for which it was built using techniques proprietary to the platform. For example, an iOS application is native when written in Objective-C and an Android application is written in Java.  Native applications are typically fast and can access the device's native API's.
+This paragraph will define the paradigm of \emph{native look-and-feel}. 
+
+A native application is an application inherent to the platform for which it was built using techniques proprietary to the platform. For example, an iOS application is native when written in Objective-C and an Android application is written in Java.  Native applications are typically fast and can access the device's native API's.
 
 \subparagraaf{The native look-and-feel}
 When written in the native framework for a platform a mobile application receives acces to the available public libraries of the platform. These libraries include the UIKit\emph{(on iOS)} which provides the developer with a pre-fabricated set of user interface components. These can be seen as the building blocks for the graphical user interface on that platform. When used, the general style of the mobile application gains consitency to the overal user interface design of the platforms operating system. This gives an application its native look, which in turn participates to the \emph{native feel}.
