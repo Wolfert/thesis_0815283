@@ -1,6 +1,5 @@
 \hoofdstuk{Preliminary research}
 
-
 The goal of the preliminary research is to determine whether or not an existing solution offers cross-platform mobile application development as defined by Lunatechs' criteria.
 
 
@@ -25,7 +24,7 @@ Which type of mobile application is produced using this framework.
 The cross-platform criterium is based on Lunatechs requirement to build mobile applications for the operating systems have at least a 10 percent marketshare in the European continent. Second comes the support for native user interface elements. Together these criteria form the essence of the main research question: \emph{"How to develop a cross-platform mobile application while retaining the native look-and-feel?"}
 The remaining criteria are of secondary importance, they will provide more detailed means to compare the frameworks which offer native user interface support.
 
-\paragraaf{Framework requirements} 
+\paragraaf{Framework requirements}
 
 A cross-platform mobile application development framework has to:
 \begin{itemize}
@@ -38,6 +37,7 @@ As defined in Chapter x. Definitions - \emph{Defining native}
 \end{itemize}
 
 \paragraaf{Method}
+%todo, in this paragraph...
 % listing van bestaande frameworks.
 % toepassen criterea.
 % testwijze (benchmak app)
@@ -45,10 +45,39 @@ As defined in Chapter x. Definitions - \emph{Defining native}
 
 \subparagraaf{Selection}
 
-There are over 30 frameworks which offer cross-platform development of mobile applications\cite{Wikipedia2012}. These frameworks have been added to an initial list \footnote{see appendix: \emph{Existing solutions}} This intial list contains only frameworks which adhere to the requirement of supporting cross-platform mobile application development.
+There are over 30 frameworks which offer cross-platform development of mobile applications\cite{Wikipedia2012}. These frameworks have been added to an initial list \footnote{see appendix: \emph{Existing solutions}} This intial list contains only frameworks which adhere to the requirement of supporting cross-platform mobile application development. The frameworks in the list are catogorized by the first set of criteria.
 
 To determine which frameworks should be included in the comparison we'll take a closer look at each and filter out those who don't adhere to criteria of supporting native user elements. This should leave us with less than x frameworks to compare. which is the goal because the timeframe of the internship doesn't allow for more. 
 
+
+\subparagraaf{Benchmark app}
+In order to evaluate each framework I've decided to build a application with all of them. The application will have the same requirements on each platform. Before the evaluation proces begins i'll write the application first on a native platform, the results of building it natively will serve as benchmark setting during the evauation, hench the term: \emph{benchmark app}
+
+The application should be related to what Lunatech might anticipate for mobile contracts. In this case the usecase was taken from \emph{Stager}. Stager is a modern web-based resource planning and ticketing application to help manage live music events. Lunatech took the opportunity to use the relatively new Play framework to build a web application with an HTML5 and Java architecture. The application should be a publicity app, allowing for users to view published events and share them on social media.
+
+This concludes that the app should be able to:
+\begin{itemize}
+	\item display events from the xml based atom feed,
+	\item show event details,
+	\item allow for sharing of events to social media
+\end{itemize}
+The design will be based on the website of an live music venue which already uses Stager to publish their events. WORM.ORG
+
+%requirement specs. feed/xpath/sharekit/ui tools
+For the native version of the benchmark application I've chosen to use the iOS platform simply for practical reasons, because I have an iOS device in my direct availability for testing.
+
+It took me a mere 3 days to complete the benchmark app, from which the majority of the time was spend on parsing data using xpath, which I had never used before.
+\begin{figure}%
+	\centering
+	\parbox{0.0in}
+	\qquad
+	\begin{minipage}{2.2in}%
+		\includegraphics[scale=0.15]{images/benchmarkapp01.png}
+		\includegraphics[scale=0.15]{images/benchmarkapp02.png}
+	\end{minipage}%
+	\caption{iOS version of the benchmark application}%
+	\label{fig:1figs}%
+\end{figure}
 
 
 
@@ -66,13 +95,31 @@ The remaining framework will be Evaluated on available of documentation, licensi
 
 \paragraaf{Results}
 
-From 30 existing solutions a total of 4 frameworks have been selected to get evaluated:
+From 30 existing solutions a total of 4 frameworks were selected to be evaluated:
 \begin{itemize}
-\item Titanium
-\item RhoMobile
-\item MoSync
-\item Worklight
+	\item Titanium
+	\item RhoMobile
+	\item MoSync
+	\item Worklight
 \end{itemize}
+
+The first framework put under evaluation was Titanium. In the 3 days available for rewriting the benchmark app only the first two requirements/features were implemented succesfully.
+
+However there was a complication: Titanium does not support the DOM3 specifications. Not having been developed beyond DOM2 specifications the required methodes to evaluate the xml doc where missing, to be more percice, xpath could not be used. This is particulary troublesome, forced to write some ugly parsing functions that made me want to rm -rf my disk. But it worked.
+
+Overal developing with Titanium proceeded without to many comprimizes and the built results were as expected: crossplatform with the native look and feel.
+
+
+Second up Rhomobile, after installing it and reading the quick start guide it turns out that elements are not native. the native feature advertised on their website refered to the fact that they could encapulate your webapp in a webview, this essentially bombards the app to Webview-based hybrid application as defined in chapter x - Defitions: defining native. This discovery rendered fuhrer scrutiny of the framework useless, because it did not meet the essential native requirement.
+
+After this debacle I considered the possibility other frameworks might have a similar issue. As it turns out: MoSync was not native either, just a webapp encapsulated a native shell. Worklight also required PhoneGap. As it turns out my definition of native may not be as univerally accepted as i thought before.
+
+just 2 weeks in to my research and it was effectivily completed: Titanium was the only option.
+
+
+\subparagraaf{Titanium}
+Titanium 
+
 
 
 todo.
