@@ -32,7 +32,69 @@ As mentioned above, Titanium applications are written in JavaScript but can be a
 The goal of Titanium is to provide a high level, cross-platform JavaScript runtime and API for mobile development.\cite{Whinnery2012} Titanium aims to help developers levarage their JavaScript knowledge to build native mobile apps that run across multiple platforms.
 
 \subparagraaf{Results}
+%todo aan elkaar hechten.
 
+in verwerken:
+
+
+One of the issues which came up was that Titanium does not support DOM3 level specifications\cite{Whinnery2011}. This effectively rules out the xpath evaluate function which has support for an xml namespace resolver.\cite{Whitmer}
+
+Finding this out took a while. I posted in Titaniums public Q\&A to no effect. I updated and closed the question myself after I found the cause of problem in Titaniums' documentation. \cite{Kraker2012a}
+
+\begin{minted}[mathescape,
+			   label="JavaScript-object",
+               linenos,
+               numbersep=5pt,
+               gobble=0,
+               frame=lines,
+               framesep=2mm]{js}
+function nsResolver(prefix) {
+    var ns = {
+        'atom' : 'http://www.w3.org/2005/Atom',
+        'gd'   : 'http://schemas.google.com/g/2005'
+    };
+    return ns[prefix] || null;
+}
+ 
+function getFeed() {
+    var url = 'url of service returning a valid xml document';
+ 
+    var request = Titanium.Network.createHTTPClient();
+    request.open('GET', url);
+    request.onload = function() {
+        var doc;
+ 
+        Ti.API.info('>>> got server reply!');
+        if(request.readyState == request.DONE) {
+            if(request.status == 200 && request.responseXML != null) {
+                doc = request.responseXML;
+                Ti.API.info('>>> success!');
+            } else {
+                Ti.API.info('>>> error!:(');
+                return;
+            }
+        } else return;
+ 
+        var entries = doc.evaluate('//atom:entry', doc, nsResolver, XPathResult.ANY_TYPE, null);
+        Ti.API.info('>>> number of entries: ' + entries.length);
+    };
+ 
+    request.send();
+}
+\end{minted}
+
+\noindent The solution is to use the predating DOM2 level xpath evaluate function:
+\begin{minted}[mathescape,
+			   label="DOM2",
+               linenos,
+               numbersep=5pt,
+               gobble=0,
+               frame=lines,
+               framesep=2mm]{js}
+var results = xml.evaluate("//*[local-name()='entry' 
+		and namespace-uri()='"+ xml.namespaceURI+"']");
+\end{minted}
+Note that the function dates back to 2003 and prior. The namespace selection is hardcoded in the query, which is not very elegant.
 
 
 \paragraaf{Rhodes}
