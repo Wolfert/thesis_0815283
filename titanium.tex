@@ -17,11 +17,8 @@ At runtime a mobile application developed with Titanium consists of three major 
 	A JavaScript interpreter
 \end{itemize}
 
-During runtime the JavaScript sourcecode will be intergrated in a native class where it is encoded as a string and compiled. The implementation of the Titanium API done in a platform specific native programming language, Java for Android and Objective-C for iOS. The JavaScript interpreter evaluates the JavaScript code at runtime. Each platform has its own specific JavaScript Interpreter.
+During runtime the JavaScript sourcecode will be intergrated in a native class where it is encoded as a string and compiled. The implementation of the Titanium API done in a platform specific native programming language, Java for Android and Objective-C for iOS. The JavaScript interpreter evaluates the JavaScript code at runtime.
 
-V8 is the default for Android but Rhino is also supported. V8 is has a better performance dealing as Rhino because it is directly intergrated to the NDK\footnote{Native Development Kit}. This means it does the code does not have to run trough the JVM\footnote{Java Virtual Machine}. Performance gain can exceed over 200\% processing time when parsing a JSON object.\cite{Lukasavage2011}
-
-For iOS JavaScriptCore is the choosen interpreter.
 
 \subparagraaf{Runtime}
 At runtime a JavaScript execution environment set up in the native evironment this is where the application sourcecode is evaluated. Injected into JavaScript execution environment are so called \emph{proxy} objects.
@@ -29,10 +26,10 @@ At runtime a JavaScript execution environment set up in the native evironment th
 \subparagraaf{Proxy objects}
 A proxy object is an JavaScript object with a paired object in native code.\cite{Whinnery2012} This means the object exists in both JavaScript and native code. Proxy objects gap the bridge between the native and the JavaScript environment. A global Titanium object in JavaScript exposes access to the proxy objects. 
 
-So, for example var label = Titanium.UI.createTabel({ text: "label" }); will invoke a native method which creates a native UILabel object. 
+% So, for example var label = Titanium.UI.createTabel({ text: "label" }); will invoke a native method which creates a native UILabel object. 
 
-var b = Ti.UI.createButton({title:'Title'});, that will invoke a native method that will create a native UI object, and create a “proxy” object (b) which exposes properties and methods on the underlying native UI object to JavaScript.
-UI components (view proxies) can be arranged hierarchically to create complex user interfaces. Proxy objects which represent an interface to non-visual APIs (like filesystem I/O or database access) execute in native code, and synchronously (or asynchronously for APIs like network access) return a result to JavaScript. 
+% var b = Ti.UI.createButton({title:'Title'});, that will invoke a native method that will create a native UI object, and create a “proxy” object (b) which exposes properties and methods on the underlying native UI object to JavaScript.
+% UI components (view proxies) can be arranged hierarchically to create complex user interfaces. Proxy objects which represent an interface to non-visual APIs (like filesystem I/O or database access) execute in native code, and synchronously (or asynchronously for APIs like network access) return a result to JavaScript. 
 
 
 Par example: In the JavaScript code, when a function is called on the global Titanium object to create a native UILabel a proxy object is created.
@@ -79,17 +76,94 @@ In iOS the proxy button object:
 \end{minted}
 
 \paragraaf{JavaScript}
-\paragraaf{CommonJS}
-\paragraaf{Modules}
+% %TODO verwoorden:
+% JavaScript (sometimes abbreviated JS) is a prototype-based scripting language that is dynamic, weakly typed and has first-class functions. It is a multi-paradigm language, supporting object-oriented,[5] imperative, and functional[1][6] programming styles.
+% JavaScript was formalized in the ECMAScript language standard and is primarily used in the form of client-side JavaScript, implemented as part of a Web browser in order to give enhanced user interfaces and dynamic websites. This enables programmatic access to computational objects within a host environment.
+% JavaScript's use in applications outside Web pages — for example in PDF documents, site-specific browsers, and desktop widgets — is also significant. Newer and faster JavaScript VMs and frameworks built upon them (notably Node.js) have also increased the popularity of JavaScript for server-side web applications.
+% JavaScript uses syntax influenced by that of C. JavaScript copies many names and naming conventions from Java, but the two languages are otherwise unrelated and have very different semantics. The key design principles within JavaScript are taken from the Self and Scheme programming languages.[7]
 
+
+As mentioned above, Titanium uses JavaScript for cross-platform code compatibility. JavaScript is a logical choice because there are JavaScript Interpreters available for most platforms. This includes the targetted mobile platforms:
+
+V8 is the default for Android but Rhino is also supported. V8 is has a better performance dealing as Rhino because it is directly intergrated to the NDK\footnote{Native Development Kit}. This means it does the code does not have to run trough the JVM\footnote{Java Virtual Machine}. Performance gain can exceed over 200\% processing time when parsing a JSON object.\cite{Lukasavage2011}
+For iOS JavaScriptCore is the choosen interpreter.
+
+These interpreters support the CommonJS specification.
+
+
+\paragraaf{CommonJS}
+%TODO: verwoorden:
+JavaScript is a powerful object oriented language with some of the fastest dynamic language interpreters around. The official JavaScript specification defines APIs for some objects that are useful for building browser-based applications. However, the spec does not define a standard library that is useful for building a broader range of applications.
+
+The CommonJS API will fill that gap by defining APIs that handle many common application needs, ultimately providing a standard library as rich as those of Python, Ruby and Java. The intention is that an application developer will be able to write an application using the CommonJS APIs and then run that application across different JavaScript interpreters and host environments. With CommonJS-compliant systems, you can use JavaScript to write:
+
+Server-side JavaScript applications
+Command line tools
+Desktop GUI-based applications
+Hybrid applications (Titanium, Adobe AIR)
+
+
+
+\paragraaf{Modules}
+%TODO: verwoorden:
+By default, JavaScript runs programs in a global scope and doesn't have any native namespacing language features. This means that, unless you're careful, your programs can descend into a mess of code spaghetti, full of conflicting variables and namespace pollution.
+
+CommonJS modules are one of the best solutions to JavaScript dependency management.
+
+CommonJS modules solve JavaScript scope issues by making sure each module is executed in its own namespace. Modules have to explicitly export variables they want to expose to other modules, and explicitly import other modules; in other words, there's no global namespace.
+
+Modules prevent variables from glogging up the global namespace.
+
+
+a sample module:
+
+
+\begin{minted}[mathescape,
+         label="eventCell.js",
+               linenos,
+               numbersep=5pt,
+               gobble=0,
+               frame=lines,
+               framesep=2mm]{js}
+function eventCell(Event, delegate) {
+  // cell code removed
+  return this.cell;
+};
+module.exports = eventCell;
+\end{minted}
+
+Is used like:
+\begin{minted}[mathescape,
+         label="eventCell.js",
+               linenos,
+               numbersep=5pt,
+               gobble=0,
+               frame=lines,
+               framesep=2mm]{js}
+  var messageCell = require('stager/tableview/messageCell');
+  tableview.appendRow(new messageCell(message, that));
+\end{minted}
+
+gaat er te ver op in:
 \paragraaf{Eclipse}
 \paragraaf{Buildsystem}
-\paragraaf{XCode CLI and the iOS SDK}
-\paragraaf{Android SDK}
+% \paragraaf{XCode CLI and the iOS SDK}
+% \paragraaf{Android SDK}
+
+
+\paragraaf{Window Navigation}
+\paragraaf{View hierarchie}
+\paragraaf{event handling}
 
 
 \paragraaf{Performance versus flexibility}
 tableview.
 
-\paragraaf{Conclusion}
+\paragraaf{Documentation}
+all in one place
+wide range: video tutorials to confluence based in dept guides
+
+
+\paragraaf{Summary}
 % werking, architectuur, kort samenvatten
+Titanium provides the \emph{native look-and-feel} trough proxy objects. 
