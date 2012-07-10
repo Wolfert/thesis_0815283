@@ -1,6 +1,6 @@
 \hoofdstuk{Exsisting solutions to Cross-platform Mobile Application Development}
 \paragraaf{Introduction}
-In todays industry there exist several cross-platform mobile application development framework which offer a solution to cross-platform problem. All of these frameworks provide a custom solution for crossing the bridge between platforms. In order determine which one should be adopted by Lunatech for mobile development the following criteria have been determined for comparisson:
+In todays industry there exist several cross-platform mobile application development framework which offer a solution to cross-platform problem. All of these frameworks provide a custom solution for crossing the bridge between platforms. In order determine which one should be adopted by Lunatech for mobile development the following criteria have been determined for comparison:
 
 \begin{enumerate}
 \item \emph{Platform support}\\
@@ -9,7 +9,7 @@ Which platforms and their versions are supported by the framework.
 Whether or not native user interface elements are supported for each supported platform.
 \item \emph{Programming language}\\
 Which programming language is used to develop using the framework.
-\item \emph{IDE} (Intergrated Development Environment)\\
+\item \emph{IDE} (Integrated Development Environment)\\
 Which IDE can be used to develop using with the framework.
 \item \emph{License type}\\
 Which license types are available.
@@ -38,7 +38,7 @@ A cross-platform mobile application development framework
 <draft>
 To determine which frameworks should be included in the comparison a list of cross-platform mobile application development framework has been prepared.\footnote{see attachment: \emph{Existing solutions}} This intial list contains only frameworks which adhere to the requirement of supporting cross-platform mobile application development.
 
-After we've gathered a list of potentioal candidates we'll take a closer look at each and filter out our those who don't adhere to criteria of supporting native user elements.This should leave us with less than x frameworks to compare. which is the goal because the timeframe of the internship doesn't allow for more. 
+After we've gathered a list of potential candidates we'll take a closer look at each and filter out our those who don't adhere to criteria of supporting native user elements.This should leave us with less than x frameworks to compare. which is the goal because the timeframe of the internship doesn't allow for more. 
 
 Estimated is that it takes 4 days to do experiments with a framework, this is based on N+1 in which N is the number of days it took to develop the benchmark app + 1 to familiarize with the framework. If in those 4 days I'm unable to complete the benchmark app, it is still a result. The experiment consumes a timespan of 32 hours per framework and consist of the following activities:
 
@@ -50,12 +50,12 @@ Estimated is that it takes 4 days to do experiments with a framework, this is ba
 \end{itemize}
 
 Ensuing the experiments is a comparison in which the frameworks battle for victory.
-The remaining framework will be analysed on the points:
+The remaining framework will be analyzed on the points:
 \begin{itemize}
 \item Available documentation	
 \item Licensing
 \item Community
-\item Customizeablity (being able to add your own features.etc)
+\item Customizability (being able to add your own features.etc)
 \end{itemize}
 
 This will be done by creating a full version of the benchmark app.
@@ -66,14 +66,14 @@ This will be done by creating a full version of the benchmark app.
 
 
 \paragraaf{Appcelerator Titanium}
-Appceleator Titanium is an commericially supported opensource platform for developing cross-platform mobile applications. It was introduced by Appcelerator Inc in December 2008. Built upon the Eclipse IDE Titanium offers a Javascript API to native proxy classes which allow the developer to generate truely native cross-platform mobile applications. 
+Appcelerator Titanium is an commercially supported open source platform for developing cross-platform mobile applications. It was introduced by Appcelerator Inc in December 2008. Built upon the Eclipse IDE Titanium offers a Javascript API to native proxy classes which allow the developer to generate truly native cross-platform mobile applications. 
 
 \subparagraaf{Platform support}
 As of may 2012 Titanium supports iOS and Android. Next to building a native application for these platforms Titanium offers the option to generate a web application. 
 Support for Research in Motion (BlackBerry) is in active (however closed from public) development. May first 2012 Appcelerator announced that it is extending its core value of cross-platform native application development beyond iOS and Android, on to RIM's BlackBerry devices.\cite{Asher2012}
 
 \subparagraaf{Techniques and tools}
-TitaniumStudio is an Eclipse based IDE with integration the propriatory mobile SDKs and simulators. For iOS this means Titanium requires Xcode with the iOS SDK to be installed, for Android the Android SDK and the Android AVD\footnote{AVD: Android Virtual Device (device simulator)} are required.
+TitaniumStudio is an Eclipse based IDE with integration the proprietary mobile SDKs and simulators. For iOS this means Titanium requires Xcode with the iOS SDK to be installed, for Android the Android SDK and the Android AVD\footnote{AVD: Android Virtual Device (device simulator)} are required.
 
 Titanium applications are written in JavaScript but can be augmented with HTML \& CSS. During runtime the JavaScript is evaluated and executed via so-called \emph{proxy objects}.Proxy Objects are objects which are paired to a native object and can resemble native user interface elements.\footnote{Proxy objects are discussed in more detail in chapter x:Proxy objects \#TODO}.
 
@@ -86,7 +86,7 @@ Titanium applications are written in JavaScript but can be augmented with HTML \
 As mentioned above, Titanium applications are written in JavaScript but can be augmented with HTML \& CSS. The latter is in case a web application is required rather than a native application. This devices applications built with Titanium in two types:
 \begin{itemize}
 	\item
-	Webapplications
+	Web applications
 	\item
 	Native applications
 \end{itemize}
@@ -120,9 +120,9 @@ Even though Rhodes advertises producing fully native apps\cite{RhoMobile}, they 
 
 
 \paragraaf{Worklight}
-Worklight Studio is an eclipse based IDE for the cross-platform development of mobile applications. Worklight Studio was introduced in 200x by Worklight Inc. In early 2012 Worklight Inc. became an IBM company. Worklight Studio offers mobile development trough the use of webtechnologies such as HTML5, and Javascript.
+Worklight Studio is an eclipse based IDE for the cross-platform development of mobile applications. Worklight Studio was introduced in 200x by Worklight Inc. In early 2012 Worklight Inc. became an IBM company. Worklight Studio offers mobile development trough the use of web technologies such as HTML, and Javascript.
 
-Worklight advertises the capability for developers to develop crossplatform HTML5, hybrid and native mobile applications.
+Worklight advertises the capability for developers to develop cross-platform HTML, hybrid and native mobile applications.
 
 
 \subparagraaf{Platform support}
@@ -134,7 +134,7 @@ Allows the developer access to device APIs using native code or standard HTML5, 
 
 
 \subparagraaf{Application type}
-Applications developed with Worklight can be classied as \emph{framework built hybrid applications}. As defined in the previous chapter this means the applications are based fitted inside webview and build on a framework which provides an API to allow the application access to otherwise native API's. The latter is achieved trough Worklights SDK while the former is made possible by an implementation of PhoneGap. \cite{Inc2012}
+Applications developed with Worklight can be classified as \emph{framework built hybrid applications}. As defined in the previous chapter this means the applications are based fitted inside web-view and build on a framework which provides an API to allow the application access to otherwise native API's. The latter is achieved trough Worklights SDK while the former is made possible by an implementation of PhoneGap. \cite{Inc2012}
 
 \begin{centering}
 	\includegraphics[scale=0.5]{images/Worklight_architecture.png}\\{Worklights bridge architecture\cite{Inc2012a}}\\
@@ -151,7 +151,7 @@ Worklight aims to grant developers access trough HTML5 to the capabilities that 
 
 
 \paragraaf{MoSync}
-The MoSync mobile SDK offers cross-platform development trough the use of webtechnologie or C/C++.
+The MoSync mobile SDK offers cross-platform development trough the use of web technologies or C/C++.
 
 \subparagraaf{Platform support}
 
