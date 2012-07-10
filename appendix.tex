@@ -3,16 +3,16 @@
 % Benchmark app. requirements etc.
 
 \paragraaf{Appcelerator Titanium}
-Appceleator Titanium is an commericially supported opensource platform for developing cross-platform mobile applications. It was introduced by Appcelerator Inc in December 2008. Built upon the Eclipse IDE Titanium offers a Javascript API to native proxy classes which allow the developer to generate truely native cross-platform mobile applications. 
+Appceleator Titanium is an commercially supported open source platform for developing cross-platform mobile applications. It was introduced by Appcelerator Inc in December 2008. Built upon the Eclipse IDE Titanium offers a Javascript API to native proxy classes which allow the developer to generate truly native cross-platform mobile applications. 
 
 \subparagraaf{Platform support}
 As of may 2012 Titanium supports iOS and Android. Next to building a native application for these platforms Titanium offers the option to generate a web application. 
 Support for Research in Motion (BlackBerry) is in active (however closed from public) development. May first 2012 Appcelerator announced that it is extending its core value of cross-platform native application development beyond iOS and Android, on to RIM's BlackBerry devices.\cite{Asher2012}
 
 \subparagraaf{Techniques and tools}
-TitaniumStudio is an Eclipse based IDE with integration the propriatory mobile SDKs and simulators. For iOS this means Titanium requires Xcode with the iOS SDK to be installed, for Android the Android SDK and the Android AVD\footnote{AVD: Android Virtual Device (device simulator)} are required.
+TitaniumStudio is an Eclipse based IDE with integration the proprietary mobile SDKs and simulators. For iOS this means Titanium requires Xcode with the iOS SDK to be installed, for Android the Android SDK and the Android AVD\footnote{AVD: Android Virtual Device (device simulator)} are required.
 
-Titanium applications are written in JavaScript but can be augmented with HTML \& CSS. During runtime the JavaScript is evaluated and executed via so-called \emph{proxy objects}.Proxy Objects are objects which are paired to a native object and can resemble native user interface elements.\footnote{Proxy objects are discussed in more detail in chapter x:Proxy objects \#TODO}.
+Titanium applications are written in JavaScript but can be augmented with HTML \& CSS. During runtime the JavaScript is evaluated and executed via so-called \emph{proxy objects}.Proxy Objects are objects which are paired to a native object and can resemble native user interface elements.\footnote{Proxy objects are discussed in more detail in chapter x:Proxy objects \   }.
 
 
 \begin{centering}
@@ -23,13 +23,13 @@ Titanium applications are written in JavaScript but can be augmented with HTML \
 As mentioned above, Titanium applications are written in JavaScript but can be augmented with HTML \& CSS. The latter is in case a web application is required rather than a native application. This devices applications built with Titanium in two types:
 \begin{itemize}
 	\item
-	Webapplications
+	Web applications
 	\item
 	Native applications
 \end{itemize}
 
 \subparagraaf{Philosophy}
-The goal of Titanium is to provide a high level, cross-platform JavaScript runtime and API for mobile development.\cite{Whinnery2012} Titanium aims to help developers levarage their JavaScript knowledge to build native mobile apps that run across multiple platforms.
+The goal of Titanium is to provide a high level, cross-platform JavaScript runtime and API for mobile development.\cite{Whinnery2012} Titanium aims to help developers leverage their JavaScript knowledge to build native mobile apps that run across multiple platforms.
 
 \subparagraaf{Results}
 %todo aan elkaar hechten.
@@ -37,7 +37,7 @@ The goal of Titanium is to provide a high level, cross-platform JavaScript runti
 in verwerken:
 
 
-One of the issues which came up was that Titanium does not support DOM3 level specifications\cite{Whinnery2011}. This effectively rules out the xpath evaluate function which has support for an xml namespace resolver.\cite{Whitmer}
+One of the issues which came up was that Titanium does not support DOM3 level specifications\cite{Whinnery2011}. This effectively rules out the x-path evaluate function which has support for an xml namespace resolver.\cite{Whitmer}
 
 Finding this out took a while. I posted in Titaniums public Q\&A to no effect. I updated and closed the question myself after I found the cause of problem in Titaniums' documentation. \cite{Kraker2012a}
 
@@ -100,6 +100,8 @@ Note that the function dates back to 2003 and prior. The namespace selection is 
 \paragraaf{Rhodes}
 Rhodes is an open source Ruby-based framework to build native applications for all major smartphone operating systems (iPhone, Android, RIM, Windows Mobile and Windows Phone 7). These are true native device applications (not mobile web applications) which work with synchronized local data and take advantage of device capabilities such as GPS, PIM contacts and calendar and the camera. %todo: herfomuleren
 
+% Rhodes offers support for a Modal View Controller structure allowing you to efficiently separate the content from the presentation and easily make changes to a view (even simply by updating the data structure). Rhodes gives you the starting points for a handful of different views and you can tweak the templates to fit your needs simply by updating the HTML. The Ruby gets compiled down into bytecode to be executed on the device and each view is presented on the given device’s browser rendering engine. %http://floatlearning.com/2011/07/which-cross-platform-framework-is-right-for-me/
+
 \subparagraaf{Platform support}
 iOS, Android, BlackBerry, Symbian, Windows Mobile
 
@@ -107,7 +109,7 @@ iOS, Android, BlackBerry, Symbian, Windows Mobile
 Eclipse based studio, Ruby \& HTML
 
 \subparagraaf{Application type}
-Even though Rhodes advertises producing fully native apps\cite{RhoMobile}, they do not. In fact all they do is provide the user with a framework, access to some navigational user interface controls, but the rest is a webview.
+Even though Rhodes advertises producing fully native apps\cite{RhoMobile}, they do not. In fact all they do is provide the user with a framework, access to some navigational user interface controls, but the rest of the view is html presented in a web-view.
 \begin{centering}
 	\includegraphics[scale=0.3]{images/rhodes_notsonative.png}\\{Rhodes sample iOS application: not fully native}\\
 \end{centering}
@@ -119,7 +121,7 @@ Even though Rhodes advertises producing fully native apps\cite{RhoMobile}, they 
 
 
 \paragraaf{Worklight}
-Worklight Studio is an eclipse based IDE for the cross-platform development of mobile applications. Worklight Studio was introduced in 200x by Worklight Inc. In early 2012 Worklight Inc. became an IBM company. Worklight Studio offers mobile development trough the use of webtechnologies such as HTML5, and Javascript.
+Worklight Studio is an eclipse based IDE for the cross-platform development of mobile applications. Worklight Studio was introduced in 200x by Worklight Inc. In early 2012 Worklight Inc. became an IBM company. Worklight Studio offers mobile development trough the use of web technologies such as HTML, and Javascript.
 
 Worklight advertises the capability for developers to develop crossplatform HTML5, hybrid and native mobile applications.
 
@@ -133,7 +135,7 @@ Allows the developer access to device APIs using native code or standard HTML5, 
 
 
 \subparagraaf{Application type}
-Applications developed with Worklight can be classied as \emph{framework built hybrid applications}. As defined in the previous chapter this means the applications are based fitted inside webview and build on a framework which provides an API to allow the application access to otherwise native API's. The latter is achieved trough Worklights SDK while the former is made possible by an implementation of PhoneGap. \cite{Inc2012}
+Applications developed with Worklight can be classied as \emph{framework built hybrid applications}. As defined in the previous chapter this means the applications are based fitted inside web-view and build on a framework which provides an API to allow the application access to otherwise native API's. The latter is achieved trough Worklights SDK while the former is made possible by an implementation of PhoneGap. \cite{Inc2012}
 
 \begin{centering}
 	\includegraphics[scale=0.5]{images/Worklight_architecture.png}\\{Worklights bridge architecture\cite{Inc2012a}}\\
@@ -150,7 +152,7 @@ Worklight aims to grant developers access trough HTML5 to the capabilities that 
 
 
 \paragraaf{MoSync}
-The MoSync mobile SDK offers cross-platform development trough the use of webtechnologie or C/C++.
+The MoSync mobile SDK offers cross-platform development trough the use of web technologies or C/C++.
 
 \subparagraaf{Platform support}
 
