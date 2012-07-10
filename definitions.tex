@@ -1,4 +1,4 @@
-\hoofdstuk{Defining the scope}
+\hoofdstuk{Defining the context}
 The goal of this chapter is to define the context of the main research question.
 
 \indent \emph{"How to develop a cross-platform mobile application while retaining the native look-and-feel?"}
@@ -10,32 +10,32 @@ The goal of this chapter is to define the context of the main research question.
 \end{itemize}
 
 \paragraaf{Cross-platform}
-This paragraph will define the scope of \emph{cross-platform}.
+This section will define the scope of \emph{cross-platform}. This will be done in two parts, first term platform will be defined after which will determined which platforms fall within the scope.
 
 \subparagraaf{Platforms}
-In todays market there exists a wide variaty of mobile platforms. In order to determine which platforms should be supported for mobile development the following criteria have been provided by Lunatech:
+In order to determine which platforms should be supported for mobile development the following criteria have been provided by Lunatech:
 
-\begin{enumerate}
+\begin{enumerate}	
 \item \emph{Platform type}\\
 The platform has to be mobile, equipped with a touchscreen and support 3rd party applications. %Only smartphones will be targetted for development.
 \item \emph{Platform marketshare}\\
-The platform should have at least a 10\% marketshare in the european continent.
+The platform should have at least a 10\% market share in the european continent.
 \item \emph{Platform marketshare trend}\\
-The marketshare trend from the past 6 months should not depict a trend directed below the set threshold of 10\% within the next 6 months.
+The market share trend from the past 6 months should not depict a trend directed below the set threshold of 10\% within the next 6 months.
 \end{enumerate}
 
-The platform type criteria is based on Lunatech's requirement to support smartphones and tablet computers. A smartphone can be defined as a smart phone is a next-generation, multifunctional cell phone that provides voice communication and text-messaging capabilities and facilitates data processing as well as enhanced wireless connectivity.\cite{Ni2006} Tablet computers, commonly referred to as tablet PCs, are wireless portable personal computers that utilize a touchscreen to access or process information. \cite{Leigh2011}
+The platform type criteria is based on Lunatech's requirement to support smartphones and tablet computers. A smartphone can be defined as a smart phone is a next-generation, multifunctional cell phone that provides voice communication and text-messaging capabilities and facilitates data processing as well as enhanced wireless connectivity.\cite{Ni2006} Tablet computers, commonly referred to as tablet PCs, are wireless portable personal computers that utilize a touchscreen to access or process information.\cite{Leigh2011} The platform market share is the percentage per platform representing its share of the platforms market. Platform market share trend defined as the general course or prevailing tendency of the platforms market share. %TODO spellcheck. TODO: bron toevoegen http://dictionary.reference.com/browse/trend
 
 
 %The smartphone only criteria implies that it is not a requirement to support support tablets and other mobile devices. This has significant influence on the marketshare criteria because it eliminates marketshare statistics based on operatingsystems, instead specific version details to be be included. %For instance this means that statistics which were harvested based on useragent strings have to be specifically scanned for \emph{iPhone} rather than \emph{Safai Mobile}.
 
 \subparagraaf{Platform marketshares \& trend}
-Platforms included in the cross-platform scope it need to have a 10\% in share in the european smartphone market. 
+Platforms included in the cross-platform scope need to have a 10\% in share in the european smartphone market. 
 
-There are serveral sources which provide statistical data over mobile platform marketshare. One of these is \emph{Net Market Share}. Net Market Share defines itself as the standard for tracking key internet tochnology usage market share. This means their statistical data usage based, because it is aggregated from tracking users on the internet. Net market share aggregates its data from over 40,000 websites with approximately 160 million visitors per month.\cite{NetApplications2012}
+There are several sources which provide statistical data over mobile platform market share. One of these is \emph{Net Market Share}. Net Market Share defines itself as the standard for tracking key internet technology usage market share. This means their statistical data is usage based, because it is aggregated from tracking users on the internet. Net market share aggregates its data from over 40,000 websites with approximately 160 million visitors per month.\cite{NetApplications2012}
 
 
-An alternate source for marketshare data is \emph{Gartner}. Gartner describes itself as being the world's leading information technology research and advisory company.\cite{Gartner2012} In an anual publication Gartner publishes a smartphone market share report. In contrast to Net Market Share this report has been based on manufator unit sales data. Although very accurate, it does not reflect real usage nor is it an up to date source, i.e. the lastest publication dates from august 2011.\cite{Pettey2011} Therefore Net Market Share is favorable over Gartner.
+An alternate source for market share data is \emph{Gartner}. Gartner describes itself as being the world's leading information technology research and advisory company.\cite{Gartner2012} In an annual publication Gartner publishes a smartphone market share report. In contrast to Net Market Share this report has been based on manufacture unit sales data. Although very accurate, it does not reflect real usage nor is it an up to date source, i.e. the latest publication dates from august 2011.\cite{Pettey2011} Therefore Net Market Share is favorable over Gartner.
 
 
 \begin{centering}
@@ -103,40 +103,6 @@ iOS and Android both cover over 10 \% of the market, together they are good for 
 % A sales based does not j therefor i. Therefor method based on usage probing is favorable.
 % Netmarketshare is a company which provides statistcs based on the usage probing method. It does this by collecting data from the useragent string. This is a piece of information a browser (and thus the device)\footnote{Although the useragent string is manipulatable we neglect this possibility} identifies itself with.
 
-iOS is a proprietary mobile operating system, developed by Apple Inc. It was originally released in 2007 for the iPhone and iPod Touch. iOS also became the main operating system of the iPad and Apple TV.
-
-\cite{Sylvain2012}
-
-\begin{centering}
-\includegraphics[scale=0.5]{images/iphone4.jpg}\\{4th generation Apple iPhone running iOS 4.3}\\
-\end{centering}
-
-Android is a opensource mobile operating system, developed by the Open Handset Alliance, led by Google and other companies.\cite{Inc.2012}
-
-\begin{centering}
-\includegraphics[scale=0.35]{images/android_sgs2.jpg}\\{Samsung Galaxy S2 running Android 2.3}\\
-\end{centering}
-
-% \subparagraaf{BlackBerry OS}
-% BlackBerry OS is a proprietary mobile operating system, developed by RIM\emph{(Research In Motion)} for its line of BlackBerry mobile devices.
-
-% \begin{centering}
-% \includegraphics[scale=0.5]{images/Blackberrybold9900.jpg}\\{BlackBerry Bold 9900 running BlackBerry OS 7.1}\\
-% \end{centering}
-
-
-% \subparagraaf{Windows Phone 7}
-% Windows Phone 7 is a mobile operating system developed by Microsoft as a succesor to its Windows Mobile platform.
-
-% \begin{centering}
-% \includegraphics[scale=0.35]{images/WindowsPhone7.png}\\{Windows Phone 7}\\
-% \end{centering}
-
-
-% \subparagraaf{Other platforms}
-% % Onder other valt Symbian. Symbian is een app platforms dus we nemen het mee:)
-% \subparagraaf{Java ME}
-% \subparagraaf{Symbian}
 
 
 \subparagraaf{Platform versions}
@@ -164,7 +130,7 @@ This statement is based on data gathered by the number of Android devices that h
 
 
 \subparagraaf{Conclusion}
-Apple iOS and Google Android both adhere to the criteria set by Lunatech and will be included in the scope of cross-platform. In conclusion \emph{cross-platform} support is defined as compitible to run on iOS 4.3 or greater and Android 2.2 or greater.
+Apple iOS and Google Android both adhere to the criteria set by Lunatech and will be included in the scope of cross-platform. In conclusion \emph{cross-platform} support is defined as compatible to run on iOS 4.3 or greater and Android 2.2 or greater.
 
 
 \paragraaf{Native mobile applications}
@@ -173,35 +139,36 @@ This paragraph will define the paradigm of \emph{native look-and-feel}.
 A native application is an application inherent to the platform for which it was built using techniques proprietary to the platform. For example, an iOS application is native when written in Objective-C and an Android application is written in Java.  Native applications are typically fast and can access the device's native API's.
 
 \subparagraaf{The native look-and-feel}
-When written in the native framework for a platform a mobile application receives acces to the available public libraries of the platform. These libraries include the UIKit\emph{(on iOS)} which provides the developer with a pre-fabricated set of user interface components. These can be seen as the building blocks for the graphical user interface on that platform. When used, the general style of the mobile application gains consitency to the overal user interface design of the platforms operating system. This gives an application its native look, which in turn participates to the \emph{native feel}.
+When written in the native framework for a platform a mobile application receives access to the available public libraries of the platform. These libraries include those which provide the developer with a pre-fabricated set of user interface components. These can be seen as the building blocks for the graphical user interface on that platform. When used, the general style of the mobile application gains constancy to the overall user interface design of the platforms operating system. This gives an application its native look, which in turn participates to the \emph{native feel}.
 
 %with a feeling of recognition when using the application, userinterface elements work as they expected based upon experience with using the operating system.
 %todo: add some notes about the Human Interface Guidelines.
 
-The \emph{native feel} of a mobile application can be defined as the speed in which the userinterface elements, the responsiveness of user interface elements to touch events, and smoothness of the animation in which the user interface elements are moved. A native mobile application has the advantage to hardware acceleration. This means its code has been precompiled and directly executed by the device CPU, rather than having to be interpreted by the device's browser. As a result of this the user interface elements are rendered faster and it \emph{feels} smooth.
+The \emph{native feel} of a mobile application can be defined as the speed in which the user interface elements, the responsiveness of user interface elements to touch events, and smoothness of the animation in which the user interface elements are moved. A native mobile application has the advantage of hardware acceleration. This means its code has been precompiled and directly executed by the device CPU, rather than having to be interpreted by the device's browser. As a result of this the user interface elements are rendered faster and it \emph{feels} smooth.
 
 
 \paragraaf{Alternative mobile application types}
 \subparagraaf{Web applications}
-A mobile web application is an application developed with web technologies as JavaScript and HTML5 with CSS3. It is in fact nothing more than a website designed to fit on mobile devices, often they resemble the style of a native application rather than a traditional website. These applications are build with a JavaScript library to add support for scrolling and handling touch events. Touch events are handled via user interface elements provided by the library. Examples of these libraries include jQtouch, SenchaTouch
+A mobile web application is an application developed with web technologies as JavaScript and HTML with CSS. It is in fact nothing more than a website designed to fit on mobile devices' display, often they resemble the style of a native application rather than a traditional website. These applications are build with a JavaScript library to add support for scrolling and handling events. Touch events are handled via user interface elements provided by the library. Examples of these libraries include jQtouch, SenchaTouch
 
 % todo: screenshots/links neerzetten.
 
 \subparagraaf{Hybrid applications}
-A hybrid application in mobile development refers to an application which use a native shell to wrapped around web app. There are generally two forms of native shells, the first is a \emph{webview} and the second a native framework which exposes a javascript API to provide the web application access to otherwise native API's.
+A hybrid application in mobile development refers to an application which use a native shell wrapped around web app. There are generally two forms of native shells, the first is a \emph{webview} and the second a native framework which exposes an JavaScript API to provide the web application access to otherwise native API's.
+%TODO framework example.
 
 \subparagraaf{Webview-based hybrid applications}
-A webview-based hybrid application is a webbased mobile application wrapped in a webview. A webview is a view or element which acts like a browser would, e.g. it is able to render HTML and run javascript.  It is readily available in the native libraries. The advantage of a webview-based hybrid application over an normal web application is that it can be published via the devices native application publishing platforms. e.g. a webview-based hybrid application targetted for the iPhone can be placed in the Apple appstore. 
+A web-view based hybrid application is a web based mobile application wrapped in a web-view. A web-view is a view or element which acts like a browser would, e.g. it is able to render HTML and run javascript.  It is readily available in the native libraries. The advantage of a web-view based hybrid application over an normal web application is that it can be published via the devices native application publishing platforms, i.e. a web-view based hybrid application targeted for the iPhone can be placed in the Apple Appstore. 
 
-Worklight is an example of a framework which can be used to develop webviewbased hybrid applications.
+Worklight is an example of a framework which can be used to develop web-view based hybrid applications.
 
 \subparagraaf{Framework hybrid applications}
-A Framework based hybrid application is a webviewbased application build upon a framework which provides an API to allow the application access to otherwise native API's. The framework is written in the platforms native programming language making it possible to access the native API, such as reading contact list, composing of SMSes, full access to the location API, etc.
+A Framework based hybrid application is a web-view based application build upon a framework which provides an API to allow the application access to otherwise native API's. The framework is written in the platforms native programming language making it possible to access the native API, such as reading contact list, composing of SMSes, full access to the location API, etc.
 
 PhoneGap is an example of a framework which can be used to develop mixed hybrid applications.
 
 \paragraaf{Comparison}
-Web applications are quick and cheap to develop. Written entirely in HTML5, CSS and JavaScript. Executed by the mobile
+Web applications are quick and cheap to develop. Written entirely in HTML, CSS and JavaScript. Executed by the mobile
 browser and therefore cross - platform by default, but less powerful than native apps.
  
 Hybrid Applications (Web), the app's source code consists of web code executed within a native wrapper that is provided by a framework.
@@ -217,11 +184,11 @@ Native Application are platform-specific. Requires unique expertise and knowledg
 \end{centering}
 
 \paragraaf{Conclusion}
-A nativily written mobile application provides the user with an experience immersed to that of the level of the device's operationg system. This is due to two reasons:
+A natively written mobile application provides the user with an experience immersed to that of the level of the device's operating system. This is due to two reasons:
 \begin{itemize}
 \item
 \emph{Performance}\\
 a native application is faster because it has direct access to memory and CPU
 \item \emph{Looks}\\
-a native application looks and feels more coherent to the device's operatingsystem because it is able to make use the of the provided userinterface elements.
+a native application looks and feels more coherent to the device's operating system because it is able to make use the of the provided user interface elements.
 \end{itemize}
