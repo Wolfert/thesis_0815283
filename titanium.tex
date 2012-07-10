@@ -1,30 +1,33 @@
 \hoofdstuk{Titanium analysis}
 
 \paragraaf{Introduction}
+Work in progress
 %korte herhaling van wat titanium is, referentie naar existing solutions.
-This chapter will analyse how Titanium works and why it provides the desired native \emph{look-and-feel}.
+This chapter will analyze how Titanium works and why it provides the desired native \emph{look-and-feel}.
+flexibility, extensibility
 
+In this chapter we will attempt to analyze 
 
 \paragraaf{Inner workings}
 
 At runtime a mobile application developed with Titanium consists of three major components:
 \begin{itemize}
 	\item
-	The JavaScript sourcecode
+	The JavaScript source code
 	\item
 	A platform-specific implementation of the Titanium API
 	\item
 	A JavaScript interpreter
 \end{itemize}
 
-During runtime the JavaScript sourcecode will be intergrated in a native class where it is encoded as a string and compiled. The implementation of the Titanium API done in a platform specific native programming language, Java for Android and Objective-C for iOS. The JavaScript interpreter evaluates the JavaScript code at runtime.
+During runtime the JavaScript source code will be integrated in a native class where it is encoded as a string and compiled. The implementation of the Titanium API done in a platform specific native programming language, Java for Android and Objective-C for iOS. The JavaScript interpreter evaluates the JavaScript code at runtime.
 
 
 \subparagraaf{Runtime}
-At runtime a JavaScript execution environment set up in the native evironment this is where the application sourcecode is evaluated. Injected into JavaScript execution environment are so called \emph{proxy} objects.
+At runtime a JavaScript execution environment set up in the native environment, this is where the application source code is evaluated. Injected into JavaScript execution environment are so called \emph{proxy} objects.
 
 \subparagraaf{Proxy objects}
-A proxy object is an JavaScript object with a paired object in native code.\cite{Whinnery2012} This means the object exists in both JavaScript and native code. Proxy objects gap the bridge between the native and the JavaScript environment. A global Titanium object in JavaScript exposes access to the proxy objects. 
+A proxy object is an JavaScript object paired to an object in native code.\cite{Whinnery2012} This means the object exists in both JavaScript and native code. Proxy objects gap the bridge between the native and the JavaScript environment. A global Titanium object in JavaScript exposes access to the proxy objects. 
 
 % So, for example var label = Titanium.UI.createTabel({ text: "label" }); will invoke a native method which creates a native UILabel object. 
 
@@ -32,8 +35,8 @@ A proxy object is an JavaScript object with a paired object in native code.\cite
 % UI components (view proxies) can be arranged hierarchically to create complex user interfaces. Proxy objects which represent an interface to non-visual APIs (like filesystem I/O or database access) execute in native code, and synchronously (or asynchronously for APIs like network access) return a result to JavaScript. 
 
 
-Par example: In the JavaScript code, when a function is called on the global Titanium object to create a native UILabel a proxy object is created.
-\#TODO: voorbeeld afmaken
+For example: In the JavaScript code, when a function is called on the global Titanium object to create a native UILabel a proxy object is created.
+\   : voorbeeld afmaken
 \begin{minted}[mathescape,
 			   label="JavaScript-object",
                linenos,
@@ -75,7 +78,7 @@ In iOS the proxy button object:
 }
 \end{minted}
 
-\paragraaf{JavaScript}
+\subparagraaf{JavaScript}
 % %TODO verwoorden:
 % JavaScript (sometimes abbreviated JS) is a prototype-based scripting language that is dynamic, weakly typed and has first-class functions. It is a multi-paradigm language, supporting object-oriented,[5] imperative, and functional[1][6] programming styles.
 % JavaScript was formalized in the ECMAScript language standard and is primarily used in the form of client-side JavaScript, implemented as part of a Web browser in order to give enhanced user interfaces and dynamic websites. This enables programmatic access to computational objects within a host environment.
@@ -85,13 +88,13 @@ In iOS the proxy button object:
 
 As mentioned above, Titanium uses JavaScript for cross-platform code compatibility. JavaScript is a logical choice because there are JavaScript Interpreters available for most platforms. This includes the targetted mobile platforms:
 
-V8 is the default for Android but Rhino is also supported. V8 is has a better performance dealing as Rhino because it is directly intergrated to the NDK\footnote{Native Development Kit}. This means it does the code does not have to run trough the JVM\footnote{Java Virtual Machine}. Performance gain can exceed over 200\% processing time when parsing a JSON object.\cite{Lukasavage2011}
+V8 is the default for Android but Rhino is also supported. V8 is has a better performance dealing as Rhino because it is directly intergrated to the NDK\footnote{Native Development Kit}. This means the code does not have to run trough the JVM\footnote{Java Virtual Machine}. Performance gain can exceed over 200\% processing time when parsing a JSON object.\cite{Lukasavage2011}
 For iOS JavaScriptCore is the choosen interpreter.
 
 These interpreters support the CommonJS specification.
 
 
-\paragraaf{CommonJS}
+\subparagraaf{CommonJS}
 %TODO: verwoorden:
 JavaScript is a powerful object oriented language with some of the fastest dynamic language interpreters around. The official JavaScript specification defines APIs for some objects that are useful for building browser-based applications. However, the spec does not define a standard library that is useful for building a broader range of applications.
 
@@ -104,7 +107,7 @@ Hybrid applications (Titanium, Adobe AIR)
 
 
 
-\paragraaf{Modules}
+\subparagraaf{Modules}
 %TODO: verwoorden:
 By default, JavaScript runs programs in a global scope and doesn't have any native namespacing language features. This means that, unless you're careful, your programs can descend into a mess of code spaghetti, full of conflicting variables and namespace pollution.
 
@@ -144,24 +147,26 @@ Is used like:
   tableview.appendRow(new messageCell(message, that));
 \end{minted}
 
-gaat er te ver op in:
-\paragraaf{Eclipse}
-\paragraaf{Buildsystem}
+% gaat er te ver op in:
+% \paragraaf{Eclipse}
+% \paragraaf{Buildsystem}
 % \paragraaf{XCode CLI and the iOS SDK}
 % \paragraaf{Android SDK}
 
+\paragraaf{Usage concepts}
+\subparagraaf{Window Navigation}
+\subparagraaf{View hierarchie}
+\subparagraaf{Event handling}
 
-\paragraaf{Window Navigation}
-\paragraaf{View hierarchie}
-\paragraaf{event handling}
-
+\paragraaf{Extensibility and flexibility}
+\subparagraaf{Module system}
 
 \paragraaf{Performance versus flexibility}
 tableview.
 
 \paragraaf{Documentation}
 all in one place
-wide range: video tutorials to confluence based in dept guides
+wide range: video tutorials to confluence based guides
 
 
 \paragraaf{Summary}
