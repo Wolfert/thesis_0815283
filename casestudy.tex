@@ -1,86 +1,109 @@
 \hoofdstuk{Case study}
-
 \paragraaf{Introduction}
-Mobile application has been developed with Titanium to study its flexibility and features.
+This chapter introduces iStager and summarizes its development process. iStager is be a cross-platform mobile application developed using Titanium. The summary will cover the application requirements and design, the implementation process and the results. 
 
+
+% The implementation consists of feature availability of Titanium, and the possible augmentation of missing features.  
+
+%As mentioned in the chapter \emph{Main research} the goal is to answer the question: "\emph{Is Titanium viable for commerical useage?}" 
+% To answer this question a set of criteria have been defined in the chapter \emph{Main research}, section \emph{Defining viable}
+
+
+% \begin{itemize}
+% 	\item \emph{Extensibility}
+% 	\item \emph{Maturity}
+% 	\item \emph{Documentation}
+% \end{itemize}
 
 \paragraaf{Stager}
 In 2011, live music venue WORM hired Lunatech to build \emph{Stager}, a modern web-based resource planning and ticketing application to help manage live music events. Lunatech took the opportunity to use the relatively new Play framework to build a web application with an HTML5 and Java architecture. Stager has broad requirements ranging from high performance and security for the public ticket sales component to high usability for the internal resource planning component that will be used for hours a day by employees and being open to enhancements in the future for new customers. \cite{Lunatech2011}
 
 \subparagraaf{WORM}
-WORM is an institute for avantgardistic recreation Rotterdam, consisting of an artistscollective, a podium with a bar and Parallel University (DIY workshops for film, music and media). Born under the stars of punk, Dada, Fluxus, Situationism and futurism WORM is grown into a headstrong organization that the 'Do-It-Yourself' mentality of their ancestors, combined with ultra-pragmatism, love of technique (s) and proper accounting. Worm outputs film, radio, concerts, courses, partys, publications, performances, web projects, installations, workshops and an accumulation of tactile media and internet.WORM focuses (cheerful yet serious) in avantgarde, resource scarcity and opensource. \cite{WORM2012}
+WORM is an institute for avantgardistic recreation Rotterdam, consisting of an artistscollective, a podium with a bar and Parallel University (DIY workshops for film, music and media). Born under the stars of punk, Dada, Fluxus, Situationism and futurism WORM is grown into a headstrong organization that the 'Do-It-Yourself' mentality of their ancestors, combined with ultra-pragmatism, love of technique (s) and proper accounting. Worm outputs film, radio, concerts, courses, partys, publications, performances, web projects, installations, workshops and an accumulation of tactile media and internet.WORM focuses (cheerful yet serious) in avantgarde, resource scarcity and open source. \cite{WORM2012}
 
-\paragraaf{Stager app}
-As described in the chapter \emph{Background} Stager is an planning and ticketing application to help manage live music events. In addition to planning and ticketing Stager features an \emph{atomfeed} to publish events. A Stager app would make use of this atomfeed to list any published events on a mobile device.
+\paragraaf{Introducing iStager}
+iStager is a mobile event publication platform. As described above Stager is an planning and ticketing application to help manage live music events. In addition to planning and ticketing Stager features an \emph{atomfeed} to publish events. iStager makes use of this atom-feed to publish planned events on a mobile device.
+
 
 
 \paragraaf{Stager application requirements}
 
+%todo: tussen delen naar appendix. 
+Functional requirements:
+\begin{enumerate}
+\item \emph{Cross-platform}\\Application must be compatible to run on iOS 4.3 or greater \emph{and} Android 2.2 or greater.
+\item \emph{Native look-and-feel}\\Application must make use the of the native user interface components.
+\item \emph{i18n}\\Application must have language support for both Dutch and English.
+\end{enumerate}
+
+\noindent Below is a simplified list of the feature requirements of the iStager application.\footnote{The complete set of requirements is attached as an appendix} %TODO apendix.
+\begin{enumerate}
+\item
 List of current and upcoming events
-events are downloaded in JSON format from the Stager event atomfeed at /web/feeds/events
-events are displayed in a row-based layout
-events are linked to their corresponding event detailview
-events in the list are sorted by date (asc)
-events in the list contain labels with event title, subtitle, date
-
-Detailview of an event
-Shows detailed event information of an selected event:
-event title, 
-subtitle, 
-date, 
-times (doors open, start, end), 
-location details (venue name, street, number, city), 
-event content (html rendered text)
-
+\item
+Detail-view of an event, shows detailed event information of an selected event:
+\item
 Add event to agenda
-Prompts the user: "Add event 'x' on date 'y' in agenda?"
-Adds a selected event to the mobile devices agenda.
-Prompts the user of succes of add action.
-
-Start gps-based navigation towards physical location of event
-Prompts the user "Navigate to y?" (y in the format of: streetname, housenumber, cityname, postalcode)
-Opens map application with address as argument.
-
+\item
+Start GPS-based navigation towards physical location of event
+\item
 View media attached to an event
-Media defined as: URL's to event images, videos, websites.
-
+\item
 Display in a grid or list, categorize media types.
-Each displayed media item is resembled by a tumbnail or icon.
-When selected a media item opens to its content in:
-images an included webview,
-websites the device browser,
-for videos the youtube app or the browser( depending on video type \& location).
-
+\item
 Share event details to social media
-An event detail view will contain a 'share/deel' button.
-Prompts the user for platform to share. (twitter/facebook/email)
-Default value (editable): "I am attending event x on date y in location x !"
+% \item
+% (Un)Register device to receive push notifications on new events of interest
+% \item
+% Register the device to receive pushed notifications about upcoming events which might be of interest to the user.
+% Based on Relation.interest model in Stager.
+\end{enumerate}
 
-	
-(Un)Register device to receive push notifications on new events of interest
-Register the device to receive pushed notifications about upcoming events which might be of interest to the user.
-Based on Relation.interest model in Stager.
+\paragraaf{Architecture}
+
+\begin{centering}
+	\includegraphics[scale=0.4]{images/globale_architectuur.png}\\{The client-server architecture of the app}\\
+\end{centering}
+\begin{centering}
+	\includegraphics[scale=0.4]{images/stagerapp_statediagram.png}\\{The client-server architecture of the app}\\
+\end{centering}
 
 
+\paragraaf{Feed}
+Stager is able to publish any planned live music events trough an feed which is publicly accessible. An feed is an simplified standardized view of content which may be frequently updated. In Stager the feed has an atom-based XML format.
 
-\subparagraaf{Events}
+\paragraaf{Events}
+An event contains contains detailed information about an occurrence at a certain time, date and place. The detailed information consists of 
+
+\paragraaf{Media}
+
+\paragraaf{i18n}
+
+\paragraaf{Results}
 
 
+% \subparagraaf{Platform support}
+% \subparagraaf{Native look and feel}
 
-\subparagraaf{Notifications}
-\subparagraaf{Tickets}
-\subparagraaf{i18n}
-\subparagraaf{Mobile payment}
-\paragraaf{Used techniques and methodologies}
-\subparagraaf{Javascript}
-For Titanium Javascript is the only option. Everything that can be written in JavaScript will eventually be written in JavaScript.
-\subparagraaf{CommonJS}
-\subparagraaf{Playframework}
-\subparagraaf{Java}
-\subparagraaf{JSON}
-%\paragraaf{Titanium modules}
-%\paragraaf{Stager service modules}
+\begin{figure}%
+	\centering
+	\parbox{0.0in}
+	\qquad
+	\begin{minipage}{2.2in}%
+		\includegraphics[scale=0.15]{images/iStager_1.png}
+		\includegraphics[scale=0.15]{images/iStager_2.png}
+	\end{minipage}%
+	\caption{iStager application on running iOS 5.0}%
+	\label{fig:1figs}%
+\end{figure}
+\subparagraaf{DOM2 issue}
+%feed -> json.
+\subparagraaf{Tableview performance}
+
+\subparagraaf{Cross-platform NavigationController}
 
 
 \paragraaf{Conclusion}
 %Samenvatten wat er gedaan is aan de Stager app, welke platforms het draaid, e.d.
+Although not completely finished due to time restrains, the development of iStager proved that it is possible to build a cross-platform application which is truly native.
+
