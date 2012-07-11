@@ -27,17 +27,24 @@ Which type of mobile application is produced using this framework.
 The cross-platform criterium is based on Lunatechs requirement to build mobile applications for the operating systems have at least a 10 percent market share in the European continent. Second comes the support for native user interface elements. Together these criteria form the essence of the main research question: \emph{"How to develop a cross-platform mobile application while retaining the native look-and-feel?"}
 The remaining criteria are of secondary importance, they will provide more detailed means to compare the frameworks which offer native user interface support.
 
-\paragraaf{Framework requirements}
+Based on the previous statement and criteria a hypothesis can be formed:
+\begin{shadequote}
+There is an existing solution which offers cross-platform mobile application development as defined by Lunatechs' criteria.\par\emph{W. de Kraker, 2012}
+\end{shadequote}
 
-A cross-platform mobile application development framework has to:
-\begin{itemize}
-\item Support cross-platform mobile application development.\\
-Build an application which runs on multiple platforms, originating from a single codebase.
-\item Supported platforms should be at minimum iOS and Android.\\
-As decided in Chapter Defining the context, section \emph{Mobile platforms}
-\item Be able to offer the native look-and-feel.\\
-As defined in Chapter Defining the context, section \emph{Defining native}
-\end{itemize}
+
+%\subparagraaf{Framework requirements}
+%
+%A cross-platform mobile application development framework has to:
+%\begin{itemize}
+%\item Support cross-platform mobile application development.\\
+%Build an application which runs on multiple platforms, originating from a single codebase.
+%\item Supported platforms should be at minimum iOS and Android.\\
+%As decided in Chapter Defining the context, section \emph{Mobile platforms}
+%\item Be able to offer the native look-and-feel.\\
+%As defined in Chapter Defining the context, section \emph{Defining native}
+%\end{itemize}
+
 
 \paragraaf{Method}
 %todo, in this paragraph...
@@ -45,12 +52,17 @@ As defined in Chapter Defining the context, section \emph{Defining native}
 % toepassen criterea.
 % testwijze (benchmak app)
 % beste kiezen om mee verder te gaan
+In order to test the hypothesis it is necessary to conduct a market survey to determine which solutions to cross-platform app development are available on todays market and which of those meet the criteria. Each solution will be evaluated during a test in which a benchmark application will be developed using the solution. The resulting evaluations will be compared. The solution which offers the most complete set of features will be deemed potentially viable for commercial use by Lunatech. 
 
+\begin{centering}
+\includegraphics[scale=0.3]{images/preliminary}\\{Preliminary research structure}\\
+\end{centering}
 \subparagraaf{Selection}
 
 There are over 30 frameworks which offer cross-platform development of mobile applications\cite{Wikipedia2012}. These frameworks have been added to an initial list.\footnote{see appendix: \emph{Existing solutions}} This initial list contains only frameworks which adhere to the requirement of supporting cross-platform mobile application development. The frameworks in the list are categorized by the first set of criteria.
 
 To determine which frameworks should be included in the comparison we'll take a closer look at each and filter out those who don't adhere to criteria of supporting native user elements. This should leave us with an acceptable number of frameworks to compare. Acceptable in this scenario will be 5. Which is the goal because the timeframe of the internship doesn't allow for more.
+
 
 
 \subparagraaf{Benchmark app}
@@ -106,7 +118,7 @@ From 30 existing solutions a total of 4 frameworks were selected to be evaluated
 	\item RhoMobile
 	\item MoSync
 	\item Worklight
-\end{itemize}
+\end{itemize} 
 
 The first framework put under evaluation was Titanium. In the 3 days available for rewriting the benchmark app only the first two requirements/features were implemented successfully.
 
@@ -118,7 +130,7 @@ Second up Rhomobile, after installing it and reading the quick start guide it tu
 
 After this debacle I considered the possibility other frameworks might have a similar issue. As it turns out: MoSync was not native either, just a web app encapsulated a native shell. Worklight also required PhoneGap. As it turns out my definition of native may not be as universally accepted as i thought before.
 
-just 2 weeks in to my research and it was effectively completed: Titanium was the only option.
+%just 2 weeks in to my research and it was effectively completed: Titanium was the only option.
 
 
 %\paragraaf{A custom implementation?}
@@ -126,4 +138,7 @@ just 2 weeks in to my research and it was effectively completed: Titanium was th
 
 
 \subparagraaf{Conclusion}
+
 Titanium is the only option.
+confirm hypothesis.
+
