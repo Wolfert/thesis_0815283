@@ -16,14 +16,14 @@ This chapter introduces iStager and summarizes its development process. iStager 
 % \end{itemize}
 
 \paragraaf{Stager}
-In 2011, live music venue WORM hired Lunatech to build \emph{Stager}, a modern web-based resource planning and ticketing application to help manage live music events. Lunatech took the opportunity to use the relatively new Play framework to build a web application with an HTML5 and Java architecture. Stager has broad requirements ranging from high performance and security for the public ticket sales component to high usability for the internal resource planning component that will be used for hours a day by employees and being open to enhancements in the future for new customers. \cite{Lunatech2011}
+In 2011, live music venue WORM hired Lunatech to build \emph{Stager}, a modern web-based resource planning and ticketing application to help manage live music events. Lunatech took the opportunity to use the relatively new Play framework to build a web application with an HTML5 and Java architecture. Stager has broad requirements ranging from high performance and security for the public ticket sales component to high usability for the internal resource planning component that will be used for hours a day by employees and being open to enhancements in the future for new customers. \cite{Lunatech2011} In April 2012 Stager became Stager B.V. and is able to function independently from WORM. As main marketing concept Stager B.V. offers the use of Stager  to live music venues. Although WORM is the main customer of Stager B.V. this might change in the future as Stagers market share expands. 
 
 \subparagraaf{WORM}
-WORM is an institute for avantgardistic recreation Rotterdam, consisting of an artistscollective, a podium with a bar and Parallel University (DIY workshops for film, music and media). Born under the stars of punk, Dada, Fluxus, Situationism and futurism WORM is grown into a headstrong organization that the 'Do-It-Yourself' mentality of their ancestors, combined with ultra-pragmatism, love of technique (s) and proper accounting. Worm outputs film, radio, concerts, courses, partys, publications, performances, web projects, installations, workshops and an accumulation of tactile media and internet.WORM focuses (cheerful yet serious) in avantgarde, resource scarcity and open source. \cite{WORM2012}
+WORM is an institute for avantgardistic recreation Rotterdam, consisting of an artistscollective, a podium with a bar and Parallel University (DIY workshops for film, music and media). Born under the stars of punk, Dada, Fluxus, Situationism and futurism WORM is grown into a headstrong organization that the 'Do-It-Yourself' mentality of their ancestors, combined with ultra-pragmatism, love of technique (s) and proper accounting. Worm outputs film, radio, concerts, courses, parties, publications, performances, web projects, installations, workshops and an accumulation of tactile media and internet.WORM focuses (cheerful yet serious) in avantgarde, resource scarcity and open source. \cite{WORM2012} Due to a drain on subsidized funding resource from the government WORM is forced halt its' current operations. It is possible that WORM closes its doors in august 2012, alternatively WORM might reorganize and continue in a s smaller form.
 
 \paragraaf{Introducing iStager}
-iStager is a mobile event publication platform. As described above Stager is an planning and ticketing application to help manage live music events. In addition to planning and ticketing Stager features an \emph{atomfeed} to publish events. iStager makes use of this atom-feed to publish planned events on a mobile device.
-
+iStager is a mobile event publication platform. As described above Stager is an planning and ticketing application to help manage live music events. In addition to planning and ticketing Stager features an \emph{atomfeed} to publish events. iStager makes use of this atom-feed to publish planned events on a mobile device. Because Stager
+Every customer of Stager would be granted their own version of iStager. This indicates that iStager needs to be have a generic user interface.
 
 
 \paragraaf{Stager application requirements}
@@ -34,6 +34,7 @@ Functional requirements:
 \item \emph{Cross-platform}\\Application must be compatible to run on iOS 4.3 or greater \emph{and} Android 2.2 or greater.
 \item \emph{Native look-and-feel}\\Application must make use the of the native user interface components.
 \item \emph{i18n}\\Application must have language support for both Dutch and English.
+\item \emph{Generic style}\\Application must have an configurable stylesheet to generate different styles of user interface looks.
 \end{enumerate}
 
 \noindent Below is a simplified list of the feature requirements of the iStager application.\footnote{The complete set of requirements is attached as an appendix} %TODO apendix.
@@ -60,12 +61,19 @@ Share event details to social media
 \end{enumerate}
 
 \paragraaf{Architecture}
+The global architecture consists of a client-server model where the mobile application acts as the client, and the Stager application provides acts as the server.
 
 \begin{centering}
-	\includegraphics[scale=0.4]{images/globale_architectuur.png}\\{The client-server architecture of the app}\\
+	\includegraphics[scale=0.4]{images/globale_architectuur.png}\\{The client-server architecture of Stager and the iStager app}\\
 \end{centering}
+
+\paragraaf{Design}
+The application designed in consultation with WORM. It had to be modern enough to stand out from other apps, yet it had to simple enough to support an generic stylesheet.
+
+
+\subparagraaf{User interaction}
 \begin{centering}
-	\includegraphics[scale=0.4]{images/stagerapp_statediagram.png}\\{The client-server architecture of the app}\\
+	\includegraphics[scale=0.4]{images/stagerapp_statediagram.png}\\{Flowchart diagram of the iStager app}\\
 \end{centering}
 
 
@@ -73,11 +81,17 @@ Share event details to social media
 Stager is able to publish any planned live music events trough an feed which is publicly accessible. An feed is an simplified standardized view of content which may be frequently updated. In Stager the feed has an atom-based XML format.
 
 \paragraaf{Events}
-An event contains contains detailed information about an occurrence at a certain time, date and place. The detailed information consists of 
+An event contains contains detailed information about an occurrence at a certain time, date and location. The detailed information consists of a title, subtitle, content, attached media. 
 
 \paragraaf{Media}
+When an event is gets published it is possible to attach media items to the publication. These range from audio files and images to  links to websites such as to youtube content. Any attached media will be included in the feed as a hyperlink to its location, which is publicly accessible.
 
 \paragraaf{i18n}
+
+
+\paragraaf{Issues}
+
+An issue was the lack of DOM3 specification support. This was already determined during the development of the benchmark application in the preliminary research, however the chosen solution was a quick fix to solve the symptom of the issue. 
 
 \paragraaf{Results}
 
