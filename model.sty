@@ -107,6 +107,36 @@
 \sloppy%twocolummode met \verb!!'s moet sloppy, andere moden zijn ongevoeliger
 \newlength{\maxwidth}
 
+% For nice quotationblocks (bron: http://tex.stackexchange.com/a/16981)
+%\definecolor{lunablue}{rgb}{0.098,0.6,0.81}
+%\definecolor{lunagray}{rgb}{0.84,0.84,0.84}
+
+\usepackage{ifxetex}
+\usepackage[svgnames]{xcolor}
+\ifxetex{%
+  \usepackage{fontspec}
+  \setmainfont{Linux Libertine O} % or any font on your system
+  \newfontfamily\quotefont[Ligatures=TeX]{Linux Libertine O} % or any font on your system
+\else
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+  \usepackage{libertine} % or any other font package (or none)
+  \newcommand*\quotefont{\fontfamily{fxl}} % selects Libertine for quote font
+\fi
+\usepackage{tikz}
+\usepackage{framed}
+% Make commands for the quotes
+\newcommand*{\openquote}{\tikz[remember picture,overlay,xshift=-15pt,yshift=-10pt]
+     \node (OQ) {\quotefont\fontsize{60}{60}\selectfont``};\kern0pt}
+\newcommand*{\closequote}{\tikz[remember picture,overlay,xshift=15pt,yshift=10pt]
+     \node (CQ) {\quotefont\fontsize{60}{60}\selectfont''};}
+% select a colour for the shading
+\definecolor{shadecolor}{named}{Gray}
+% wrap everything in its own environment
+\newenvironment{shadequote}%
+{\begin{snugshade}\begin{quote}\openquote}
+{\hfill\closequote\end{quote}\end{snugshade}}
+% End nice quotationblocks 
 
 \ifpublic %publishable version
   \setlength{\parindent}{0pt}% Eur. alinea past bij listings en verbatims   
