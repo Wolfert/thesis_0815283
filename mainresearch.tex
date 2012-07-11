@@ -1,6 +1,4 @@
 \hoofdstuk{Main research}
-Work in progress.
-
 This chapter will define the main research process. 
 
 \paragraaf{Introduction}
@@ -12,31 +10,42 @@ The goal of the main research is to get a hands on with the chosen solution. Doe
 To determine if a cross-platform mobile application development solution is considered viable for commercial usage a set of criteria has been provided by Lunatech.
 \begin{itemize}
 	\item \emph{Extensibility}\\
-	How new features can be added to the existing framework.
+	Possibility to extend new features to the framework.
 	\item \emph{Maturity}\\ 
-	Maturity of underlying code. \& implementation of features.
+	Maturity of framework.
 	\item \emph{Documentation}\\
-	How extensive and accessible the documentation is.
+	Coverage, accessibility and up-to-dateness of the documentation.
 \end{itemize}
 
-Extensibility
+
+Extensibility the possibility to extend Titanium with a new (custom) functionality. 
 When the developer wants to implement a custom feature in the solution, the interfacing API should be easy to understand and use
 
-Maturity
-The code underneath the API should be free from bugs' and programming errors.
-Indications of this 
-A immature code could have unpredictable issues.
-Also: it should have all the features implemented which we except to be there. 
-- steady stream of releases.
-- predictable development rate
-- how bugs are handled
-- community support
+The maturity is determined by checking for the following trustworthy elements: \begin{inparaenum}[\itshape a\upshape)]
+\item Product Documentation,
+\item Use of Established Mobile Standards,
+\item Licenses,
+\item Community activity,
+\item Number of Commits and Bug Reports
+\item Use of code management and versioning tools,
+\item Requirements Management,
+\item Availability and Use of a product roadmap.
+\end{inparaenum}
+This list was originally derived from the OpenSource Maturity Model\cite{Wikipedia2011} and has been augmented with elements fit to the specific mobile nature of the framework.
 
 
-Accessibility means the documentation is freely available online %and you don't have to look for it. 
+The documentation should be publicly accessible, cover all public methods in the most current version of the frameworks' API.
 
-These issues come down to the question:
-is the developer spending more time fighting the framework, rather than developing his application?
+%it should have all the features implemented which we except to be there. 
+%- steady stream of releases.
+%- predictable development rate
+%- how bugs are handled
+%- community support
+%
+%Accessibility means the documentation is freely available online %and you don't have to look for it. 
+%
+%These issues come down to the question:
+%is the developer spending more time fighting the framework, rather than developing his application?
 
 %how do you want to prove this?
 \paragraaf{Devised method}
@@ -55,6 +64,7 @@ Quality of the documentation will be judged on:
 	\item Up-to-dateness
 	\item Orderliness
 	\item Availability
+	\item Awesomeness
 \end{itemize}
 
 
@@ -71,7 +81,35 @@ Quality of the documentation will be judged on:
 \input{titanium}
 \input{casestudy}
 
-\paragraaf{Results}
+
+\hoofdstuk{Results}
+
+
+\paragraaf{Extensibility}
+It is possible to extend new functionality in Titanium. This is done at 2 levels:
+\begin{itemize}
+	\item Project based
+	\item SDK based
+\end{itemize}
+The Project based extending of features is done by placing the module in the Titaniums installation directory. SDK based means that the module is built inline with the Titaniums' source code, from there the module augments Titaniums SDK.  Extending Titaniums features at SDK level requires the entire framework to be rebuilt and compiled it which can take up to 50 minutes. When a module is added on project base it only requires a restart from the framework, this process might take up to 2 minutes. Another downside is that a custom version of Titaniums SDK will have to be built and compiled for every new release. Therefore it is preferable to extend new functionality on project base.
+
+\paragraaf{Maturity}
+
+\begin{tabel}{| p{\Procent{40}} || >\R p{\Procent{60}}| }{vbx}{Maturity level}
+\hline
+\bf{Thrustworthy element} & \bf{Implementation}\\
+\hline \hline
+Product Documentation&\\
+Use of Established Mobile Standards&\\
+Licenses&\\
+Community activity&\\
+Number of Commits and Bug Reports &\\
+Use of code management and versioning tool &\\
+Requirements Management&\\
+Availability and Use of a product roadmap&\\
+\hline
+\end{tabel}
 
 
 
+\paragraaf{Documentation}
