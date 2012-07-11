@@ -1,12 +1,27 @@
 \hoofdstuk{Titanium analysis}
 
 \paragraaf{Introduction}
-Work in progress
 %korte herhaling van wat titanium is, referentie naar existing solutions.
-This chapter will analyze how Titanium works and why it provides the desired native \emph{look-and-feel}.
-flexibility, extensibility
 
-In this chapter we will attempt to analyze 
+
+\noindent The primary this chapter is to analyze how Titanium works and why it provides the desired native \emph{look-and-feel}. The results of this will add to the answer of the main research question
+
+Secondarily this chapter is to determine the maturity of Titanium. As mentioned in \emph{Main research}, section \emph{Defining viable} the maturity of a framework is determined based on the presence the following of trustworthy elements:
+
+\begin{itemize}
+  \setlength{\itemsep}{1pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}
+\item Product Documentation
+\item Use of Established Mobile Standards
+\item Licenses
+\item Community activity
+\item Number of Commits and Bug Reports
+\item Use of code management and versioning tools
+\item Requirements Management
+\item Availability and Use of a product roadmap
+\end{itemize}
+
 
 \paragraaf{Inner workings}
 
@@ -86,10 +101,10 @@ In iOS the proxy button object:
 % JavaScript uses syntax influenced by that of C. JavaScript copies many names and naming conventions from Java, but the two languages are otherwise unrelated and have very different semantics. The key design principles within JavaScript are taken from the Self and Scheme programming languages.[7]
 
 
-As mentioned above, Titanium uses JavaScript for cross-platform code compatibility. JavaScript is a logical choice because there are JavaScript Interpreters available for most platforms. This includes the targetted mobile platforms:
+As mentioned above, Titanium uses JavaScript for cross-platform code compatibility. JavaScript is a logical choice because there are JavaScript Interpreters available for most platforms. This includes the targeted mobile platforms:
 
-V8 is the default for Android but Rhino is also supported. V8 is has a better performance dealing as Rhino because it is directly intergrated to the NDK\footnote{Native Development Kit}. This means the code does not have to run trough the JVM\footnote{Java Virtual Machine}. Performance gain can exceed over 200\% processing time when parsing a JSON object.\cite{Lukasavage2011}
-For iOS JavaScriptCore is the choosen interpreter.
+V8 is the default for Android but Rhino is also supported. V8 is has a better performance dealing as Rhino because it is directly integrated to the NDK\footnote{Native Development Kit}. This means the code does not have to run trough the JVM\footnote{Java Virtual Machine}. Performance gain can exceed over 200\% processing time when parsing a JSON object.\cite{Lukasavage2011}
+For iOS JavaScriptCore is the chosen interpreter.
 
 These interpreters support the CommonJS specification.
 
@@ -109,13 +124,13 @@ Hybrid applications (Titanium, Adobe AIR)
 
 \subparagraaf{Modules}
 %TODO: verwoorden:
-By default, JavaScript runs programs in a global scope and doesn't have any native namespacing language features. This means that, unless you're careful, your programs can descend into a mess of code spaghetti, full of conflicting variables and namespace pollution.
+By default, JavaScript runs programs in a global scope and doesn't have any native name spacing language features. This means that, unless you're careful, your programs can descend into a mess of code spaghetti, full of conflicting variables and namespace pollution.
 
 CommonJS modules are one of the best solutions to JavaScript dependency management.
 
 CommonJS modules solve JavaScript scope issues by making sure each module is executed in its own namespace. Modules have to explicitly export variables they want to expose to other modules, and explicitly import other modules; in other words, there's no global namespace.
 
-Modules prevent variables from glogging up the global namespace.
+Modules prevent variables from clogging up the global namespace.
 
 
 a sample module:
@@ -153,16 +168,16 @@ Is used like:
 % \paragraaf{XCode CLI and the iOS SDK}
 % \paragraaf{Android SDK}
 
-\paragraaf{Usage concepts}
-\subparagraaf{Window Navigation}
-\subparagraaf{View hierarchie}
-\subparagraaf{Event handling}
-
-\paragraaf{Extensibility and flexibility}
-\subparagraaf{Module system}
-
-\paragraaf{Performance versus flexibility}
-tableview.
+%\paragraaf{Usage concepts}
+%\subparagraaf{Window Navigation}
+%\subparagraaf{View hierarchie}
+%\subparagraaf{Event handling}
+%
+%\paragraaf{Extensibility and flexibility}
+%\subparagraaf{Module system}
+%
+%\paragraaf{Performance versus flexibility}
+%tableview.
 
 \paragraaf{Documentation}
 all in one place
