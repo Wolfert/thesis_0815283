@@ -110,7 +110,6 @@
 % For nice quotationblocks (bron: http://tex.stackexchange.com/a/16981)
 %\definecolor{lunablue}{rgb}{0.098,0.6,0.81}
 %\definecolor{lunagray}{rgb}{0.84,0.84,0.84}
-
 \usepackage{ifxetex}
 \usepackage[svgnames]{xcolor}
 \ifxetex{%
@@ -128,7 +127,7 @@
 % Make commands for the quotes
 \newcommand*{\openquote}{\tikz[remember picture,overlay,xshift=-15pt,yshift=-10pt]
      \node (OQ) {\quotefont\fontsize{60}{60}\selectfont``};\kern0pt}
-\newcommand*{\closequote}{\tikz[remember picture,overlay,xshift=15pt,yshift=10pt]
+\newcommand*{\closequote}{\tikz[remember picture,overlay,xshift=15pt,yshift=-15pt]
      \node (CQ) {\quotefont\fontsize{60}{60}\selectfont''};}
 % select a colour for the shading
 \definecolor{shadecolor}{named}{Gray}
