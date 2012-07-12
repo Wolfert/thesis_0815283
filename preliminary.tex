@@ -110,7 +110,7 @@ The remaining framework will be Evaluated on available of documentation, licensi
 
 \paragraaf{Results}
 Work in progress
-This paragraph will summarize the results of the research, more details of the results are included as a appendices (list + evaluations) %todo referal.
+This paragraph will summarize the results of the research, more details of the results are included as a appendices (list + evaluations) (todo)%todo referal. #TODO
 
 From 30 existing solutions a total of 4 frameworks were selected to be evaluated:
 \begin{itemize}
@@ -120,25 +120,25 @@ From 30 existing solutions a total of 4 frameworks were selected to be evaluated
 	\item Worklight
 \end{itemize} 
 
-The first framework put under evaluation was Titanium. In the 3 days available for rewriting the benchmark app only the first two requirements/features were implemented successfully.
-
-However there was a complication: Titanium does not support the DOM3 specifications. Not having been developed beyond DOM2 specifications the required methods to evaluate the xml doc where missing, to be more precise, x-path could not be used. This is particularly troublesome, forced to write some ugly parsing functions that made me want to rm -rf my disk. But it worked. %TODO: herzien.
-
-Overall developing with Titanium proceeded really well if you disregard the one compromise. The built results were as expected: cross platform with the native look and feel.
-
-Second up Rhomobile, after installing it and reading the quick start guide it turns out that elements are not native. the native feature advertised on their website referred to the fact that they could encapsulate your web app in a web-view, this essentially bombards the app to Web-view based hybrid application as defined in chapter x - Definitions: defining native. This discovery rendered further scrutiny of the framework useless, because it did not meet the essential native requirement.
-
-After this debacle I considered the possibility other frameworks might have a similar issue. As it turns out: MoSync was not native either, just a web app encapsulated a native shell. Worklight also required PhoneGap. As it turns out my definition of native may not be as universally accepted as i thought before.
-
-%just 2 weeks in to my research and it was effectively completed: Titanium was the only option.
 
 
-%\paragraaf{A custom implementation?}
+{\bf Titanium}, the first framework put under evaluation. In the 3 days available for rewriting the benchmark app only the first two features were implemented successfully.
 
+However there was a complication: Titanium does not support the DOM3 specifications. Not having been developed beyond DOM2 specifications the required methods to evaluate an XML document where missing, to be more precise, x-path could not be used. This is particularly troublesome because the resulting solution required hardcoded namespace resolving, which is against best practice. %forced to write some ugly parsing functions that made me want to rm -rf my disk. But it worked. %DONE? herzien.
+
+Overall developing with Titanium proceeded really well, with exception for the DOM issue. The built results were as expected: cross-platform with the native look and feel.
+
+Second up: {\bf Rhomobile}. Up on installing it and reading the quick start guide it turns out that elements are not by definition \emph{native} but HTML elements mimicking the native user interface style. The native feature advertised on their website referred to the fact that Rhomobile can encapsulate your web app in a web-view. This essentially devaluates the application type to Web-view based hybrid application as defined in chapter \emph{Defining the context}, section \emph{Alternative mobile application types}.
+
+After some further research it turns out Rhomobile does have \emph{some} support for native user interface elements, however only the very basic. When a the developer wants to use an element not in that list, he or she has to implement it in native code. \cite{Rhomobile2012} This does not how the cross-platform definition was envisioned by Lunatech.
+
+{\bf MoSync} was third up. During the installation of the framework the installed prompted for the system location of \emph{PhoneGap}, it would not install without. As it turns out, the developers of MoSync sync have the same definition for native as Rhomobile. The native feature advertised on their website referred to the fact that MoSync can encapsulate your web app in a web-view. The user interface is built using a PhoneGap implementation. Further research did not show a way for building actual native user interface elements using MoSync.
+
+Last up is {\bf Worklight}. Worklight also required PhoneGap. Even though Worklight classifies itself as producing actual native applications, it merely encapsulates a PhoneGap built user interface. The value Worklight brings is in their API which augments the PhoneGap application by exposing a JavaScript API to access some of the devices' native features.
 
 
 \subparagraaf{Conclusion}
-
-Titanium is the only option.
-confirm hypothesis.
-
+The goal of this preliminary research was to "\emph{determine whether or not an existing solution offers cross-platform mobile application development as defined by Lunatechs' criteria.}".  Surveying and categorizing the available frameworks on the market resulted in a list of 4 possible solutions. By evaluating each solution it turned out that Titanium meets the criteria set by Lunatech. Therefor the following conceptual model can be defined:
+\begin{shadequote}
+Titanium offers cross-platform mobile application development as defined by Lunatechs' criteria.\par\emph{W. de Kraker, 2012}
+\end{shadequote}
