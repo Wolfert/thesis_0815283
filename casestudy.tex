@@ -1,6 +1,6 @@
 \hoofdstuk{Case study}
 \paragraaf{Introduction}
-This goal of this chapter is to introduce iStager and summarizes its development process. iStager is be a cross-platform mobile application developed using Titanium. The summary will cover the application requirements and design, the implementation process and the results. 
+This goal of this chapter is to introduce iStager and summarizes its development process. iStager is a cross-platform mobile application developed using Titanium. The summary will cover the application requirements and design, the implementation process and the results. 
 The development of iStager provides a realistic case study. This is necessary in order to determine the commercial viability of the Titanium. Parallel to the case study an analysis of Titanium is performed which will be discussed in detail in the next chapter.
 
 
@@ -17,13 +17,13 @@ The development of iStager provides a realistic case study. This is necessary in
 % \end{itemize}
 
 \paragraaf{Stager}
-In 2011, live music venue WORM hired Lunatech to build \emph{Stager}, a modern web-based resource planning and ticketing application to help manage live music events. Lunatech took the opportunity to use the relatively new Play framework to build a web application with an HTML5 and Java architecture. Stager has broad requirements ranging from high performance and security for the public ticket sales component to high usability for the internal resource planning component that will be used for hours a day by employees and being open to enhancements in the future for new customers. \cite{Lunatech2011} In April 2012 Stager became Stager B.V. and is able to function independently from WORM. As main marketing concept Stager B.V. offers the use of Stager  to live music venues. Although WORM is the main customer of Stager B.V. this might change in the future as Stagers market share expands. 
+In 2011, live music venue WORM hired Lunatech to build \emph{Stager}, a modern web-based resource planning and ticketing application to help manage live music events. Lunatech took the opportunity to use the relatively new Play framework to build a web application with an HTML5 and Java architecture. Stager has broad requirements ranging from high performance and security for the public ticket sales component to high usability for the internal resource planning component that will be used for hours a day by employees and being open to enhancements in the future for new customers. \cite{Lunatech2011} In April 2012 Stager became Stager B.V. and is able to function independently from WORM. As main marketing concept Stager B.V. offers the use of Stager  to live music venues. Although WORM is the main customer of Stager B.V. this might change in the future as Stager's market share expands. 
 
 \subparagraaf{WORM}
 WORM is an institute for avantgardistic recreation Rotterdam, consisting of an artistscollective, a podium with a bar and Parallel University (DIY workshops for film, music and media). Born under the stars of punk, Dada, Fluxus, Situationism and futurism WORM is grown into a headstrong organization that the 'Do-It-Yourself' mentality of their ancestors, combined with ultra-pragmatism, love of technique (s) and proper accounting. Worm outputs film, radio, concerts, courses, parties, publications, performances, web projects, installations, workshops and an accumulation of tactile media and internet.WORM focuses (cheerful yet serious) in avantgarde, resource scarcity and open source. \cite{WORM2012} Due to a drain on subsidized funding resource from the government WORM is forced halt its' current operations. It is possible that WORM closes its doors in august 2012, alternatively WORM might reorganize and continue in a s smaller form.
 
 \paragraaf{Introducing iStager}
-iStager is a mobile event publication platform. As described above Stager is an planning and ticketing application to help manage live music events. In addition to planning and ticketing Stager features an \emph{atomfeed} to publish events. iStager makes use of this atom-feed to publish planned events on a mobile device. Because Stager
+iStager is a mobile event publication platform. As described above Stager is a planning and ticketing application to help manage live music events. In addition to planning and ticketing Stager features an \emph{atomfeed} to publish events. iStager makes use of this atom-feed to publish planned events on a mobile device. Because Stager
 Every customer of Stager would be granted their own version of iStager. This indicates that iStager needs to be have a generic user interface.
 
 
@@ -33,9 +33,9 @@ Every customer of Stager would be granted their own version of iStager. This ind
 Functional requirements:
 \begin{enumerate}
 \item \emph{Cross-platform}\\Application must be compatible to run on iOS 4.3 or greater \emph{and} Android 2.2 or greater.
-\item \emph{Native look-and-feel}\\Application must make use the of the native user interface components.
+\item \emph{Native look-and-feel}\\Application must make use the of native user interface components.
 \item \emph{i18n}\\Application must have language support for both Dutch and English.
-\item \emph{Generic style}\\Application must have an configurable stylesheet to generate different styles of user interface looks.
+\item \emph{Generic style}\\Application must have a configurable stylesheet to generate different styles of user interface looks.
 \end{enumerate}
 
 \noindent Below is a simplified list of the feature requirements of the iStager application.\footnote{The complete set of requirements is attached as an appendix} %TODO apendix.
@@ -43,13 +43,13 @@ Functional requirements:
 \item
 List of current and upcoming events
 \item
-Detail-view of an event, shows detailed event information of an selected event:
+Detail-view of a event, shows detailed event information of a selected event
 \item
 Add event to agenda
 \item
 Start GPS-based navigation towards physical location of event
 \item
-View media attached to an event
+View media attached to a event
 \item
 Display in a grid or list, categorize media types.
 \item
@@ -62,14 +62,14 @@ Share event details to social media
 \end{enumerate}
 
 \paragraaf{Architecture}
-The global architecture consists of a client-server model where the mobile application acts as the client, and the Stager application provides acts as the server.
+The global architecture consists of a client-server model where the mobile application acts as the client, and the Stager application acts as the server.
 
 \begin{centering}
 	\includegraphics[scale=0.4]{images/globale_architectuur.png}\\{The client-server architecture of Stager and the iStager app}\\
 \end{centering}
 
 \paragraaf{Design}
-The application designed in consultation with WORM. It had to be modern enough to stand out from other apps, yet it had to simple enough to support an generic stylesheet.
+The application designed in consultation with WORM. It had to be modern enough to stand out from other apps, yet it had to simple enough to support a generic stylesheet.
 
 
 \subparagraaf{User interaction}
@@ -79,7 +79,7 @@ The application designed in consultation with WORM. It had to be modern enough t
 
 
 \paragraaf{Feed}
-Stager is able to publish any planned live music events trough an feed which is publicly accessible. An feed is an simplified standardized view of content which may be frequently updated. In Stager the feed has an atom-based XML format.
+Stager is able to publish any planned live music events trough a feed which is publicly accessible. A feed is an simplified standardized view of content which may be frequently updated. In Stager the feed has an atom-based XML format.
 
 \paragraaf{Events}
 An event contains contains detailed information about an occurrence at a certain time, date and location. The detailed information consists of a title, subtitle, content, attached media. 
@@ -116,7 +116,7 @@ An issue was the lack of DOM3 specification support. This was already determined
 Internationalization in Titanium works by creating a folder called i18n the root of your project in which folders are to be created for each of the supported language in your application. These folders should be named according to the  ISO 639-1 standard. For example, \emph{nl} for Dutch. English \emph{en} is the default language. In each of these folders a \texttt{string.xml} file is to be created. This file provides the string resources. The string resource file closely mirrors the format of Android localization files, which have an XML-based format. The name attribute represents the 'key' for the string, and the text inside the XML node represents the value. %TODO BRON: https://wiki.appcelerator.org/display/guides/Internationalization
 
 \subparagraaf{Cross-platform NavigationController}
-Titanium does not provide a navigation controller. A navigation controller is used to navigate an trough windows\footnote{Note that Titanium refers to what is normally considered a UIViewController on iOS as a Window} of a mobile application it is common practice maintain a stack of windows in a controller. The controller is stack owner and has public methods for the pushing or popping of a window. 
+Titanium does not provide a navigation controller. A navigation controller is used to navigate trough windows\footnote{Note that Titanium refers to what is normally considered a UIViewController on iOS as a Window} of a mobile application it is common practice maintain a stack of windows in a controller. The controller is stack owner and has public methods for the pushing or popping of a window. 
 Titanium does not offer a replacement. Developers who would like to stick with this best practice are advised to write their own navigation controller. %TODO: apendix emt voorbeeld toevoegen.
 
 
