@@ -4,9 +4,7 @@
 %korte herhaling van wat titanium is, referentie naar existing solutions.
 
 
-\noindent The primary this chapter is to analyze how Titanium works and why it provides the desired native \emph{look-and-feel}. The results of this will add to the answer of the main research question
-
-Secondarily this chapter is to determine the maturity of Titanium. As mentioned in \emph{Main research}, section \emph{Defining viable} the maturity of a framework is determined based on the presence the following of trustworthy elements:
+\noindent The primary goal of this chapter is to determine the maturity of Titanium. As mentioned in \emph{Main research}, section \emph{Defining viable}, the maturity of a framework is determined based on the presence the following of trustworthy elements:
 
 \begin{itemize}
   \setlength{\itemsep}{1pt}
@@ -21,6 +19,11 @@ Secondarily this chapter is to determine the maturity of Titanium. As mentioned 
 \item Requirements Management
 \item Availability and Use of a product roadmap
 \end{itemize}
+
+Secondarily this chapter is to analyze how Titanium works and why it provides the desired native \emph{look-and-feel}. The results of this will add to the answer of the main research question
+
+
+
 
 
 \paragraaf{Inner workings}
@@ -183,7 +186,54 @@ Is used like:
 all in one place
 wide range: video tutorials to confluence based guides
 
+\paragraaf{Maturity}
+As mentioned the maturity of a framework is determined based on the presence the predefined of trustworthy elements.
 
-\paragraaf{Summary}
-% werking, architectuur, kort samenvatten
-Titanium provides the \emph{native look-and-feel} trough proxy objects. 
+\begin{description}
+\item [Product Documentation] is found at the official website as well as a simplified version which included on the code completion. 
+The documentation is updated either on the day of a new release or the day after. %TODO bron: http://docs.appcelerator.com/titanium/2.1/index.html
+A simplified version of the documentation is integrated into TitaniumStudio, a feature named \emph{'dynamic help'} automatically looks up the documentation belonging to the a selected method or object.
+Many objects in the documentation are supplemented with an code example.
+\item [Use of Established Mobile Standards] 
+%On the surface JavaScript API, Titanium has full support for CommonJS . 
+\item [Licenses] Appcelerator offers 4 plans from which the first one is free, the other three provide different levels op support and include the use of cloud services. The commercial plans' pricing is per application. Additionally Appcelerator offers services for app analytics or stand alone cloud services. A drawback is that prices are not publicly listed.
+\item [Community activity] Titaniums community exists of mobile developers whom use Titanium to develop their mobile applications. Some of these have knowledge of native programming on the supported platforms. It happens frequently that they publish features they implement because it was missing from Titanium. 
+\item [Number of Commits and Bug Reports] Since the beta there have been 15,991 commits. %https://github.com/appcelerator/titanium_mobile/branches
+On Titaniums' Jira page there have been 8784 issues reported of which 2601 are open.
+Issues: 398 created and 366 resolved
+TODO: conclusie formuleren.
+\item [Use of code management and versioning tools] Titaniums' code base is mainted in a public github account.%TODO github verklaren account. For 
+\item [Requirements Management] Requirements and features are managed using Jira tickets.
+\item [Availability and Use of a product roadmap] Not public:
+\texttt{http://developer.appcelerator.com/doc/mobile/roadmap}
+"We apologize but at this time we're not publishing our roadmap."
+\end{description}
+
+\subparagraaf{Resulting scheme}
+\begin{tabel}{ >\R p{\Procent{60}} | p{\Procent{20}} }{vbx}{Maturity level}
+\bf{Thrustworthy element} & \bf{Score}\\
+ \hline
+Product Documentation& +++\\
+Use of Established Mobile Standards&++\\
+Licenses&++\\
+Community activity&++\\
+Number of Commits and Bug Reports &+\\
+Use of code management and versioning tool &+++\\
+Requirements Management&+\\
+Availability and Use of a product roadmap\footnote{In use but not publicly available, http://developer.appcelerator.com/doc/mobile/roadmap}&-+\\
+\end{tabel}
+
+
+
+\paragraaf{Conclusion}
+From this analysis two conclusions can be drawn:
+\begin{itemize}
+\item \emph{Titanium is a mature open source framework}\\
+Titanium is a mature framework because all the trustworthy elements are present.
+\item \emph{Titanium provides truly native applications}\\
+Titanium provides its' cross-platform with the \emph{native look-and-feel} trough the use of proxy objects.  A high level API provides JavaScript access to the devices' native features. Each supported platform has its own implementation of the API.
+\end{itemize}
+
+
+
+
