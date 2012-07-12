@@ -1,9 +1,9 @@
 \hoofdstuk{appendix I - Preliminary research}
-
+Work in progress
 % Benchmark app. requirements etc.
 
 \paragraaf{Appcelerator Titanium}
-Appceleator Titanium is an commercially supported open source platform for developing cross-platform mobile applications. It was introduced by Appcelerator Inc in December 2008. Built upon the Eclipse IDE Titanium offers a Javascript API to native proxy classes which allow the developer to generate truly native cross-platform mobile applications. 
+Appceleator Titanium is a commercially supported open source platform for developing cross-platform mobile applications. It was introduced by Appcelerator Inc in December 2008. Built upon the Eclipse IDE Titanium offers a Javascript API to native proxy classes which allow the developer to generate truly native cross-platform mobile applications. 
 
 \subparagraaf{Platform support}
 As of may 2012 Titanium supports iOS and Android. Next to building a native application for these platforms Titanium offers the option to generate a web application. 
@@ -34,7 +34,19 @@ The goal of Titanium is to provide a high level, cross-platform JavaScript runti
 \subparagraaf{Results}
 %todo aan elkaar hechten.
 
-in verwerken:
+\begin{tabel}{ >\R p{\Procent{30}} | p{\Procent{60}} }{vbx}{Preliminary evaluation of Titanium}
+\bf{Criteria} & \bf{Score}\\
+ \hline
+Platform support& ++\\
+Native capabilities& +++\\
+Programming language& JavaScript\\
+IDE& Eclipse based studio\\
+License type& Free but commercial available\\
+Application type& Native\\
+\end{tabel}
+
+
+%TODO: in verwerken:
 
 
 One of the issues which came up was that Titanium does not support DOM3 level specifications\cite{Whinnery2011}. This effectively rules out the x-path evaluate function which has support for an xml namespace resolver.\cite{Whitmer}
@@ -103,20 +115,32 @@ Rhodes is an open source Ruby-based framework to build native applications for a
 % Rhodes offers support for a Modal View Controller structure allowing you to efficiently separate the content from the presentation and easily make changes to a view (even simply by updating the data structure). Rhodes gives you the starting points for a handful of different views and you can tweak the templates to fit your needs simply by updating the HTML. The Ruby gets compiled down into bytecode to be executed on the device and each view is presented on the given device’s browser rendering engine. %http://floatlearning.com/2011/07/which-cross-platform-framework-is-right-for-me/
 
 \subparagraaf{Platform support}
-iOS, Android, BlackBerry, Symbian, Windows Mobile
+Rhodes supports iOS, Android, BlackBerry, Symbian, Windows Mobile
 
 \subparagraaf{Techniques and tools}
-Eclipse based studio, Ruby \& HTML
+Rhodes is an comes with an Eclipse based studio. Rhodes applications are primarily written using Ruby for business code and user interface control. For the actual user interface Rhodes relies on web techniques such as HTML, JavaScript and CSS. 
+Rhodes focusses on the \emph{Model-View-Controller} pattern which is implemented using Ruby for the controllers and HTML for the views. The philosophy of the user interface is geared towards web technology using JavaScript libraries such as Sencha touch.
 
 \subparagraaf{Application type}
-Even though Rhodes advertises producing fully native apps\cite{RhoMobile}, they do not. In fact all they do is provide the user with a framework, access to some navigational user interface controls, but the rest of the view is html presented in a web-view.
+Even though Rhodes advertises producing fully native apps\cite{RhoMobile}, they do not. In fact all they do is provide the user with a framework, access to some navigational user interface controls, but the rest of the user interface is html presented in a web-view. Although it is possible to augment the user interface with specific native components, it is not the focus of Rhodes. 
 \begin{centering}
 	\includegraphics[scale=0.3]{images/rhodes_notsonative.png}\\{Rhodes sample iOS application: not fully native}\\
 \end{centering}
 
 \subparagraaf{Philosophy}
+Rhodes focusses on a user interface built with JavaScript libraries such as jQuery Mobile and Sencha, it is their believe that this creates a better user experience as native.
+%TODO: bron http://floatlearning.com/2011/07/which-cross-platform-framework-is-right-for-me/#comment-792
 \subparagraaf{Results}
-
+\begin{tabel}{ >\R p{\Procent{30}} | p{\Procent{60}} }{vbx}{Preliminary evaluation of Rhodes}
+\bf{Criteria} & \bf{Score}\\
+ \hline
+Platform support& +++\\
+Native capabilities& +-\\
+Programming language& Ruby \& HTML, JavaScript and CSS\\
+IDE& Eclipse based studio\\
+License type& Free but commercial available\\
+Application type& Framework hybrid applications\\
+\end{tabel}
 
 
 
@@ -135,15 +159,25 @@ Allows the developer access to device APIs using native code or standard HTML5, 
 
 
 \subparagraaf{Application type}
-Applications developed with Worklight can be classied as \emph{framework built hybrid applications}. As defined in the previous chapter this means the applications are based fitted inside web-view and build on a framework which provides an API to allow the application access to otherwise native API's. The latter is achieved trough Worklights SDK while the former is made possible by an implementation of PhoneGap. \cite{Inc2012}
+Applications developed with Worklight can be classied as \emph{Webview-based hybrid applications}. As defined in the previous chapter this means the applications are based fitted inside web-view and build on a framework which provides an API to allow the application access to otherwise native API's. The latter is achieved trough Worklights SDK while the former is made possible by an implementation of PhoneGap. \cite{Inc2012}
 
 \begin{centering}
-	\includegraphics[scale=0.5]{images/Worklight_architecture.png}\\{Worklights bridge architecture\cite{Inc2012a}}\\
+	\includegraphics[scale=0.4]{images/Worklight_architecture.png}\\{Worklights bridge architecture\cite{Inc2012a}}\\
 \end{centering}
 
 \subparagraaf{Philosophy}
 Worklight aims to grant developers access trough HTML5 to the capabilities that mobile devices provide. 
 
+\begin{tabel}{ >\R p{\Procent{30}} | p{\Procent{60}} }{vbx}{Preliminary evaluation of Worklight}
+\bf{Criteria} & \bf{Score}\\
+ \hline
+Platform support& ++\\
+Native capabilities& -\\
+Programming language&  HTML, JavaScript and CSS\\
+IDE& Eclipse based studio with PhoneGap integration\\
+License type& Commercial\\
+Application type& Webview-based hybrid applications\\
+\end{tabel}
 
 % Modern mobile users want on-the-go access to personalized data and context-driven services delivered at the right time and through the right channel. Augmented reality, Near Field Communication (NFC), push, geo-location, integration with cloud services, and mobile wallets are but a few of the current technologies that enable organizations to streamline operations, reduce costs and increase revenues.
 
@@ -155,18 +189,29 @@ Worklight aims to grant developers access trough HTML5 to the capabilities that 
 The MoSync mobile SDK offers cross-platform development trough the use of web technologies or C/C++.
 
 \subparagraaf{Platform support}
+Android, Java ME, iOS, Symbian, Windows Mobile,
 
 \subparagraaf{Techniques and tools}
+HTML, CSS and Javascript, Eclipse plugin, Visual Studio plugin
 
 \subparagraaf{Application type}
+Webview-based hybrid applications
 
 \subparagraaf{Philosophy}
 
 \subparagraaf{Results}
-
+\begin{tabel}{ >\R p{\Procent{30}} | p{\Procent{60}} }{vbx}{Preliminary evaluation of MoSync}
+\bf{Criteria} & \bf{Score}\\
+ \hline
+Platform support& ++\\
+Native capabilities& -\\
+Programming language&  C++ \& HTML, CSS and Javascript\\
+IDE& Eclipse plugin, Visual Studio plugin\\
+License type& Free\\
+Application type& Webview-based hybrid applications\\
+\end{tabel}
 
 
 \paragraaf{Comparisson} %todo..
 
 \paragraaf{Conclusion}
-%samenvatting geven - misschien hier de overige 3 frameworks al uitsluiten?
