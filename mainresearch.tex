@@ -5,7 +5,7 @@ This chapter will define the main research process.
 %The goal of the main research is to find out if the chosen solution
 The goal of the main research is to get a hands on with the chosen solution. Does it have the features Lunatech wants? Is it suitable for adoption by Lunatech? In other words: "\emph{Is Titanium viable for commerical useage?}". To answer this question we define the following hypothesis:
 \begin{shadequote}
-Titanium provides a commercially viable solution to the cross-platform development of mobile applications\par\emph{W. de Kraker, 2012}
+Titanium provides a commercially viable solution to the cross-platform development of mobile applications%\par\emph{W. de Kraker, 2012}
 \end{shadequote}
 
 %so what is viable?
@@ -54,11 +54,15 @@ The documentation should be publicly accessible, cover all public methods in the
 \paragraaf{Devised method}
 In order to determine the commercial viability of the solution it is necessary to perform a case study which originates from a realistic scenario. During the case study the solution will be analyzed on its maturity and extensibility.  The extensibility will be tested by adding a missing feature to the use case scenario. The maturity of the framework will be tested by checking for the following trustworthy elements as defined above. Quality of the documentation will be judged on:
 \begin{itemize}
-	\item Completeness
-	\item Up-to-dateness
-	\item Availability
+	\item Completeness\\
+	Whether or not any missing parts are noticed during the development of the case study.
+	\item Up-to-dateness\\
+	Determined by the support of the latest version.
+	\item Availability\\
+	Determined by the location of the documentation and or IDE integration.
 \end{itemize}
 
+\noindent The main research process is divided between the case study and the analysis. Even though performed parallel, both serve different goals. The global structure structure looks as following:
 \begin{centering}
 \includegraphics[scale=0.5]{images/process.png}\\{Main research process schematic}\\
 \end{centering}
@@ -67,12 +71,13 @@ In order to determine the commercial viability of the solution it is necessary t
 %\paragraaf{Summary}
 %To answer whether or not the chosen solution is commercially viable a case study will be performed during which the solution will be analyzed on provided criteria.
 
-
-\input{titanium}
 \input{casestudy}
-
+\input{titanium}
 
 \hoofdstuk{Results}
+This chapter summarizes the results of the main research.
+
+\paragraaf{Case study}
 
 
 \paragraaf{Extensibility}
@@ -84,22 +89,6 @@ It is possible to extend new functionality in Titanium. This is done at 2 levels
 The Project based extending of features is done by placing the module in the Titaniums installation directory. SDK based means that the module is built inline with the Titaniums' source code, from there the module augments Titaniums SDK.  Extending Titaniums features at SDK level requires the entire framework to be rebuilt and compiled it which can take up to 50 minutes. When a module is added on project base it only requires a restart from the framework, this process might take up to 2 minutes. Another downside is that a custom version of Titaniums SDK will have to be built and compiled for every new release. Therefore it is preferable to extend new functionality on project base.
 
 \paragraaf{Maturity}
-
-\begin{tabel}{| p{\Procent{40}} || >\R p{\Procent{60}}| }{vbx}{Maturity level}
-\hline
-\bf{Thrustworthy element} & \bf{Implementation}\\
-\hline \hline
-Product Documentation&\\
-Use of Established Mobile Standards&\\
-Licenses&\\
-Community activity&\\
-Number of Commits and Bug Reports &\\
-Use of code management and versioning tool &\\
-Requirements Management&\\
-Availability and Use of a product roadmap&\\
-\hline
-\end{tabel}
-
 
 
 \paragraaf{Documentation}
