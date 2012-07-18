@@ -1,5 +1,4 @@
-\hoofdstuk{Case study}
-\paragraaf{Introduction}
+\paragraaf{Case study}
 This goal of this chapter is to introduce iStager and summarizes its development process. iStager is a cross-platform mobile application developed using Titanium. The summary will cover the application requirements and design, the implementation process and the results. 
 The development of iStager provides a realistic case study. This is necessary in order to determine the commercial viability of the Titanium. Parallel to the case study an analysis of Titanium is performed which will be discussed in detail in the next chapter.
 
@@ -16,18 +15,18 @@ The development of iStager provides a realistic case study. This is necessary in
 % 	\item \emph{Documentation}
 % \end{itemize}
 
-\paragraaf{Stager}
+\subparagraaf{Stager}
 In 2011, live music venue WORM hired Lunatech to build \emph{Stager}, a modern web-based resource planning and ticketing application to help manage live music events. Lunatech took the opportunity to use the relatively new Play framework to build a web application with an HTML5 and Java architecture. Stager has broad requirements ranging from high performance and security for the public ticket sales component to high usability for the internal resource planning component that will be used for hours a day by employees and being open to enhancements in the future for new customers. \cite{Lunatech2011} In April 2012 Stager became Stager B.V. and is able to function independently from WORM. As main marketing concept Stager B.V. offers the use of Stager  to live music venues. Although WORM is the main customer of Stager B.V. this might change in the future as Stager's market share expands. 
 
 \subparagraaf{WORM}
 WORM is an institute for avantgardistic recreation Rotterdam, consisting of an artistscollective, a podium with a bar and Parallel University (DIY workshops for film, music and media). Born under the stars of punk, Dada, Fluxus, Situationism and futurism WORM is grown into a headstrong organization that the 'Do-It-Yourself' mentality of their ancestors, combined with ultra-pragmatism, love of technique (s) and proper accounting. Worm outputs film, radio, concerts, courses, parties, publications, performances, web projects, installations, workshops and an accumulation of tactile media and internet.WORM focuses (cheerful yet serious) in avantgarde, resource scarcity and open source. \cite{WORM2012} Due to a drain on subsidized funding resource from the government WORM is forced halt its' current operations. It is possible that WORM closes its doors in august 2012, alternatively WORM might reorganize and continue in a s smaller form.
 
-\paragraaf{Introducing iStager}
+\subparagraaf{Introducing iStager}
 iStager is a mobile event publication platform. As described above Stager is a planning and ticketing application to help manage live music events. In addition to planning and ticketing Stager features an \emph{atomfeed} to publish events. iStager makes use of this atom-feed to publish planned events on a mobile device. Because Stager
 Every customer of Stager would be granted their own version of iStager. This indicates that iStager needs to be have a generic user interface.
 
 
-\paragraaf{Stager application requirements}
+\subparagraaf{Stager application requirements}
 
 %todo: tussen delen naar appendix. 
 Functional requirements:
@@ -61,14 +60,14 @@ Share event details to social media
 % Based on Relation.interest model in Stager.
 \end{enumerate}
 
-\paragraaf{Architecture}
+\subparagraaf{Architecture}
 The global architecture consists of a client-server model where the mobile application acts as the client, and the Stager application acts as the server.
 
 \begin{centering}
 	\includegraphics[scale=0.4]{images/globale_architectuur.png}\\{The client-server architecture of Stager and the iStager app}\\
 \end{centering}
 
-\paragraaf{Design}
+\subparagraaf{Design}
 The application designed in consultation with WORM. It had to be modern enough to stand out from other apps, yet it had to simple enough to support a generic stylesheet.
 
 
@@ -78,20 +77,20 @@ The application designed in consultation with WORM. It had to be modern enough t
 \end{centering}
 
 
-\paragraaf{Feed}
+\subparagraaf{Feed}
 Stager is able to publish any planned live music events trough a feed which is publicly accessible. A feed is an simplified standardized view of content which may be frequently updated. In Stager the feed has an atom-based XML format.
 
-\paragraaf{Events}
+\subparagraaf{Events}
 An event contains contains detailed information about an occurrence at a certain time, date and location. The detailed information consists of a title, subtitle, content, attached media. 
 
-\paragraaf{Media}
+\subparagraaf{Media}
 When an event is gets published it is possible to attach media items to the publication. These range from audio files and images to  links to websites such as to youtube content. Any attached media will be included in the feed as a hyperlink to its location, which is publicly accessible.
 
-\paragraaf{i18n}
+\subparagraaf{i18n}
 iStager has to support both English and Dutch. The internationalization of the app is to be automatically determined by the device locale settings. 
 
 
-\paragraaf{Results}
+\subparagraaf{Results}
 % \subparagraaf{Platform support}
 % \subparagraaf{Native look and feel}
 
@@ -120,7 +119,7 @@ Titanium does not provide a navigation controller. A navigation controller is us
 Titanium does not offer a replacement. Developers who would like to stick with this best practice are advised to write their own navigation controller. %TODO: apendix emt voorbeeld toevoegen.
 
 
-\paragraaf{Conclusion}
+\subparagraaf{Conclusion}
 %Samenvatten wat er gedaan is aan de Stager app, welke platforms het draaid, e.d.
 %TODO diagram met features en implementatie compleetheid
 Although not completely finished due to time restrains, the development of iStager proved that it is possible to build a cross-platform application which is truly native. In addition the realistic nature of the case studies' context proved Titanium can be used for development in a scenario Lunatech might encounter. 

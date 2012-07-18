@@ -1,15 +1,41 @@
 \hoofdstuk{Main research}
-This chapter will define the main research process. 
+%This chapter will define the main research process. 
 
 \paragraaf{Introduction}
 %The goal of the main research is to find out if the chosen solution
-The goal of the main research is to get a hands on with the chosen solution. Does it have the features Lunatech wants? Is it suitable for adoption by Lunatech? In other words: "\emph{Is Titanium viable for commerical useage?}". To answer this question we define the following hypothesis:
+%The goal of the main research is to get a hands on with the chosen solution. Does it have the features Lunatech wants? Is it suitable for adoption by Lunatech? In other words: "\emph{Is Titanium viable for commerical useage?}".
+%
+%A solution to the cross-platform paradigm would have to meet a specific set of criteria. 
+%
+% tijdens het vooronderzoek is naar voren gekomen dat er een bestaande oplossing is die voldoen aan lunatech's criteria. naar aanleiding van dit resultaat 
+% op basis van het originele probleem statement
+
+
+
+
+The preliminary research confirmed that there is an existing solution as defined by Lunatech's criteria. In order to determine if this solution is suitable for adoption by Lunatech it is necessary to determine the its commercial viability.
+Henceforth goal of the main research is to confirm the following hypothesis:
 \begin{shadequote}
 Titanium provides a commercially viable solution to the cross-platform development of mobile applications%\par\emph{W. de Kraker, 2012}
 \end{shadequote}
 
+%Based on the results of the preliminary research was determined that there is an existing solution as defined by Lunatech's criteria. In conclusion of this result
+
+
+%As discussed in the \emph{Introduction} chapter, Lunatech has stated that it would like to know how to make use of the look-and-feel from native apps with the cross-platform support of web apps. During the preliminary research was determined that there is an existing solution as defined by Lunatech's criteria. Based on this result the following hypothesis has been defined:
+%\begin{shadequote}
+%Titanium provides a commercially viable solution to the cross-platform development of mobile applications%\par\emph{W. de Kraker, 2012}
+%\end{shadequote}
+
+
+
+
+
+%Therefor the goal of the main research is to define
+
+
 %so what is viable?
-\paragraaf{Defining viable}
+\subparagraaf{Defining viable}
 To determine if a cross-platform mobile application development solution is considered viable for commercial usage a set of criteria has been provided by Lunatech.
 \begin{itemize}
 	\item \emph{Extensibility}\\
@@ -21,23 +47,12 @@ To determine if a cross-platform mobile application development solution is cons
 \end{itemize}
 
 
-Extensibility the possibility to extend Titanium with a new (custom) functionality. 
+{\bf Extensibility} is the possibility to extend Titanium with a new (custom) functionality. 
 When the developer wants to implement a custom feature in the solution, the interfacing API should be easy to understand and use
 
-The maturity is determined by checking for the following trustworthy elements: \begin{inparaenum}[\itshape a\upshape)]
-\item Product Documentation,
-\item Use of Established Mobile Standards,
-\item Licenses,
-\item Community activity,
-\item Number of Commits and Bug Reports
-\item Use of code management and versioning tools,
-\item Requirements Management,
-\item Availability and Use of a product roadmap.
-\end{inparaenum}
-This list was originally derived from the OpenSource Maturity Model\cite{Wikipedia2011} and has been augmented with elements fit to the specific mobile nature of the framework.
+The {\bf maturity} is determined by checking for predefined \emph{trustworthy elements} which are derived from the OpenSource Maturity Model\cite{Wikipedia2011}. The OSMM provides a formal methodology which utilizes a standardized analytical scheme for evaluating the maturity of an open source product. For this research the OSSM scheme has been augmented with elements fit to the specific mobile nature of the framework.
 
-
-The documentation should be publicly accessible, cover all public methods in the most current version of the framework's API.
+The {\bf documentation} should be publicly accessible, cover all public methods in the most current version of the framework's API.
 
 %it should have all the features implemented which we except to be there. 
 %- steady stream of releases.
@@ -51,9 +66,40 @@ The documentation should be publicly accessible, cover all public methods in the
 %is the developer spending more time fighting the framework, rather than developing his application?
 
 %how do you want to prove this?
-\paragraaf{Devised method}
-In order to determine the commercial viability of the solution it is necessary to perform a case study which originates from a realistic scenario. During the case study the solution will be analyzed on its maturity and extensibility.  The extensibility will be tested by adding a missing feature to the use case scenario. The maturity of the framework will be tested by checking for the following trustworthy elements as defined above. Quality of the documentation will be judged on:
+\paragraaf{Method}
+In order to determine the commercial viability of the solution it is necessary to perform a case study which originates from a realistic scenario. During the case study the solution will be analyzed on its inner workings. 
+
+The extensibility will be tested by adding a custom or missing feature to the case study application. The following points will be evaluated:
 \begin{itemize}
+  \setlength{\itemsep}{1pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}
+	\item Interfacing API
+	\item Requirements for extending a custom feature
+	\item Availability of third party extensions
+\end{itemize}
+
+\noindent The maturity of the framework will be assessed using an augmented version OpenSource Maturity Model assessment scheme. This scheme consists of a set predefined trustworthy elements:
+\begin{itemize}
+  \setlength{\itemsep}{1pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}
+\item Product Documentation,
+\item Use of Established Mobile Standards,
+\item Licenses,
+\item Community activity,
+\item Number of Commits and Bug Reports
+\item Use of code management and versioning tools,
+\item Requirements Management,
+\item Availability and Use of a product roadmap.
+\end{itemize} 
+%TODO OSSM twe's verklaren
+
+\noindent Quality of the documentation will be judged on:
+\begin{itemize}
+  \setlength{\itemsep}{1pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}
 	\item Completeness\\
 	Whether or not any missing parts are noticed during the development of the case study.
 	\item Up-to-dateness\\
@@ -62,7 +108,16 @@ In order to determine the commercial viability of the solution it is necessary t
 	Determined by the location of the documentation and or IDE integration.
 \end{itemize}
 
-\noindent The main research process is divided between the case study and the analysis. Even though performed parallel, both serve different goals. The global structure looks as following:
+\begin{tabel}{ p{\Procent{25}} | p{\Procent{25}} | p{\Procent{50}}}{vbx}{Main research method}
+\bf{criteria} & \bf{method} & \bf{process}\\
+ \hline
+Extensibility & Case study & Integrating a custom or missing feature in the case study application\\
+Maturity & Analysis & OpenSource Maturity Model assessment\\
+Documentation & Case study \& analysis & By usage during the case study development and analyzing it\\
+\end{tabel}
+
+\noindent The main research method is divided in two processes, the case study and the analysis. Even though performed parallel, both serve different goals. The global structure is as following:\\
+
 \begin{centering}
 \includegraphics[scale=0.5]{images/process.png}\\{Main research process schematic}\\
 \end{centering}
@@ -74,13 +129,13 @@ In order to determine the commercial viability of the solution it is necessary t
 \input{casestudy}
 \input{titanium}
 
-\hoofdstuk{Results}
-This chapter summarizes the results of the main research.
+\paragraaf{Results}
+This paragraph summarizes the results of the main research.
 
-\paragraaf{Case study}
+\subparagraaf{Case study}
 
 
-\paragraaf{Extensibility}
+\subparagraaf{Extensibility}
 It is possible to extend new functionality in Titanium. This is done at two levels:
 \begin{itemize}
 	\item Project based
@@ -88,7 +143,7 @@ It is possible to extend new functionality in Titanium. This is done at two leve
 \end{itemize}
 The Project based extending of features is done by placing the module in the Titaniums installation directory. SDK based means that the module is built inline with the Titanium's source code, from there the module augments Titanium's SDK.  Extending Titanium's features at SDK level requires the entire framework to be rebuilt and compiled which can take up to 50 minutes. When a module is added on project base it only requires a restart from the framework, this process might take up to 2 minutes. Another downside is that a custom version of Titaniums SDK will have to be built and compiled for every new release. Therefore it is preferable to extend new functionality on project base.
 
-\paragraaf{Maturity}
+\subparagraaf{Maturity}
 
 
-\paragraaf{Documentation}
+\subparagraaf{Documentation}
