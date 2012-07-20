@@ -13,11 +13,14 @@
 
 
 
-The preliminary research confirmed that there is an existing solution as defined by Lunatech's criteria. In order to determine if this solution is suitable for adoption by Lunatech it is necessary to determine the its commercial viability.
-Henceforth goal of the main research is to confirm the following hypothesis:
+The preliminary research confirmed that there is an existing solution as defined by Lunatech's criteria. In order to determine if this solution is suitable for adoption by Lunatech it is necessary to determine the its viability.
+Henceforth primary goal of the main research is to confirm the following hypothesis:
 \begin{shadequote}
-Titanium provides a commercially viable solution to the cross-platform development of mobile applications%\par\emph{W. de Kraker, 2012}
+Titanium provides a viable solution to the cross-platform development of mobile applications%\par\emph{W. de Kraker, 2012}
 \end{shadequote}
+
+\noindent The secondary goal of the main research is to analyze how Titanium works and why it provides the desired native \emph{look-and-feel}. The results of this will add to the answer of the main research question.
+
 
 %Based on the results of the preliminary research was determined that there is an existing solution as defined by Lunatech's criteria. In conclusion of this result
 
@@ -36,14 +39,16 @@ Titanium provides a commercially viable solution to the cross-platform developme
 
 %so what is viable?
 \subparagraaf{Defining viable}
-To determine if a cross-platform mobile application development solution is considered viable for commercial usage a set of criteria has been provided by Lunatech.
+To determine if a cross-platform mobile application development solution is considered viable for usage a set of criteria has been provided by Lunatech.
 \begin{itemize}
 	\item \emph{Extensibility}\\
-	Possibility to extend new features to the framework.
+	The possibility to extend new features to the framework.
 	\item \emph{Maturity}\\ 
 	Maturity of framework.
 	\item \emph{Documentation}\\
 	Coverage, accessibility and up-to-dateness of the documentation.
+%	\item \emph{Underlying technique}\\
+%	Should provide truly native user interface	
 \end{itemize}
 
 
@@ -67,14 +72,13 @@ The {\bf documentation} should be publicly accessible, cover all public methods 
 
 %how do you want to prove this?
 \paragraaf{Method}
-In order to determine the commercial viability of the solution it is necessary to perform a case study which originates from a realistic scenario. During the case study the solution will be analyzed on its inner workings. 
+In order to determine the viability of the solution it is necessary to perform a case study which originates from a realistic scenario. During the case study the solution will be analyzed on its inner workings. 
 
 The extensibility will be tested by adding a custom or missing feature to the case study application. The following points will be evaluated:
 \begin{itemize}
   \setlength{\itemsep}{1pt}
   \setlength{\parskip}{0pt}
   \setlength{\parsep}{0pt}
-	\item Interfacing API
 	\item Requirements for extending a custom feature
 	\item Availability of third party extensions
 \end{itemize}
@@ -132,9 +136,6 @@ Documentation & Case study \& analysis & By usage during the case study developm
 \paragraaf{Results}
 This paragraph summarizes the results of the main research.
 
-\subparagraaf{Case study}
-
-
 \subparagraaf{Extensibility}
 It is possible to extend new functionality in Titanium. This is done at two levels:
 \begin{itemize}
@@ -144,6 +145,29 @@ It is possible to extend new functionality in Titanium. This is done at two leve
 The Project based extending of features is done by placing the module in the Titaniums installation directory. SDK based means that the module is built inline with the Titanium's source code, from there the module augments Titanium's SDK.  Extending Titanium's features at SDK level requires the entire framework to be rebuilt and compiled which can take up to 50 minutes. When a module is added on project base it only requires a restart from the framework, this process might take up to 2 minutes. Another downside is that a custom version of Titaniums SDK will have to be built and compiled for every new release. Therefore it is preferable to extend new functionality on project base.
 
 \subparagraaf{Maturity}
+The following diagram is based on observations done during the analysis.
+\begin{tabel}{ >\R p{\Procent{60}} | p{\Procent{20}} }{vbx}{Maturity level}
+\bf{Thrustworthy element} & \bf{Score}\\
+ \hline
+Product Documentation& +++\\
+Use of Established Mobile Standards&++\\
+Licenses&++\\
+Community activity&++\\
+Number of Commits and Bug Reports &+\\
+Use of code management and versioning tool &+++\\
+Requirements Management&+\\
+Availability and Use of a product roadmap\footnote{In use but not publicly available, http://developer.appcelerator.com/doc/mobile/roadmap}&-+\\
+\end{tabel}
 
 
 \subparagraaf{Documentation}
+During the case study the documentation of Titanium was used daily for a period of 8 weeks. The following observations were made: The documentation is located at a central web resource and in addition has been integrated in Titanium's IDE. All methods and functions which were needed during the development of the case study were found in the documentation. During the development of the case study a new version of Titanium was release, the documentation was update consequently. Each described function has a simple overview of which platforms it supports and in which SDK version it is included. As a result of these observations the following score's are met:
+
+\begin{tabel}{ >\R p{\Procent{60}} | p{\Procent{20}} }{vbx}{Maturity level}
+\bf{Criteria} & \bf{Score}\\
+ \hline
+Completeness& +++\\
+Up-to-dateness&+++\\
+Availability&+++\\
+\end{tabel}
+

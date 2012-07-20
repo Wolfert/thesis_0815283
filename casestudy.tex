@@ -1,5 +1,5 @@
 \paragraaf{Case study}
-This goal of this chapter is to introduce iStager and summarizes its development process. iStager is a cross-platform mobile application developed using Titanium. The summary will cover the application requirements and design, the implementation process and the results. 
+This goal of this paragraph is to introduce iStager and summarizes its development process. iStager is a cross-platform mobile application developed using Titanium. The summary will cover the application requirements and design, the implementation process and the results. 
 The development of iStager provides a realistic case study. This is necessary in order to determine the commercial viability of the Titanium. Parallel to the case study an analysis of Titanium is performed which will be discussed in detail in the next chapter.
 
 
@@ -37,7 +37,7 @@ Functional requirements:
 \item \emph{Generic style}\\Application must have a configurable stylesheet to generate different styles of user interface looks.
 \end{enumerate}
 
-\noindent Below is a simplified list of the feature requirements of the iStager application.\footnote{The complete set of requirements is attached as an appendix} %TODO apendix.
+\noindent Below is a simplified list of the feature requirements of the iStager application.\footnote{The complete set of requirements is attached as a appendix II - Preliminary research} %TODO apendix.
 \begin{enumerate}
 \item
 List of current and upcoming events
@@ -90,7 +90,7 @@ When an event is gets published it is possible to attach media items to the publ
 iStager has to support both English and Dutch. The internationalization of the app is to be automatically determined by the device locale settings. 
 
 
-\subparagraaf{Results}
+\subparagraaf{Observations}
 % \subparagraaf{Platform support}
 % \subparagraaf{Native look and feel}
 
@@ -105,10 +105,12 @@ iStager has to support both English and Dutch. The internationalization of the a
 	\caption{iStager application on running iOS 5.0}%
 	\label{fig:1figs}%
 \end{figure}
+
+
 \subparagraaf{DOM issue}
 An issue was the lack of DOM3 specification support. This was already determined during the development of the benchmark application in the preliminary research, however the chosen solution was a quick fix to solve the symptom of the issue and would not be acceptable for a real scenario. During the development of iStager was decided for a JSON implementation of the atom-feed. Since there are no atom standards for JSON it meant a whole new feed had to be written. It was not possible to convert the format. This is due to the manner in which the atom feed was designed: using a default xml template with groovy integrated code. The JSON feed implementation was done the same way to preserve consistency.
 
-\subparagraaf{Tableview performance}
+%\subparagraaf{Tableview performance}
 
 \subparagraaf{Internationalization}
 %TODO http://en.wikipedia.org/wiki/ISO_639-1
@@ -119,7 +121,8 @@ Titanium does not provide a navigation controller. A navigation controller is us
 Titanium does not offer a replacement. Developers who would like to stick with this best practice are advised to write their own navigation controller. %TODO: apendix emt voorbeeld toevoegen.
 
 
-\subparagraaf{Conclusion}
+%\subparagraaf{Conclusion}
 %Samenvatten wat er gedaan is aan de Stager app, welke platforms het draaid, e.d.
 %TODO diagram met features en implementatie compleetheid
-Although not completely finished due to time restrains, the development of iStager proved that it is possible to build a cross-platform application which is truly native. In addition the realistic nature of the case studies' context proved Titanium can be used for development in a scenario Lunatech might encounter. 
+%Although not completely finished due to time restrains, the development of iStager proved that it is possible to build a cross-platform application which is truly native. In addition the realistic nature of the case studies' context proved Titanium can be used for development in a scenario Lunatech might encounter. 
+%\pagebreak
