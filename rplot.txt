@@ -1,0 +1,18 @@
+iOS <- c(75.78, 75.23, 74.8, 75, 74.28, 74.04)
+android <- c(16.14, 16.03, 16.51, 16.85, 17.96, 18.36)
+months <- c("Oct", "Nov", "Dec", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep")
+
+plot(iOS, type="o", col="blue", ylim=c(1,100.0), axes=FALSE, ann=FALSE, xlim=c(1,12))
+axis(2, las=0, at=10*0:100)
+axis(1, at=1:12, lab=months)
+
+abline(h=10, col="red")
+iOStrend <- lm(iOS ~ c(1:6))
+abline(iOStrend, lty=2, pch=4)
+
+
+lines(android, type="o", pch=22, col="green")
+androidtrend <- lm(android ~ c(1:6))
+abline(androidtrend,lty=2, pch=4)
+
+legend(10, 100, c("iOS","Android","Trend","10% Threshold"), cex=0.8, col=c("blue","green","black", "red"), 	=c(21,22,4,4), lty=c(1,1,2,1))
