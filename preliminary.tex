@@ -32,26 +32,7 @@ Based on the previous statement and criteria a hypothesis can be formed:
 There is a solution for cross-platform mobile application development that meets Lunatech's criteria.%\par\emph{W. de Kraker, 2012}
 \end{shadequote}
 
-
-%\subparagraaf{Framework requirements}
-%
-%A cross-platform mobile application development framework has to:
-%\begin{itemize}
-%\item Support cross-platform mobile application development.\\
-%Build an application which runs on multiple platforms, originating from a single codebase.
-%\item Supported platforms should be at minimum iOS and Android.\\
-%As decided in Chapter Defining the context, section \emph{Mobile platforms}
-%\item Be able to offer the native look-and-feel.\\
-%As defined in Chapter Defining the context, section \emph{Defining native}
-%\end{itemize}
-
-
 \paragraaf{Method}
-%todo, in this paragraph...
-% listing van bestaande frameworks.
-% toepassen criterea.
-% testwijze (benchmak app)
-% beste kiezen om mee verder te gaan
 In order to test the hypothesis it is necessary to conduct a market survey to determine which solutions to cross-platform app development are available on todays market and which of those meet the criteria. Each solution will be evaluated during a test in which a benchmark application will be developed using the solution. The resulting evaluations will be compared. The solution which offers the most complete set of features will be deemed potentially viable for commercial use by Lunatech. 
 
 \begin{centering}
@@ -63,10 +44,11 @@ There are over 30 frameworks which offer cross-platform development of mobile ap
 
 To determine which frameworks should be included in the comparison we'll take a closer look at each and filter out those who do not adhere to criteria of supporting native user elements. This should leave us with an acceptable number of frameworks to compare. Acceptable in this scenario will be five frameworks, which is the goal because the timeframe of the internship doesn't allow for more.
 
-%TODO: eerste persoonsvorm verplaatsen naar 3e persoonsvorm. Is door dit hele hoofdstuk een issue.
+%TODO: persoonsvorm
 
 \subparagraaf{Benchmark app}
-In order to evaluate each framework I've decided to build a application with all of them. The application will have the same requirements on each platform. Before the evaluation process begins I will write the application first on a native platform, the results of building it natively will serve as benchmark setting during the evaluation, hence the term: \emph{benchmark app}
+
+In order to evaluate the frameworks it is necessary to build a application with all of them. The application will have the same requirements on each platform. Before the evaluation process begins a native application has to be written, the results of building it natively will serve as benchmark setting during the evaluation, hence the term: \emph{benchmark app}
 
 The application should be related to what Lunatech might anticipate for mobile contracts. In this case the use case was taken from \emph{Stager}. Stager is a modern web-based resource planning and ticketing application to help manage live music events. Lunatech took the opportunity to use the relatively new Play framework to build a web application with an HTML and Java architecture. The application should be a publicity app, allowing for users to view published events and share them on social media.
 
@@ -79,10 +61,10 @@ This concludes that the app should be able to:
 The design will be based on the website of an live music venue which already uses Stager to publish their events. WORM.ORG
 
 %requirement specs. feed/xpath/sharekit/ui tools
-For the native version of the benchmark application I have chosen to use the iOS platform simply for practical reasons, because I have an iOS device in my direct availability for testing.
-%iOS was chosen for the native version of the benchmark application. The reason for this being very practical: an
+For the native version of the benchmark application was chosen to use the iOS platform simply for practical reasons, because there was an iOS device directly available for testing. And because I have extensive experience programming native iOS applications.
 
-It took three days to complete the benchmark app, from which the majority of the time was spend on parsing data using x-path, which I had never used before.
+
+It took three days to complete the benchmark app, of which the majority of the time was spent on parsing data using x-path, which I had not used before.
 \begin{figure}%
 	\centering
 	\parbox{0.0in}
@@ -98,7 +80,7 @@ It took three days to complete the benchmark app, from which the majority of the
 
 
 \subparagraaf{Evaluation process}
-Estimated is that it takes four days to do experiments with a framework, this is based on N+1 in which N is the number of days it took to develop the benchmark app + 1 to familiarize with the framework. If in those four days I'm unable to complete the benchmark app, it is still a result. The experiment consumes a timespan of 32 hours per framework and consist of the following activities:
+Estimated is that it takes four days to do experiments with a framework, this is based on N+1 in which N is the number of days it took to develop the benchmark app + 1 to familiarize with the framework. If in those four days I am unable to complete the benchmark app, it is still a result. The experiment consumes a timespan of 32 hours per framework and consist of the following activities:
 
 \begin{itemize}
 	\item Install framework
@@ -110,7 +92,8 @@ Estimated is that it takes four days to do experiments with a framework, this is
 The remaining framework will be Evaluated on available of documentation, licensing, community, and flexibility.
 
 \paragraaf{Results}
-%This paragraph will summarize the results of the research, more details of the results are included as a appendices (list + evaluations) (todo)%todo referal. #TODO
+This paragraph will summarize the results of the research, more detailed results are included as an appendix. %(list + evaluations) (todo)%todo referal. #TODO
+
 From 30 existing solutions a total of four frameworks were selected to be evaluated:
 \begin{itemize}
 	\item Titanium
@@ -119,23 +102,24 @@ From 30 existing solutions a total of four frameworks were selected to be evalua
 	\item Worklight
 \end{itemize}
 
-{\bf Titanium}, is the first framework put under evaluation. In the 3 days available for rewriting the benchmark app only the first two features were implemented successfully.
+{\bf Titanium}. In the 3 days available for rewriting the benchmark app only the first two features were implemented successfully.
 
-However there was a complication: Titanium does not support the DOM3 specifications. Not having been developed beyond DOM2 specifications the required methods to evaluate an XML document were missing, to be more precise, x-path could not be used. This is particularly troublesome because the resulting solution required hardcoded namespace resolving, which is against best practice. %forced to write some ugly parsing functions that made me want to rm -rf my disk. But it worked. %DONE? herzien.
+However there was a complication: Titanium did not support the DOM3 specifications. Not having been developed beyond DOM2 specifications the required methods to evaluate an XML document were missing, to be more precise, x-path could not be used. X-path is an industry standard used to locate data within XML structured documents. This is particularly troublesome because the resulting solution required hardcoded namespace resolving. Hardcoded namespace resolving means that one has to know the exact path to a node to access its specific piece of data. This is against best practice in handling XML documents. %forced to write some ugly parsing functions that made me want to rm -rf my disk. But it worked. %DONE? herzien.
 
 Overall developing with Titanium proceeded really well, with exception for the DOM issue. The built results were as expected: cross-platform with the native look and feel.
 
-Second up: {\bf Rhomobile}. Up on installing it and reading the quick start guide it turns out that elements are not by definition \emph{native} but HTML elements mimicking the native user interface style. The native feature advertised on their website referred to the fact that Rhomobile can encapsulate your web app in a web-view. This essentially devaluates the application type to Web-view based hybrid application as defined in chapter \emph{Defining the context}, section \emph{Alternative mobile application types}.
+{\bf Rhomobile}. Up on installing it and reading the quick start guide it turns out that elements are not by definition \emph{native} but HTML elements mimicking the native user interface style. The native feature advertised on their website referred to the fact that Rhomobile can encapsulate your web app in a web-view. This essentially devaluates the application type to Web-view based hybrid application as defined in chapter \emph{Defining the context}, section \emph{Alternative mobile application types}.
 
-After some further research it turns out Rhomobile does have \emph{some} support for native user interface elements, however only the very basic. When a the developer wants to use an element not in that list, he or she has to implement it in native code. \cite{Rhomobile2012} This is not how the cross-platform definition is envisioned by Lunatech.
+After some further research it turns out Rhomobile does have \emph{some} support for native user interface elements, however only the limited set. When a the developer wants to use an element not in that set, they would have to implement it in native code.\cite{Rhomobile2012} This is not how the cross-platform definition is envisioned by Lunatech.
 
-{\bf MoSync} was third up. During the installation of the framework the installer prompted for the system location of \emph{PhoneGap}, it would not install without. As it turns out, the developers of MoSync sync have the same definition for native as Rhomobile. The native feature advertised on their website referred to the fact that MoSync can encapsulate your web app in a web-view. The user interface is built using a PhoneGap implementation. Further research did not show a way for building actual native user interface elements using MoSync.
+{\bf MoSync}. During the installation of the framework the installer prompted for the system location of \emph{PhoneGap}, it would not install without. As it turns out, the developers of MoSync sync have the same definition for native as Rhomobile. The native feature advertised on their website referred to the fact that MoSync can encapsulate your web app in a web-view. The user interface is built using a PhoneGap implementation. Further research did not show a way for building actual native user interface elements using MoSync.
 
-Last up is {\bf Worklight}. Worklight also required PhoneGap. Even though Worklight classifies itself as producing actual native applications, it merely encapsulates a PhoneGap built user interface. The value Worklight brings is in their API which augments the PhoneGap application by exposing a JavaScript API to access some of the devices' native features.
+{\bf Worklight}. Worklight also requires PhoneGap. Even though Worklight classifies itself as producing actual native applications, it merely encapsulates a PhoneGap built user interface. The value Worklight brings is in their API which augments the PhoneGap application by exposing a JavaScript API to access some of the devices' native features.
 
-
-\subparagraaf{Conclusion}
-The goal of this preliminary research was to "\emph{determine whether or not an existing solution offers cross-platform mobile application development as defined by Lunatechs' criteria.}".  Surveying and categorizing the available frameworks on the market resulted in a list of 4 possible solutions. By evaluating each solution it turned out that Titanium meets the criteria set by Lunatech. Therefor the following conceptual model can be defined:
+\paragraaf{Conclusion}
+The goal of this preliminary research was to "\emph{determine whether or not an existing solution offers cross-platform mobile application development as defined by Lunatechs' criteria.}".  Surveying and categorizing the available frameworks on the market resulted in a list of four possible solutions. By evaluating each solution it turned out that Titanium meets the criteria set by Lunatech. The remainder three frameworks did not adhere to the specific native user interface requirement. Although Rhomobile does offer \emph{some} usage of native elements, it is not the main focus op the framework, as opposed to Titanium. Therefor the following conceptual model can be defined:
 \begin{shadequote}
 Titanium offers cross-platform mobile application development as defined by Lunatech's criteria.%\par\emph{W. de Kraker, 2012}
 \end{shadequote}
+
+Since there is an existing solution which meets Lunatech's criteria it is not nessecary to research the implementation of a custom solution.% Therefore the main research will focus on determining the 
