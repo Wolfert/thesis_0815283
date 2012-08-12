@@ -108,8 +108,6 @@
 \newlength{\maxwidth}
 
 % For nice quotationblocks (bron: http://tex.stackexchange.com/a/16981)
-%\definecolor{lunablue}{rgb}{0.098,0.6,0.81}
-%\definecolor{lunagray}{rgb}{0.84,0.84,0.84}
 \usepackage{ifxetex}
 \usepackage[svgnames]{xcolor}
 \ifxetex{%
@@ -130,6 +128,7 @@
 \newcommand*{\closequote}{\tikz[remember picture,overlay,xshift=15pt,yshift=-15pt]
      \node (CQ) {\quotefont\fontsize{60}{60}\selectfont''};}
 % select a colour for the shading
+%\definecolor{shadecolor}{rgb}{0.84,0.84,0.84}
 \definecolor{shadecolor}{named}{Gray}
 % wrap everything in its own environment
 \newenvironment{shadequote}%
@@ -177,7 +176,9 @@
 
 
 \else     %normal version
+%  \newcommand{\hoofdstuk}[1]{\chapter*{#1}\addcontentsline{toc}{chapter}{#1}}
   \newcommand{\hoofdstuk}[1]{\chapter*{#1}\addcontentsline{toc}{chapter}{#1}}
+
   \newcommand{\paragraaf}[1]{\section*{#1}\addcontentsline{toc}{section}{#1}}
   \newcommand{\subparagraaf}[1]{\subsection*{#1}\addcontentsline{toc}{subsection}{#1}}
   \newcommand{\samenvatting}[1]{\hoofdstuk{\abstractname}}

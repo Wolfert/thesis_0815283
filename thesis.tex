@@ -57,10 +57,11 @@
 	\pagenumbering{roman}
 	\input{abstract}
 	\input{versions}
-	% \include{credits} 
+	\include{credits} 
 	\tableofcontents
 	\pagenumbering{arabic}
 \fi
+	\setcounter{chapter}{1}
 	\input{background}
 	\input{introduction}
 	\input{definitions}
@@ -71,17 +72,18 @@
 	\input{mainresearch}
 	\input{conclusion}
 	\input{appendix}
-	\input{glossarium}
+	\input{iStagerRequirements}
+	\input{glossarium}	
 \ifpublic
 % todo.
 %	\iflanguage{dutch}{\def\bibname{\normalsize{Bronnen}}}
 %		{\def\bibname{\normalsize{References}}}
 %	{\footnotesize{\input{bronnen}}} 
 \else
-	\bibliographystyle{plain}
-	\bibliography{bibliography}
+%	\bibliographystyle{plain}
+%	\bibliography{bibliography}
 	%\input{evaluating}
-	\appendix
+	%\appendix
 	%\include{attachment} 
 \fi
 \end{document} 
