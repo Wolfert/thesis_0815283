@@ -107,7 +107,7 @@ In iOS the proxy button object:
 
 As mentioned above, Titanium uses JavaScript for cross-platform code compatibility. JavaScript is a logical choice because there are JavaScript Interpreters available for most platforms. This includes the targeted mobile platforms:
 
-V8 is the default for Android but Rhino is also supported. V8 is has a better performance dealing as Rhino because it is directly integrated to the NDK\footnote{Native Development Kit}. This means the code does not have to run trough the JVM\footnote{Java Virtual Machine}. Performance gain can exceed over 200\% processing time when parsing a JSON object.\cite{Lukasavage2011}
+V8 is the default JavaScript Interpreter for Android but Rhino is also supported. V8 is has a better performance than Rhino because it is directly integrated to the NDK\footnote{Native Development Kit}. This means the code does not have to run trough the JVM\footnote{Java Virtual Machine}. The performance gain can exceed over 200\% processing time when parsing a JSON object.\cite{Lukasavage2011}
 For iOS JavaScriptCore is the chosen interpreter.
 
 These interpreters support the CommonJS specification.
@@ -203,7 +203,7 @@ Many objects in the documentation are supplemented with an code example.
 On Titaniums' Jira page there have been 8784 issues reported of which 2601 are open.
 Issues: 398 created and 366 resolved
 %TODO: conclusie formuleren.
-\item [Use of code management and versioning tools] Titaniums' code base is mainted in a public github account.%TODO github verklaren account. For 
+\item [Use of code management and versioning tools] Titaniums' code base is maintained in a public Github account.%TODO github verklaren account. For 
 \item [Requirements Management] Requirements and features are managed using Jira tickets.
 \item [Availability and Use of a product roadmap] Not public:
 \texttt{http://developer.appcelerator.com/doc/mobile/roadmap}
