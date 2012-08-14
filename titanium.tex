@@ -1,10 +1,6 @@
-
-
 \paragraaf{Titanium analysis}
 %korte herhaling van wat titanium is, referentie naar existing solutions.
 
-
-%\noindent The primary goal of this chapter is to determine the maturity of Titanium. As mentioned in \emph{Main research}, section \emph{Defining viable}, the maturity of a framework is determined based on the presence the following of trustworthy elements:
 \noindent The primary goal of this paragraph is to determine the maturity of Titanium. As mentioned in \emph{Main research}, section \emph{Defining viable}, the maturity of a framework is determined based on the presence the following of trustworthy elements:
 
 \begin{itemize}
@@ -22,8 +18,6 @@
 \end{itemize}
 
 Secondarily this paragraph is to analyze how Titanium works and why it provides the desired native \emph{look-and-feel}. The results of this will add to the answer of the main research question
-
-
 
 
 
@@ -48,14 +42,8 @@ At runtime a JavaScript execution environment set up in the native environment, 
 \subparagraaf{Proxy objects}
 A proxy object is a JavaScript object paired to an object in native code.\cite{Whinnery2012} This means the object exists in both JavaScript and native code. Proxy objects gap the bridge between the native and the JavaScript environment. A global Titanium object in JavaScript exposes access to the proxy objects. 
 
-% So, for example var label = Titanium.UI.createTabel({ text: "label" }); will invoke a native method which creates a native UILabel object. 
-
-% var b = Ti.UI.createButton({title:'Title'});, that will invoke a native method that will create a native UI object, and create a “proxy” object (b) which exposes properties and methods on the underlying native UI object to JavaScript.
-% UI components (view proxies) can be arranged hierarchically to create complex user interfaces. Proxy objects which represent an interface to non-visual APIs (like filesystem I/O or database access) execute in native code, and synchronously (or asynchronously for APIs like network access) return a result to JavaScript. 
-
-
 For example: In the JavaScript code, when a function is called on the global Titanium object to create a native UILabel a proxy object is created.
-\  %TODO : voorbeeld afmaken
+
 \begin{minted}[mathescape,
 			   label="JavaScript-object",
                linenos,
@@ -105,7 +93,7 @@ In iOS the proxy button object:
 % JavaScript uses syntax influenced by that of C. JavaScript copies many names and naming conventions from Java, but the two languages are otherwise unrelated and have very different semantics. The key design principles within JavaScript are taken from the Self and Scheme programming languages.[7]
 
 
-As mentioned above, Titanium uses JavaScript for cross-platform code compatibility. JavaScript is a logical choice because there are JavaScript Interpreters available for most platforms. This includes the targeted mobile platforms:
+As mentioned above, Titanium uses JavaScript for cross-platform code compatibility. JavaScript is a prototype based scripting language. JavaScript is a logical choice because there are JavaScript Interpreters available for most platforms. This includes the targeted mobile platforms:
 
 V8 is the default JavaScript Interpreter for Android but Rhino is also supported. V8 is has a better performance than Rhino because it is directly integrated to the NDK\footnote{Native Development Kit}. This means the code does not have to run trough the JVM\footnote{Java Virtual Machine}. The performance gain can exceed over 200\% processing time when parsing a JSON object.\cite{Lukasavage2011}
 For iOS JavaScriptCore is the chosen interpreter.
@@ -114,29 +102,17 @@ These interpreters support the CommonJS specification.
 
 
 \subparagraaf{CommonJS}
-%TODO: verwoorden:
-JavaScript is a powerful object oriented language with some of the fastest dynamic language interpreters around. The official JavaScript specification defines APIs for some objects that are useful for building browser-based applications. However, the spec does not define a standard library that is useful for building a broader range of applications.
+Although JavaScript is a powerful object oriented language with dynamic interpreters available on most platforms, the official specification only defines APIs for objects that are designed for developing browser-based applications.
+The CommonJS API will fill that gap by defining APIs that handle many common application needs, ultimately providing a standard library as rich as those of Python, Ruby and Java.\cite{CommonJS2012a} The idea behind this is that the developer can use JavaScript to develop fullgrown applications rather than being limited to the browserenvironment.
 
-The CommonJS API will fill that gap by defining APIs that handle many common application needs, ultimately providing a standard library as rich as those of Python, Ruby and Java. The intention is that an application developer will be able to write an application using the CommonJS APIs and then run that application across different JavaScript interpreters and host environments. With CommonJS-compliant systems, you can use JavaScript to write:
-
-Server-side JavaScript applications
-Command line tools
-Desktop GUI-based applications
-Hybrid applications (Titanium, Adobe AIR)
-
+Titanium implements the CommonJS module specification.
 
 
 \subparagraaf{Modules}
-%TODO: verwoorden:
-By default, JavaScript runs programs in a global scope and doesn't have any native name spacing language features. This means that, unless you are careful, your programs can descend into a mess of code spaghetti, full of conflicting variables and namespace pollution.
-
-CommonJS modules are one of the best solutions to JavaScript dependency management.
-
-CommonJS modules solve JavaScript scope issues by making sure each module is executed in its own namespace. Modules have to explicitly export variables they want to expose to other modules, and explicitly import other modules; in other words, there is no global namespace.
-
-Modules prevent variables from clogging up the global namespace.
-
-
+JavaScript does not have any name spacing by default, this means that all objects and function live in a global scope. As a consequence name conflicts on functions and variables can cause runtime errors. 
+To prevent pollution of the global scope the developer can make use of CommonJS modules.
+CommonJS modules solve JavaScript scope issues by making sure each module is executed in its own namespace.\cite{CommonJS2012b} In CommonJS modules export the variable which are to be exposed to other modules. Other modules are explicitly imported where they are required. As a consequence, modules can prevent variables from clogging up the global namespace.
+~\\
 A sample module:
 
 
@@ -166,37 +142,15 @@ Is used like:
   tableview.appendRow(new messageCell(message, that));
 \end{minted}
 
-% gaat er te ver op in:
-% \paragraaf{Eclipse}
-% \paragraaf{Buildsystem}
-% \paragraaf{XCode CLI and the iOS SDK}
-% \paragraaf{Android SDK}
-
-%\paragraaf{Usage concepts}
-%\subparagraaf{Window Navigation}
-%\subparagraaf{View hierarchie}
-%\subparagraaf{Event handling}
-%
-%\paragraaf{Extensibility and flexibility}
-%\subparagraaf{Module system}
-%
-%\paragraaf{Performance versus flexibility}
-%tableview.
-
-%\paragraaf{Documentation}
-%all in one place
-%wide range: video tutorials to confluence based guides
-
 \subparagraaf{Maturity}
 As mentioned the maturity of a framework is determined based on the presence of the predefined of trustworthy elements.
 
 \begin{description}
-\item [Product Documentation] is found at the official website as well as a simplified version which included on the code completion. 
-The documentation is updated either on the day of a new release or the day after. %TODO bron: http://docs.appcelerator.com/titanium/2.1/index.html
-A simplified version of the documentation is integrated into TitaniumStudio, a feature named \emph{'dynamic help'} automatically looks up the documentation belonging to the a selected method or object.
+\item [Product Documentation] is found at the official website as well as a simplified version which included on the code completion.
+The documentation is updated either on the day of a new release or the day after.\cite{Inc2012b} A simplified version of the documentation is integrated into TitaniumStudio, a feature named \emph{'dynamic help'} automatically looks up the documentation belonging to the a selected method or object.
 Many objects in the documentation are supplemented with an code example.
 \item [Use of Established Mobile Standards] 
-%On the surface JavaScript API, Titanium has full support for CommonJS . 
+On the surface an fully JavaScript API, Titanium also has support for CommonJS module specifications. 
 \item [Licenses] Appcelerator offers four plans from which the first one is free, the other three provide different levels of support and include the use of cloud services. The commercial plans' pricing is per application. Additionally Appcelerator offers services for app analytics or stand alone cloud services. A drawback is that prices are not publicly listed.
 \item [Community activity] Titaniums community exists of mobile developers whom use Titanium to develop their mobile applications. Some of these have knowledge of native programming on the supported platforms. It happens frequently that they publish features they implement because it was missing from Titanium. 
 \item [Number of Commits and Bug Reports] Since the beta there have been 15,991 commits. %https://github.com/appcelerator/titanium_mobile/branches
@@ -205,33 +159,7 @@ Issues: 398 created and 366 resolved
 %TODO: conclusie formuleren.
 \item [Use of code management and versioning tools] Titaniums' code base is maintained in a public Github account.%TODO github verklaren account. For 
 \item [Requirements Management] Requirements and features are managed using Jira tickets.
-\item [Availability and Use of a product roadmap] Not public:
-\texttt{http://developer.appcelerator.com/doc/mobile/roadmap}
+\item [Availability and Use of a product roadmap] Not publicly available,\\
+\texttt{http://developer.appcelerator.com/doc/mobile/roadmap}\\
 "We apologize but at this time we're not publishing our roadmap."
 \end{description}
-
-%\subparagraaf{Resulting scheme}
-%\begin{tabel}{ >\R p{\Procent{60}} | p{\Procent{20}} }{vbx}{Maturity level}
-%\bf{Thrustworthy element} & \bf{Score}\\
-% \hline
-%Product Documentation& +++\\
-%Use of Established Mobile Standards&++\\
-%Licenses&++\\
-%Community activity&++\\
-%Number of Commits and Bug Reports &+\\
-%Use of code management and versioning tool &+++\\
-%Requirements Management&+\\
-%Availability and Use of a product roadmap\footnote{In use but not publicly available, http://developer.appcelerator.com/doc/mobile/roadmap}&-+\\
-%\end{tabel}
-%
-%
-%
-%\subparagraaf{Conclusion}
-%From this analysis two conclusions can be drawn:
-%\begin{itemize}
-%\item \emph{Titanium is a mature open source framework}\\
-%Titanium is a mature framework because all the trustworthy elements are present.
-%\item \emph{Titanium provides truly native applications}\\
-%Titanium provides its cross-platform with the \emph{native look-and-feel} trough the use of proxy objects.  A high level API provides JavaScript access to the devices' native features. Each supported platform has its own implementation of the API.
-%\end{itemize}
-	\pagebreak
