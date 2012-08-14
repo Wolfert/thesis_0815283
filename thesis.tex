@@ -5,8 +5,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newif\ifpublic \newif\iftwocol	% publication mode %
 \newif\ifdraftmode \newif\ifdraftmode	% drafts mode %
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % publishable version (no titlepage, credits, evaluation or attachments)%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\publictrue	% 1-kolom publicatiemode (zonder %) of verslagmode (met %)
@@ -33,7 +32,7 @@
 \usepackage{subfigure}
 \usepackage{paralist}
 \usepackage{url}
-
+\usepackage{pdfpages}
 
 % linenumbers next to code formatted text.
 \renewcommand{\theFancyVerbLine}{
@@ -70,7 +69,8 @@
 	\input{conclusion}
 	\input{appendix}
 	\input{iStagerRequirements}
-	\input{glossarium}	
+	\input{availableproducts}
+	\input{glossarium}
 \ifpublic
 % todo.
 %	\iflanguage{dutch}{\def\bibname{\normalsize{Bronnen}}}
