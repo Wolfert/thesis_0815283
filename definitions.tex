@@ -17,11 +17,11 @@ In order to determine which platforms should be supported for mobile development
 
 \begin{enumerate}	
 \item \emph{Platform type}\\
-The platform has to be mobile, equipped with a touchscreen and support 3rd party applications. %Only smartphones will be targetted for development.
+The platform has to be mobile, equipped with a touchscreen and support 3rd party applications %Only smartphones will be targetted for development.
 \item \emph{Platform marketshare}\\
-The platform should have 10\% market share in the european continent.
+The platform should have 10\% market share in the european continent
 \item \emph{Platform marketshare trend}\\
-The market share trend from the past 6 months should not depict a trend directed below the set threshold of 10\% within the next 6 months.
+The market share trend from the past 6 months should not depict a trend directed below the set threshold of 10\% within the next 6 months
 \end{enumerate}
 
 The platform type criteria is based on Lunatech's requirement to support smartphones and tablet computers. A smartphone can be defined as a smartphone is a next-generation, multifunctional cell phone that provides voice communication and text-messaging capabilities and facilitates data processing as well as enhanced wireless connectivity.\cite{Ni2006} Tablet computers, commonly referred to as tablet PCs, are wireless portable personal computers which provide the user with a touchscreen to access or process information.\cite{Leigh2011} The platform market share is the percentage per platform representing its share of the platforms market. Platform market share trend defined as the general course or prevailing tendency of the platforms market share.
@@ -56,16 +56,16 @@ Samsung & 0.06 & 0.03\\
 LG & 0.01 & 0.01\\
 \hline
 \end{tabel}
-\pagebreak
+\newpage
 
 \noindent iOS and Android both cover over 10\% of the market, together they are good for 92.40\% of the total mobile market as of march 2012 in the european continent. 
 
 To assess the likelihood that these market shares will not hit below the 10\% market share a R plot has been generated to visualize the trends:
 
  \begin{centering}
- \includegraphics[scale=0.52]{images/platformtrends.png}\\{Market share trends between October 2011 and September 2012, generated using R}\\
+ \includegraphics[scale=0.52]{images/platformtrends.png}\\{Market share trends between October 2011 and September 2012, generated using \emph{R}}\\
  \end{centering}
-\pagebreak
+\newpage
 
 \subparagraaf{Platform versions}
 In order to determine which versions per platform will be supported Lunatech has stated that a version must have at least a 10\% user share of the platform. 
@@ -110,7 +110,7 @@ When written in the native framework for a platform a mobile application receive
 %with a feeling of recognition when using the application, userinterface elements work as they expected based upon experience with using the operating system.
 %todo: add some notes about the Human Interface Guidelines.
 
-The \emph{native feel} of a mobile application can be defined as the speed in which the user interface elements, the responsiveness of user interface elements to touch events, and smoothness of the animation in which the user interface elements are moved. A native mobile application has the advantage of hardware acceleration. This means its code has been precompiled and directly executed by the device CPU, rather than having to be interpreted by the device's browser. As a result of this the user interface elements are rendered faster and it \emph{feels} smooth.
+The \emph{native feel} of a mobile application can be defined as the speed in which the user interface elements, the responsiveness of user interface elements to touch events, and smoothness of the animation in which the user interface elements are moved. A native mobile application has the advantage of \emph{hardware acceleration}. This means its code has been precompiled and directly executed by the device CPU, rather than having to be interpreted by the device's browser. As a result of this the user interface elements are rendered faster and it \emph{feels} smooth.
 
 
 \subparagraaf{Alternative mobile application types}
@@ -120,10 +120,10 @@ A mobile web application is an application developed with web technologies such 
 % todo: screenshots/links neerzetten.
 
 \subparagraaf{Hybrid applications}
-A hybrid application in mobile development refers to an application which use a native shell wrapped around web app. There are generally two forms of native shells, the first is a \emph{webview} and the second a native framework which exposes an JavaScript API to provide the web application access to otherwise native API's. The following paragraphs will describe these types in more detail.
+A hybrid application in mobile development refers to an application which uses a native shell wrapped around web app. There are generally two forms of native shells, the first is a \emph{webview} and the second a native framework which exposes an JavaScript API to provide the web application access to otherwise native API's. The following paragraphs will describe these types in more detail.
 
 {\bf Webview-based hybrid applications}\\
-A web-view based hybrid application is a web based mobile application wrapped in a web-view. A web-view is a view or element which acts like a browser would, e.g. it is able to render HTML and run javascript.  It is readily available in the native libraries. The advantage of a web-view based hybrid application over an normal web application is that it can be published via the devices native application publishing platforms, i.e. a web-view based hybrid application targeted for the iPhone can be placed in the Apple Appstore. 
+A web-view based hybrid application is a web based mobile application wrapped in a web-view. A web-view is a view or element which acts like a browser would, e.g. it is able to render HTML and run javascript.  It is readily available in the native libraries. The advantage of a web-view based hybrid application over an normal web application is that it can be published via the platform's official app publishing channel, i.e. a web-view based hybrid application targeted for the iPhone can be placed in the \emph{Apple Appstore}. 
 
 Worklight is an example of a framework which can be used to develop web-view based hybrid applications.
 
@@ -138,9 +138,9 @@ Web applications are written entirely in HTML, CSS and JavaScript. This means th
 Webview-based hybrid applications, the app's source code consists of web code executed within a native wrapper that is provided by a framework. The advantage over web applications is that the app can be distributed and installed in the same manner that native applications can.
  
 Framework hybrid applications, the developer augments the web code with a Javascript API to create unique features and
-access native APIs that are not yet available via the browser, such as bluetooth, GPS and others.
+access native APIs that are not (yet) available in the browser API, such as \emph{bluetooth}, \emph{GPS} and others.
  
-Native Application are platform-specific. Developing a native app requires unique expertise and knowledge for each platform and are therefore pricey and time consuming to develop, however a native app delivers the highest user experience of all approaches.
+Native Application are platform-specific. Developing a native app requires unique expertise and knowledge for each platform and are therefore pricey and time consuming to develop, however a native app delivers the best user experience of all approaches.
 
 \begin{centering}
 \includegraphics[scale=0.7]{images/apptypesdefined.png}\\{Different types of mobile applications\cite{IBM-Worklight2012}}\\
@@ -151,7 +151,7 @@ A natively written mobile application provides the user with an experience immer
 \begin{itemize}
 \item
 \emph{Performance}\\
-a native application is faster because it has direct access to memory and CPU.
+a native application is faster because it has direct access to memory and CPU
 \item \emph{Looks}\\
-a native application looks and feels more coherent to the device's operating system because it is able to make use the of the provided user interface elements.
+a native application looks and feels more coherent to the device's operating system because it is able to make use the of the provided user interface elements
 \end{itemize}
