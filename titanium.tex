@@ -86,14 +86,9 @@ In iOS the proxy button object:
 \end{minted}
 
 \subparagraaf{JavaScript}
-% %TODO verwoorden:
-% JavaScript (sometimes abbreviated JS) is a prototype-based scripting language that is dynamic, weakly typed and has first-class functions. It is a multi-paradigm language, supporting object-oriented,[5] imperative, and functional[1][6] programming styles.
-% JavaScript was formalized in the ECMAScript language standard and is primarily used in the form of client-side JavaScript, implemented as part of a Web browser in order to give enhanced user interfaces and dynamic websites. This enables programmatic access to computational objects within a host environment.
-% JavaScript's use in applications outside Web pages — for example in PDF documents, site-specific browsers, and desktop widgets — is also significant. Newer and faster JavaScript VMs and frameworks built upon them (notably Node.js) have also increased the popularity of JavaScript for server-side web applications.
-% JavaScript uses syntax influenced by that of C. JavaScript copies many names and naming conventions from Java, but the two languages are otherwise unrelated and have very different semantics. The key design principles within JavaScript are taken from the Self and Scheme programming languages.[7]
 
 
-As mentioned above, Titanium uses JavaScript for cross-platform code compatibility. JavaScript is a prototype based scripting language. JavaScript is a logical choice because there are JavaScript Interpreters available for most platforms. This includes the targeted mobile platforms:
+As mentioned above, Titanium uses JavaScript for cross-platform code compatibility. JavaScript is a prototype based scripting language.\cite{Crockford2008}. JavaScript is a logical choice because there are JavaScript Interpreters available for most platforms. This includes the targeted mobile platforms:
 
 V8 is the default JavaScript Interpreter for Android but Rhino is also supported. V8 is has a better performance than Rhino because it is directly integrated to the NDK\footnote{Native Development Kit}. This means the code does not have to run trough the JVM\footnote{Java Virtual Machine}. The performance gain can exceed over 200\% processing time when parsing a JSON object.\cite{Lukasavage2011}
 For iOS JavaScriptCore is the chosen interpreter.
