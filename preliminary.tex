@@ -104,9 +104,11 @@ From 30 existing solutions a total of four frameworks were selected to be evalua
 
 {\bf Titanium}. In the 3 days available for rewriting the benchmark app only the first two features were implemented successfully.
 
-However there was a complication: Titanium did not support the DOM3 specifications. Not having been developed beyond DOM2 specifications the required methods to evaluate an XML document were missing, to be more precise, x-path could not be used. X-path is an industry standard used to locate data within XML structured documents. This is particularly troublesome because the resulting solution required hardcoded namespace resolving. Hardcoded namespace resolving means that one has to know the exact path to a node to access its specific piece of data. This is against best practice in handling XML documents. %forced to write some ugly parsing functions that made me want to rm -rf my disk. But it worked. %DONE? herzien.
+However there was a complication: Titanium did not support the DOM3 specifications. Not having been developed beyond DOM2 specifications the required methods to evaluate an XML document were missing, to be more precise, x-path could not be used. X-path is an industry standard used to locate data within XML structured documents. This is particularly troublesome because the resulting solution required hardcoded namespace resolving. Hardcoded namespace resolving means that one has to know the exact path to a node to access its specific piece of data. This is against best practice in handling XML documents. 
 
 Overall developing with Titanium proceeded really well, with exception for the DOM issue. The built results were as expected: cross-platform with the native look and feel.
+
+A comparable research conducted by M. Bruning in 2011 at Grenos BV for TU Delft concluded Titanium to be a \emph{web-based, cross- compilation tool} producing hybrid apps.\cite{Bruning2011} Results from this research however indicate that Titanium is neither web-based nor does it produce hybride apps.
 
 {\bf Rhomobile}. Up on installing it and reading the quick start guide it turns out that elements are not by definition \emph{native} but HTML elements mimicking the native user interface style. The native feature advertised on their website referred to the fact that Rhomobile can encapsulate your web app in a web-view. This essentially devaluates the application type to Web-view based hybrid application as defined in chapter \emph{Defining the context}, section \emph{Alternative mobile application types}.
 
